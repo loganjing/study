@@ -1,0 +1,4 @@
+study
+=====
+
+study for technology
