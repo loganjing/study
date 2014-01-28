@@ -16,6 +16,7 @@
     <p>
         包含块不能限制内容的尺寸，但是可以通过overflow特性 overflow 特性达到处理溢出的子孙元素的目的。
     </p>
+
     <p>overflow特性定义了当一个块级元素的内容溢出该元素的内容区域时是否被剪切，它的默认值是visible，即不进行剪切，
         这可能导致该元素的内容在该元素的content box外被渲染,可查看<a href="http://www.w3.org/TR/CSS21/visufx.html#overflow">Overflow标准</a></p>
 
@@ -27,6 +28,7 @@
         正因为IE6下将父容器的大小撑大了，所以下面开始的文字是从200px之后开始的，别的浏览器下文字是以a容器的的下边开始的，与b容器没有关系。
         但如果将a和b设置为display:inline-block，则文字就从200px的位置开始了，这是为什么呢？BFC?
     </p>
+
     <p style="background: lightgray">
         <span style="display: block">(我是个图片哦)IE6下的表现如下:</span>
         <img src="images/ie6-box1.png">
