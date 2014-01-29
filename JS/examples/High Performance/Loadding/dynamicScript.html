@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <script type="text/javascript">
+
+
+        function dynamicCreateScript(){
+            var script = document.createElement("script");
+            script.type="text/javascript";
+            if(script.readyState){
+                //ie
+                script.onreadystatechange = function(){
+                    if(script.readyState == "loaded" || script.readyState == "complete"){
+                        script.onreadystatechange = null;
+                        callback();
+                    }
+                }
+            } else{
+                script.onload = function(){
+                    callback();
+                    script.onload = null;
+                }
+            }
+            script.src = "test1.js";
+            document.getElementsByTagName("head")[0].appendChild(script);
+        }
+    </script>
+</head>
+<body>
+
+<p>本例子演示了动态创建SCRIPT元素的过程，IE下Script异步加载完成的事件为onreadystatechange和readyState控制，其他浏览器使用onload来控制。</p>
+
+
+</body>
+
+<script type="text/javascript">
+    dynamicCreateScript();
+</script>
+
+</html>

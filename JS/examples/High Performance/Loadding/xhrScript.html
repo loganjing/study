@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+
+    <title></title>
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest();
+        xhr.open("get","http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js?t=20140121");
+        xhr.onreadystatechange = function(){
+             if(xhr.readyState == 4){
+                 if((xhr.status>=200 && xhr.status<300) || xhr.status ==304){
+                     var script = document.createElement("script");
+                     script.type ="text/javascript";
+                     script.text = xhr.responseText;
+                     document.body.appendChild(script);
+                 }
+             }
+        }
+        xhr.send(null);
+    </script>
+</head>
+<body>
+<p>本例子演示了使用XHR动态从远程服务器加载JS的代码，业务你看这个界面是空的，但是他真的有内容！他的缺点是：必须在同一个域中，否则可能会没有权限下载。</p>
+
+</body>
+</html>
