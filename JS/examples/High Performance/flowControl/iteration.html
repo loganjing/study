@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+
+    <title></title>
+    <script type="text/javascript">
+        function merge(left, right) {
+            left = left || [];
+            right = right || [];
+            var result = [];
+            while (left.length > 0 && right.length > 0) {
+                if (left[0] < right[0]) {
+                    result.push(left.shift());
+                } else {
+                    result.push(right.shift());
+                }
+            }
+            return result.concat(left).concat(right);
+        }
+
+        function mergeSort(items) {
+            if (items.length == 0) return [];
+            if (items.length == 1) return items;
+            var middle = Math.floor(items.length / 2);
+            var left = items.slice(0, middle);
+            var right = items.slice(middle);
+            return merge(mergeSort(left), mergeSort(right));
+        }
+
+
+        function mergeSortIterator(items) {
+            if (items.length == 1) {
+                return items;
+            }
+            var work = [];
+            for (var i = 0, len = items.length; i < len; i++) {
+                work.push([items[i]]);
+            }
+            work.push([]); //in case of odd number of items
+            for (var lim = len; lim > 1; lim = (lim + 1) / 2) {
+                for (var j = 0, k = 0; k < lim; j++, k += 2) {
+                    work[j] = merge(work[k], work[k + 1]);
+                }
+                work[j] = []; //in case of odd number of items
+            }
+            return work[0];
+        }
+
+
+    </script>
+</head>
+<body>
+
+原始的数组项目：
+<span id="srcArr10"></span>
+<br>
+<span id="srcArr100"></span>
+<br>
+排序后的数组项目：
+<span id="destArr10"></span>
+<br>
+<span id="destArr100"></span>
+<br>
+
+<p>
+    slice: arrayObject.slice(start,end);返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。<br>
+    splice:arrayObject.splice(index,howmany,item1,.....,itemX).index 必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。
+    howmany 必需。要删除的项目数量。如果设置为 0，则不会删除项目。
+    item1, ..., itemX 可选。向数组添加的新项目。<br>l
+</p>
+
+<script language="JavaScript"><!--
+// See: http://www.msc.cornell.edu/~houle/javascript/randomizer.html
+rnd.today = new Date();
+rnd.seed = rnd.today.getTime();
+function rnd() {
+    rnd.seed = (rnd.seed * 9301 + 49297) % 233280;
+    return rnd.seed / (233280.0);
+}
+
+function rand(number) {
+    return Math.ceil(rnd() * number);
+}
+
+// end central randomizer. -->
+</script>
+
+<script type="text/javascript">
+    function test(n,loop) {
+        var arr = [], str = "", tmp;
+        for (var i = 0; i < n; i++) {
+            tmp = rand(n);
+            arr.push(tmp);
+            str = str + tmp + ",";
+        }
+        document.getElementById("srcArr" + n).innerHTML = "[" + str + "]";
+
+        arr = loop?mergeSortIterator(arr):mergeSort(arr);
+        str = "";
+        for (var i = 0; i < n; i++) {
+            tmp = arr[i];
+            str = str + tmp + ",";
+        }
+        document.getElementById("destArr" + n).innerHTML = "[" + str + "]";
+    }
+
+    test(10,true);
+    //test(100,true);
+
+    //test(10,false);
+    //test(100,false);
+</script>
+
+</body>
+</html>

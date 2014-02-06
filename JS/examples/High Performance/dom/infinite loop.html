@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+
+    <title></title>
+    <script>
+        function loop() {
+            var alldivs = document.getElementsByTagName('div');
+            //var len = alldivs.length;
+            for (var i = 0; i < alldivs.length; i++) {
+                document.body.appendChild(alldivs[i].cloneNode(true));
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div>这是一个死循环方法，因为alldivs这个会动态更新，每次更改了DOM树节点后，都会重新计算更改。</div>
+
+<script>
+    loop();
+</script>
+</body>
+</html>

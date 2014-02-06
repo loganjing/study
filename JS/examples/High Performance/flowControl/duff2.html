@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+
+    <title></title>
+    <script type="text/javascript">
+        function duffLoop(items){
+            var iterations = Math.floor(items.length/8);
+            var startAt,i =0;
+            startAt = items.length % 8;
+            do{
+                switch (startAt){
+                    case 0: process(items[i++]);
+                    case 7: process(items[i++]);
+                    case 6: process(items[i++]);
+                    case 5: process(items[i++]);
+                    case 4: process(items[i++]);
+                    case 3: process(items[i++]);
+                    case 2: process(items[i++]);
+                    case 1: process(items[i++]);
+                }
+                startAt = 0;
+            }while(--iterations);
+        }
+
+        function commonLoop(items){
+            var len = items.length;
+            for(var i= 0;i<len;i++){
+                 process(items[i]);
+            }
+        }
+
+        function process(item){
+            if(console) console.info(item);
+        }
+
+        function test(n){
+            var arr = [];
+            for(var i=0;i<n;i++){
+                arr.push("item"+i);
+            }
+            var start = new Date().getTime();
+            commonLoop(arr);
+            var end = new Date().getTime();
+            var commonTimes = end-start;
+            var text =    n+" CommonLoop spent:["+(commonTimes)+"]";
+            //console.info("CommonLoop:"+(end-start));
+
+            start = new  Date().getTime();
+            duffLoop(arr);
+            end = new  Date().getTime();
+            var duffTimes = end-start;
+            text += n+", DuffLoop spent:["+(duffTimes)+"], 减少了"+((commonTimes-duffTimes)/commonTimes)*100+"%";
+            //console.info("DuffLoop:"+(end-start));
+
+            document.getElementById("a"+n).innerHTML = text;
+        }
+
+
+    </script>
+</head>
+<body>
+
+<p>测试普通循环和达夫循环的的时间差异。</p>
+
+<p id="a1000"></p>
+<p id="a10000"></p>
+<p id="a100000"></p>
+<p id="a1000000"></p>
+
+<script type="text/javascript">
+    test(1000);
+    test(10000);
+    test(100000);
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <script type="text/javascript" src="../../../lib/jquery-1.6.3.js"></script>
+    <title></title>
+    <script type="text/javascript">
+        function testNextSibling() {
+            var el = document.getElementById('mydiv'),
+                    ch = el.firstChild,
+                    name = '';
+            do {
+                name = ch.nodeName;
+            } while (ch = ch.nextSibling);
+            return name;
+        }
+
+        function testChildNodes() {
+            var el = document.getElementById('mydiv'),
+                    ch = el.childNodes,
+                    len = ch.length,
+                    name = '';
+            for (var count = 0; count < len; count++) {
+                name = ch[count].nodeName;
+            }
+            return name;
+        }
+
+        function execute(fun,name){
+            var start = new Date().getTime();
+            fun.call(this);
+            var end = new Date().getTime();
+            alert("The function is "+name+", Time is "+(end-start));
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="mydiv">
+          <input type="text" name="aa" class="ad" value="test">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+          <input type="text" name="aa" class="ad">
+
+</div>
+
+<p>测试结果：性能上的差异表现不是很明显，几ms的差别，但是childNode是个集合需要小心处理。</p>
+
+<script>
+    execute(testChildNodes,"testChildNodes");
+    execute(testNextSibling,"testSibling");
+//    $("#mydiv").children(".ad");
+    var inputs = document.querySelectorAll("#mydiv .ad");
+    alert(inputs.length);
+</script>
+
+</body>
+</html>

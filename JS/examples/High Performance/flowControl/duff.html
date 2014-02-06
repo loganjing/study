@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+
+    <title></title>
+    <script  type="text/javascript">
+        function loopArray(items){
+            var iterations = Math.floor(items.length/8);
+            var startAt = items.length % 8;
+            var i=0;
+            do{
+                switch (startAt){
+                    case 0: process(items[i++]);
+                    case 7: process(items[i++]);
+                    case 6: process(items[i++]);
+                    case 5: process(items[i++]);
+                    case 4: process(items[i++]);
+                    case 3: process(items[i++]);
+                    case 2: process(items[i++]);
+                    case 1: process(items[i++]);
+                }
+                startAt = 0;
+            } while(--iterations);
+        }
+
+        function process(item){
+           console.info(item);
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="aa"></div>
+
+<script type="text/javascript">
+    var items = [
+            "<span>aa</span>",
+            "<span>bb</span>",
+            "<span>cc</span>",
+            "<span>dd</span>",
+            "<span>ee</span>",
+            "<span>ff</span>",
+            "<span>gg</span>",
+            "<span>hh</span>",
+            "<span>ii</span>",
+            "<span>jj</span>",
+            "<span>kk</span>",
+            "<span>ll</span>",
+            "<span>mm</span>",
+            "<span>nn</span>",
+            "<span>oo</span>",
+            "<span>pp</span>",
+            "<span>qq</span>",
+            "<span>rr</span>",
+            "<span>ss</span>",
+            "<span>tt</span>",
+            "<span>uu</span>",
+            "<span>vv</span>",
+            "<span>ww</span>",
+            "<span>xx</span>",
+            "<span>yy</span>",
+            "<span>zz</span>"
+    ];
+    loopArray(items)
+</script>
+
+</body>
+</html>

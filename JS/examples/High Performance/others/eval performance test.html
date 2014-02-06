@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+ </head>
+
+ <body>
+  <script>
+var n=200000;
+function test(){
+  var s;
+  var t1=(new Date()).getTime();
+  for(var i=0;i<n;i++)
+  s=1000*1000/1000;
+  var t2=(new Date()).getTime();
+  return (t2-t1);
+}
+function evaltest(){
+  var s;
+  var t1=(new Date()).getTime();
+  for(var i=0;i<n;i++)
+  eval("s=1000*1000/1000;");
+  var t2=(new Date()).getTime();
+  return (t2-t1);
+}
+function jsontest(){
+  var s;
+  var t1=(new Date()).getTime();
+  for(var i=0;i<n;i++)
+  s={"DataCount":5000,"jsonRoot":[{"title":"标题","staff":{"UserName":"test","Age":20},"id":2}]};
+  var t2=(new Date()).getTime();
+  return (t2-t1);
+}
+function jsonevaltest(){
+  var s;
+  var t1=(new Date()).getTime();
+  for(var i=0;i<n;i++)
+  eval('s={"DataCount":5000,"jsonRoot":[{"title":"标题","staff":{"UserName":"test","Age":20},"id":2}]};');
+  var t2=(new Date()).getTime();
+  return (t2-t1);
+}
+document.write ("<br>算术运算测试（正常）："+test()+" 毫秒");
+document.write ("<br>算术运算测试（eval）："+evaltest()+" 毫秒<br>");
+document.write ("<br>JSON赋值测试（正常）："+jsontest()+" 毫秒");
+document.write ("<br>JSON赋值测试（eval）："+jsonevaltest()+" 毫秒");
+</script>
+ </body>
+</html>
