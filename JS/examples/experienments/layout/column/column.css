@@ -1,0 +1,51 @@
+/**
+ * 定义所有的列布局
+ * @Version: WAF2
+ * @Author: JLG
+ * @Date: 2012-02-15
+ */
+.ui-columnLayout {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    zoom: 1;
+    letter-spacing: -0.31em; /**old:-0.5em**/
+    *letter-spacing: normal;
+    word-spacing: -0.43em;
+}
+
+.ui-column /**处理自定义的情况**/
+{
+    display: inline-block;
+    zoom: 1;
+    *display: inline; /* IE < 8: fake inline-block */
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    border-width:0\9; /**ie8下border-width默认为medium**/
+}
+
+
+.ui-columnLayout .col-splitpanel .shrink{
+    width: 5px;
+    height:36px;
+    position: relative;
+    top:45%;
+}
+
+.ui-columnLayout .col-splitpanel .shrink:hover{
+    cursor: pointer;
+}
+
+.col-splitpanel {
+    width: 5px;
+    height: 100%;
+}
+
+.border-sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+

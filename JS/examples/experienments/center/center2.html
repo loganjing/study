@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        #outer {
+            height: 600px;
+            border: 1px solid;
+            overflow: visible;
+            width: 100%;
+            position: relative;
+        }
+
+            /* or without overflow */
+        #outer[id] {
+            display: table;
+            position: static;
+        }
+
+        #middle {
+            position: absolute;
+            top: 50%;
+        }
+
+            /* for explorer only*/
+        #middle[id] {
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+            position: static;
+        }
+
+        #inner {
+            position: relative;
+            top: -50%
+        }
+
+            /* for explorer only */
+    </style>
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+
+</head>
+<body>
+<h1>Display table & vertical-align middle</h1>
+
+<div id="outer">
+    <div id="middle">
+        <div id="inner">
+            any text <br>
+            <b>any height </b><br>
+            any content, for example generated from DB <br>
+            everything is vertically centered <br>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

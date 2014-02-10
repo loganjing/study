@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        html,
+        body{
+            height: 100%;
+        }
+
+        #parent {
+            height: 500px;/*定义高度，让线盒型div#extra有一个参照物，可以是固定值，也可以是百分比*/
+            border: 1px solid red;
+        }
+        #vertically_center,
+        #extra {
+            display: inline-block;/*把元素转为行内块显示*/
+            vertical-align: middle;/*垂直居中*/
+        }
+        #extra {
+            height: 100%; /*设置线盒型为父元素的100%高度*/
+        }
+    </style>
+
+    <!--[if lt IE 8]>
+    <style type="text/css">
+            /*IE6-7不支持display:inline-block，所以在ie6-7另外写一个hack，用来支持ie6-7*/
+        #vertically_center,
+        #extra {
+            display: inline;
+            zoom: 1;
+        }
+        #extra {
+            width: 1px;
+        }
+    </style>
+    <![endif]-->
+</head>
+<body>
+<h1>display:inline-block</h1>
+<p>这种方法是采用的display:inline-block，然后借助另一个元素的高度来实现居中</p>
+
+
+<div id="parent">
+    <div id="vertically_center">
+        <p>I am vertically centered!</p>
+    </div>
+    <div id="extra"><!-- ie comment --></div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .page {
+            width: 400px;
+            height: 500px;
+            border: 1px solid;
+        }
+
+    </style>
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            jQuery.fn.center = function () {
+                this.css("position", "absolute");
+                this.css("top", ( this.parent().height() - this.height() ) / 2 + this.parent().scrollTop() + "px");
+                this.css("left", ( this.parent().width() - this.width() ) / 2 + this.parent().scrollLeft() + "px");
+                return this;
+            }
+        });
+    </script>
+</head>
+<body>
+<h1>Fix & JQuery implements</h1>
+
+<div class="page">
+<div id="content" style="height: 100px;width: 100px;background: #cdcdcd">ddddd</div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#content").center();
+    });
+</script>
+
+</body>
+</html>

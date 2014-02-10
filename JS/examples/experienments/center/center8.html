@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .vertical {
+            height: 100px;/*元素的高度*/
+            position: absolute;
+            top: 50%;/*元素的顶部边界离父元素的的位置是父元素高度的一半*/
+            margin-top: -50px;/*设置元素顶边负边距，大小为元素高度的一半*/
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+<h1>position:absolute</h1>
+
+<p>这种方法将在需要给容器设置绝对定位（position:absolute）,并且定位高度（top:50%）和margin-top为高度的一半（margin-top:-height/2）。这就意味着使用这种方法来实现垂直居中的效果，那么元素必须要有一个固定的高度。这样一来，你给元素设置了固定高度，如果你又给他设置了“overflow:auto”，那么当元素内容超过容器后，这样元素的就会出现滚动，而不会自适应内容的高度。</p>
+
+<div class="vertical">content</div>
+<p>这种方法可以实现元素的水平垂直居中，常用于页面在最中间的布局，使用这种方法一定要把握住：水平垂直居中的元素要有明确的大小（换句话说就是要有确切的宽和高度值）；给元素进行绝对定位，并设置left,top值为“50%”（此处最好使用 对定位，如果只是单单水平居中，此处可以换成相对定位）；最后设置margin-top和margin-left的负值，而且其值分别为元素高度和宽度的一半。
+
+</p>
+
+</body>
+</html>

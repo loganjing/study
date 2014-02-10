@@ -1,0 +1,17 @@
+/**Caption**/
+
+.ui-jqgrid{}
+.ui-jqgrid .ui-jqgrid-titlebar-close {position: absolute;top: 0;width: 19px;margin: 0;padding: 1px;height: 18px;}
+.ui-jqgrid .ui-helper-clearfix::after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+.ui-jqgrid .ui-jqgrid-titlebar {height: 19px;}
+.ui-jqgrid tr.jqgrow td {white-space: normal;vertical-align:middle;text-align: left;font-weight: inherit;}
+.ui-jqgrid .ui-pg-selbox{display: inline-block;padding: 0}
+.ui-jqgrid .ui-jqgrid-htable th {height:25px;padding: 0 2px 0 2px;}
+.ui-jqgrid tr.jqgrow td.edit-cell input[type=text],.ui-jqgrid tr.jqgrow td.edit-cell select,.ui-jqgrid tr.jqgrow td.edit-cell textarea,.ui-jqgrid tr.jqgrow td.edit-cell div.ui-multiLangArea{padding:0;height:20px}
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-table input.ui-pg-input{width:28px;height: 18px;height: 18px\9;line-height: 18px\9}
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-table select.ui-pg-selbox{padding:0;width:45px;height:20px;height:20px\9;line-height:20px\9}
+.ui-jqgrid tr.jqgrow.ui-priority-secondary{background: #EDF5FF}
+.ui-jqgrid .ui-jqgrid-htable .cbox{margin: 0;}
+.ui-jqgrid .s-ico .ui-grid-ico-sort.ui-state-disabled{background-color: transparent;}
+
+

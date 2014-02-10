@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        html,body {height: 100%;}
+        #floater{
+            float:left;
+            height:50%;/*相对于父元素高度的50%*/
+            margin-bottom: -120px;/*值大小为居中元素高度的一半（240px/2）*/
+        }
+        #content {
+            clear:both;/*清除浮动*/
+            height: 240px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<h1>空DIV</h1>
+<p>这种方法有点新意，用这种方法你需要在居中元素前面放一个空的<div>（块元素就可以），然后设置这个<div>的高度为50%，margin-bottom为元素高度的一半，而且居中元素需要清除浮动。需要注意的是，使用这种方法，如果你的居中元素是放在body中的话，你需要给html,body设置一个“height:100%”的属性。</p>
+
+<div id="floater"><!--This block have empty content --></div>
+<div id="content">Content section</div>
+
+</body>
+</html>

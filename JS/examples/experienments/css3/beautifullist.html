@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="../js/jquery-1.6.4.js"></script>
+    <title></title>
+    <style type="text/css">
+        ol {
+            counter-reset: li; /* 创建一个计数器 */
+            list-style: none; /* 清除列表默认的编码*/
+            list-style: decimal\9; /* 所有IE */
+            + list-style : decimal; /* IE7 */
+            -list-style: decimal; /* IE6 */
+            font: 15px 'Trebuchet MS', 'lucida sans unicode';
+            padding: 0;
+            margin-bottom: 4em;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        ol ol {
+            margin: 0 0 0 2em;
+        }
+
+        .rounded-list a {
+            position: relative;
+            display: block;
+            _display:inline-block;
+            _width:100%;
+            background-color: #ddd;
+
+            padding: 0.4em 0.4em 0.4em 2em;
+
+
+            margin: 0.5em 0;
+            _margin: 0.25em 0;
+
+            color: #444;
+            text-decoration: none;
+            border-radius: 0.3em;
+            -moz-transition: all 0.3s ease-out;
+            -webkit-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+        .rounded-list a:hover {
+            background-color: #eee;
+        }
+
+        .rounded-list a:hover::before {
+            /*悬停时旋转编码*/
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+
+        .rounded-list a::before {
+            content: counter(li);
+            counter-increment: li;
+            position: absolute;
+            left: -1.3em;
+            top: 50%;
+            margin-top: -1.3em;
+            background: #87ceeb;
+            height: 2em;
+            width: 2em;
+            line-height: 2em;
+            border: 0.3em solid #fff;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 2em;
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -ms-transition: all 0.3s ease-out;
+            -o-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $(".rounded-list a").click(function(){
+                $(this).next().toggle();
+            });
+        });
+    </script>
+
+</head>
+<body>
+<h1>漂亮的UI LI</h1>
+<div style="padding: 30px">
+
+    <ol class="rounded-list">
+        <li><a href="#">List item</a></li>
+        <li><a href="#">List item</a></li>
+        <li><a href="#">List item</a>
+            <ol class="sub-round-list">
+                <li><a href="#">List sub item</a></li>
+                <li><a href="#">List sub item</a></li>
+                <li><a href="#">List sub item</a></li>
+            </ol>
+        </li>
+        <li><a href="#">List item</a></li>
+        <li><a href="#">List item</a></li>
+
+    </ol>
+
+</div>
+</body>
+</html>

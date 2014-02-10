@@ -1,0 +1,2396 @@
+/**
+ * 主要设置reset相关内容
+ * @Version: 1.1-BOS7.0
+ * @Author:  Logan Jing
+ * @Date: 2011-11-15
+ */
+
+@media all {
+
+    /* 重置所有HTML的padding和margin */
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /**
+    * IE5和IE6上的斜体bug
+    */
+    * html body * {
+        overflow: visible;
+    }
+
+    body {
+        /* 解决旧版本上的opera浏览器上切换字体大小时的bug */
+        font-size: 100.01%; /* 标准的字体颜色，背景颜色和对齐方式 */
+        background: #fff;
+        color: #000;
+        text-align: left; /* LTR */
+    }
+
+    /* Webkit浏览器中避免出现div的outlines */
+    div {
+        outline: 0 none;
+    }
+
+    /* 转变成block风格,html5相关标签 */
+    article, aside, canvas, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section, summary {
+        display: block;
+    }
+
+    /*------------------------------------------------------------------------------------------------------*/
+
+    /**
+    * 清除方法 From NICOLAS
+    */
+    /* For modern browsers */
+    .cf:before,
+    .cf:after {
+        content:"";
+        display:table;
+    }
+
+    .cf:after {
+        clear:both;
+    }
+
+    /* For IE 6/7 (trigger hasLayout) */
+    .cf {
+        zoom:1;
+    }
+}
+
+
+
+
+
+/**
+ * 设置内容默认显示风格
+ * @Version: 1.1-BOS7.0
+ * @Author:  Logan Jing
+ * @Date: 2011-11-15
+ */
+
+@media all {
+
+    /**字体设置**/
+    body,textarea,input,select, pre, code, kbd, samp, var, tt,h1, h2, h3, h4, h5, h6 {
+        font-family: tahoma,"华文黑体","宋体", Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        color: #444;
+        text-align: left;
+    }
+    
+    
+
+    body,table{
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    /*--- Headings---*/
+    h1, h2, h3, h4, h5, h6 {
+        color: #222;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 250%;
+    }
+
+    /* 30px */
+    h2 {
+        font-size: 200%;
+    }
+
+    /* 24px */
+    h3 {
+        font-size: 150%;
+    }
+
+    /* 18px */
+    h4 {
+        font-size: 133.33%;
+    }
+
+    /* 16px */
+    h5 {
+        font-size: 116.67%;
+    }
+
+    /* 14px */
+    h6 {
+        font-size: 116.67%;
+    }
+
+
+    /* --- general text formatting */
+
+    p {
+        line-height: 1.5em;
+        margin: 0 0 1em 0;
+    }
+
+    blockquote, cite, q {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-style: italic;
+    }
+
+    blockquote {
+        margin: 0 0 1em 1.6em;
+        color: #666;
+    }
+
+    strong, b {
+        font-weight: bold;
+    }
+
+    em, i {
+        font-style: italic;
+    }
+
+    big {
+        font-size: 116.667%;
+    }
+
+    small {
+        font-size: 91.667%;
+    }
+
+    pre {
+        line-height: 1.5em;
+        margin: 0 0 1em 0;
+    }
+
+    pre, code, kbd, tt, samp, var {
+        font-size: 100%;
+    }
+
+    pre, code {
+        /*color: #800;*/
+    }
+
+    kbd, samp, var, tt {
+        color: #666;
+        font-weight: bold;
+    }
+
+    var, dfn {
+        font-style: italic;
+    }
+
+    acronym, abbr {
+        border-bottom: 1px #aaa dotted;
+        font-variant: small-caps;
+        letter-spacing: .07em;
+        cursor: help;
+    }
+
+    sub {
+        vertical-align: sub;
+        font-size: smaller;
+    }
+
+    sup {
+        vertical-align: super;
+        font-size: smaller;
+    }
+
+    hr {
+        color: #fff;
+        background: transparent;
+        margin: 0 0 0.5em 0;
+        padding: 0 0 0.5em 0;
+        border: 0;
+        border-bottom: 1px #eee solid;
+    }
+
+    /*--- Links ----------------------------------------------------------------------------------------- */
+
+    a {
+        color: #3030FF;
+        background: transparent;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #182E7A;
+        /*background:none;*/
+        /*border: none;*/
+        outline: none;
+        text-decoration: none;
+    }
+
+    a:focus {
+        text-decoration: none;
+        color: #182E7A;
+        /*background:none;*/
+        /*border: none;*/
+        outline: none;
+        text-decoration: none;
+    }
+
+    a:hover,
+    a:active {
+        color: #182E7A;
+        text-decoration: none;
+        /*background:none;*/
+        /*border: none;*/
+        outline: none;
+    }
+
+    /**
+    * Tables
+    * @section content-tables
+    */
+
+    .commontable {
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+        /*margin-bottom: 0.5em;*/
+        border-top: 2px #888 solid;
+        border-bottom: 2px #888 solid;
+    }
+
+    .commontable caption {
+        font-variant: small-caps;
+    }
+
+    .commontable.full {
+        width: 100%;
+    }
+
+    .commontable.fixed {
+        table-layout: fixed;
+    }
+
+    .commontable th, td {
+        padding: 0.5em;
+    }
+
+    .commontable thead th {
+        color: #000;
+        border: 1px solid #E6E6E6;
+        background: #FFFFFF;
+    }
+
+    .commontable tbody th {
+        background: #D7D7D7;
+        color: #333;
+    }
+
+    .commontable tbody th[scope="row"], tbody th.sub {
+        background: #f0f0f0;
+    }
+
+    .commontable tbody th {
+        border: 1px solid #E6E6E6;
+        text-align: left;
+    }
+
+    .commontable tbody td {
+        vertical-align: top;
+        border: 1px solid #E6E6E6;
+    }
+
+    .commontable tbody td {white-space: normal !important;word-break:break-all}
+
+    .commontable tbody tr:hover th[scope="row"],
+    .commontable tbody tr:hover tbody th.sub {
+        /*background: #f0e8e8;*/
+    }
+
+    .commontable tbody tr:hover td {
+        /*background: #FFDFC9;*/
+    }
+
+    .commontable tbody .tblaction {
+        float: left;
+        margin: 0px 5px;
+    }
+
+    .commontable tbody .tdinfo {
+        float: left;
+        margin: 0px 5px;
+    }
+
+    .commontable tbody td span {
+        /*color: #848688;*/
+    }
+
+    .commontable .odd {
+        background-color: #FFFFFF;
+    }
+
+    .commontable .even {
+        background-color: #FFFFFF;
+    }
+
+    /**
+    * ------------------------------------------------------------------------------------------------- #
+    *
+    * 常用标签的修饰
+    */
+    input[type=text], select, textarea,input[type=password] {
+        /**圆角**/
+        -moz-border-radius: 2px;
+        -webkit-border-radius:2px;
+        border-radius: 2px;
+    }
+
+    /**f7,datepicker,multiselect默认有边框，宽度单独设置**/
+    /**numberfield在padding设置为0且居右时看不到输入光标，因此宽度单独设置**/
+    div.ui-f7-frame,div.ui-datepicker-frame, div.ui-multiselect,input.ui-numberfield{
+        height: 22px;
+        width:148px;
+    }
+    input[type=text],input[type=password]{
+        height: 24px;
+        width:150px;
+        line-height: 24px\9;  /**IE下只有line-height和height设置一样的情况下，输入才能居中**/
+        /*-moz-box-sizing: border-box;*/
+        /*-webkit-box-sizing: border-box;*/
+        /*-o-box-sizing: border-box;*/
+        /*-ms-box-sizing: border-box;*/
+        /*box-sizing: border-box;*/
+    }
+
+
+
+    input:required:invalid, input:focus:invalid {
+        -moz-box-shadow: none;
+    }
+
+    input,button,select,textarea{outline:none}
+    textarea{resize:none}
+
+    input[type=checkbox],input[type=radio],input[type='checkbox']+label,input[type='radio']+label{
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+    img {
+        vertical-align: middle;
+    }
+
+    option {
+        padding-left: 0.4em;
+    }
+
+    /* 清除fieldset和img的边框 */
+    fieldset, img {
+        border: 0 solid;
+    }
+}
+
+/**
+ * 主要描述页面结构，包括body,page-margin,page,header,nav,footer,main.
+ * @Version: 1.1-BOS7.0
+ * @Author:  Logan Jing
+ * @Date: 2011-11-15
+ */
+@media screen, projection {
+    /**
+    * 当页面完全在浏览器的可见区域内时，firefox,safira,chrome等浏览器会隐藏垂直滚动条。
+    * 如果页面突然变得比可视区域更高时，垂直滚动条就会显示出来。垂直滚动条的出现与消失会导致页面中心发生偏移，导致页面抖动。
+    * 强迫出现滚动条.
+    */
+    body {
+        overflow-y: hidden;
+    }
+
+    html,body{
+        height: 100%;
+    }
+
+    /*------------------------------------------------------------------------------------------------------*/
+
+    /**
+    * 下面描述基本布局.
+    */
+    /* Layout:宽度，背景和边框 */
+    .page_margins {
+        text-align: left;
+    }
+
+    /**设置最小宽度和最大宽度**/
+    .page_margins {
+        /*background: #fff;*/
+        /*width: 1000px;*/
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .page {
+        position: relative;
+    }
+
+    .page,.page_margins{
+        height: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen {
+
+    /* Layout:宽度，背景和边框 */
+    .page_margins {
+        margin: 0 auto;
+    }
+
+    /**设置最小宽度和最大宽度**/
+    .page_margins {
+        min-width: 800px;
+    }
+
+}
+﻿/**
+ * Form定义
+ * @Version: 1.1-BOS7.0
+ * @Author:  Logan Jing
+ * @Date: 2011-11-15
+ */
+.wform {
+    overflow: hidden;
+}
+
+.wform fieldset {
+    border: 1px #ddd solid;
+    background: #fafafa;
+    margin: 0 0 1em 0;
+    padding: 0.5em;
+}
+
+.wform legend {
+    font-size: 125%;
+    font-weight: normal;
+    color: #000;
+}
+
+.wform input{
+    width:expression(this.type=="text"?"200px":"style");
+}
+
+.wform input[type="text"],.wform input[type=password],.wform div.ui-f7-frame,.wform div.ui-datepicker-frame,.wform div.ui-multiselect,
+.wform .ui-multiLangBox,.wform .ui-multiLangArea{
+    width:200px;
+}
+
+/**
+ * 由于数字输入框right-padding:2px, 所以宽度需要减少2px
+ */
+.wform input.ui-numberfield{
+    width:198px;
+}
+
+.wform input[type="text"],.wform select,.wform .ui-multiselect,.wform input[type=password]{
+    height:22px;
+}
+
+/**
+ * list的页面结构
+ * @Version: 1.1-BOS7.0
+ * @Author:  Logan Jing
+ * @Date: 2011-11-15
+ */
+
+@media screen, projection {
+    /**工作台设置**/
+    .listpage.workarea {
+        padding: 0 2px 15px 15px;
+    }
+
+    /*query结构设置*/
+    .listpage .query {
+        text-align: right;
+        padding: 0;
+        margin: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen, projection {
+    /*工作台设置*/
+    .editpage.workarea {
+        padding: 0 2px 15px 15px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /*行间距设置*/
+    .editpage .rowdata{
+        margin: 5px 0;
+    }
+
+}
+
+
+@media screen, projection {
+    /*工作台设置*/
+    .viewpage.workarea {
+        padding: 0 2px 15px 15px;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /*行间距设置*/
+    .viewpage .rowdata{
+        margin: 10px 0;
+    }
+
+}
+
+/**
+ * list的页面结构
+ * @Version: 1.1-BOS7.0
+ * @Author:  Logan Jing
+ * @Date: 2011-11-15
+ */
+
+@media screen, projection {
+    /**工作台设置**/
+    .nullpage.workarea {
+        padding: 0 2px 15px 15px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * list的页面结构
+ * @Version: 1.1-BOS7.0
+ * @Author:  Logan Jing
+ * @Date: 2011-11-15
+ */
+
+
+@media screen, projection {
+    /**工作台设置**/
+    .treelistpage .workarea {
+        padding: 0 2px 15px 15px;
+    }
+
+    /*query结构设置*/
+    .treelistpage .query {
+        text-align: right;
+        padding: 0;
+        margin: 5px;
+    }
+}
+
+/*
+ * jQuery UI CSS Framework 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+
+/* Layout helpers
+----------------------------------*/
+.ui-helper-hidden { display: none; }
+.ui-helper-hidden-accessible { position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px); }
+.ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+.ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ui-helper-clearfix { display: inline-block; }
+/* required comment for clearfix to work in Opera \*/
+* html .ui-helper-clearfix { height:1%; }
+.ui-helper-clearfix { display:block; }
+/* end clearfix */
+.ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled { cursor: default !important; }
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon { display: block; text-indent: -99999px; overflow: hidden; background-repeat: no-repeat; }
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/*
+ * jQuery UI Accordion 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Accordion#theming
+ */
+/* IE/Win - Fix animation bug - #4615 */
+.ui-accordion { width: 100%; }
+.ui-accordion .ui-accordion-header { cursor: pointer; position: relative; margin-top: 1px; zoom: 1; }
+.ui-accordion .ui-accordion-li-fix { display: inline; }
+.ui-accordion .ui-accordion-header-active { border-bottom: 0 !important; }
+.ui-accordion .ui-accordion-header a { display: block; font-size: 1em; padding: .5em .5em .5em .7em; }
+.ui-accordion-icons .ui-accordion-header a { padding-left: 2.2em; }
+.ui-accordion .ui-accordion-header .ui-icon { position: absolute; left: .5em; top: 50%; margin-top: -8px; }
+.ui-accordion .ui-accordion-content { padding: 1em 2.2em; border-top: 0; margin-top: -2px; position: relative; top: 1px; margin-bottom: 2px; overflow: auto; display: none; zoom: 1; }
+.ui-accordion .ui-accordion-content-active { display: block; }
+
+/*
+ * jQuery UI Autocomplete 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Autocomplete#theming
+ */
+.ui-autocomplete { position: absolute; cursor: default; }	
+
+/* workarounds */
+* html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
+
+/*
+ * jQuery UI Menu 1.8.16
+ *
+ * Copyright 2010, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Menu#theming
+ */
+.ui-autocomplete.ui-menu {
+	list-style:none;
+	padding: 2px;
+	margin: 0;
+	display:block;
+	float: left;
+}
+.ui-autocomplete.ui-menu .ui-menu {
+	margin-top: -3px;
+}
+.ui-autocomplete.ui-menu .ui-menu-item {
+	margin:0;
+	padding: 0;
+	zoom: 1;
+	float: left;
+	clear: left;
+	width: 100%;
+}
+.ui-autocomplete.ui-menu .ui-menu-item a {
+	text-decoration:none;
+	display:block;
+	padding:.2em .4em;
+	line-height:1.5;
+	zoom:1;
+}
+.ui-autocomplete.ui-menu .ui-menu-item a.ui-state-hover,
+.ui-autocomplete.ui-menu .ui-menu-item a.ui-state-active {
+	font-weight: normal;
+	margin: -1px;
+}
+
+/*
+ * jQuery UI Button 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Button#theming
+ */
+.ui-button { display: inline-block; position: relative; padding: 0; margin-right: .1em; text-decoration: none !important; cursor: pointer; text-align: center; zoom: 1; overflow: visible; } /* the overflow property removes extra width in IE */
+.ui-button-icon-only { width: 2.2em; } /* to make room for the icon, a width needs to be set here */
+button.ui-button-icon-only { width: 2.4em; } /* button elements seem to need a little more width */
+.ui-button-icons-only { width: 3.4em; } 
+button.ui-button-icons-only { width: 3.7em; } 
+
+/*button text element */
+.ui-button .ui-button-text { display: block; line-height: 1.4;  }
+.ui-button-text-only .ui-button-text { padding: .4em 1em; }
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text { padding: .4em; text-indent: -9999999px; }
+.ui-button-text-icon-primary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 1em .4em 2.1em; }
+.ui-button-text-icon-secondary .ui-button-text, .ui-button-text-icons .ui-button-text { padding: .4em 2.1em .4em 1em; }
+.ui-button-text-icons .ui-button-text { padding-left: 2.1em; padding-right: 2.1em; }
+/* no icon support for input elements, provide padding by default */
+input.ui-button { padding: .4em 1em; }
+
+/*button icon element(s) */
+.ui-button-icon-only .ui-icon, .ui-button-text-icon-primary .ui-icon, .ui-button-text-icon-secondary .ui-icon, .ui-button-text-icons .ui-icon, .ui-button-icons-only .ui-icon { position: absolute; top: 50%; margin-top: -8px; }
+.ui-button-icon-only .ui-icon { left: 50%; margin-left: -8px; }
+.ui-button-text-icon-primary .ui-button-icon-primary, .ui-button-text-icons .ui-button-icon-primary, .ui-button-icons-only .ui-button-icon-primary { left: .5em; }
+.ui-button-text-icon-secondary .ui-button-icon-secondary, .ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+.ui-button-text-icons .ui-button-icon-secondary, .ui-button-icons-only .ui-button-icon-secondary { right: .5em; }
+
+/*button sets*/
+.ui-buttonset { margin-right: 7px; }
+.ui-buttonset .ui-button { margin-left: 0; margin-right: -.3em; }
+
+/* workarounds */
+button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra padding in Firefox */
+
+/*
+ * jQuery UI Datepicker 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+.ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; }
+.ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
+.ui-datepicker .ui-datepicker-prev { left:2px; }
+.ui-datepicker .ui-datepicker-next { right:2px; }
+.ui-datepicker .ui-datepicker-prev-hover { left:1px; }
+.ui-datepicker .ui-datepicker-next-hover { right:1px; }
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { display: block; position: absolute; left: 50%; margin-left: -8px; top: 50%; margin-top: -8px;  }
+.ui-datepicker .ui-datepicker-title { margin: 0 2.3em; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select { font-size:1em; margin:1px 0; }
+.ui-datepicker select.ui-datepicker-month-year {width: 100%;}
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 49%;}
+.ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; margin:0 0 .4em; }
+.ui-datepicker th { padding: .7em .3em; text-align: center; font-weight: bold; border: 0;  }
+.ui-datepicker td { border: 0; padding: 1px; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; padding: .2em; text-align: right; text-decoration: none; }
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
+
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi { width:auto; }
+.ui-datepicker-multi .ui-datepicker-group { float:left; }
+.ui-datepicker-multi .ui-datepicker-group table { width:95%; margin:0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width:50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.3%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width:25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear:left; }
+.ui-datepicker-row-break { clear:both; width:100%; font-size:0em; }
+
+/* RTL support */
+.ui-datepicker-rtl { direction: rtl; }
+.ui-datepicker-rtl .ui-datepicker-prev { right: 2px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next { left: 2px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-prev:hover { right: 1px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next:hover { left: 1px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane { clear:right; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button { float: left; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}
+/*
+ * jQuery UI Dialog 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Dialog#theming
+ */
+.ui-dialog { position: absolute; padding: 0; width: 300px; overflow: hidden; }
+.ui-dialog .ui-dialog-titlebar { padding: .4em 1em; position: relative;  }
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .1em 0; } 
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.ui-dialog .ui-dialog-content { position: relative; border: 0; padding: .5em 1em; background: none; overflow: hidden; zoom: 1; }
+.ui-dialog .ui-dialog-buttonpane { text-align: left; border-width: 1px 0 0 0; background-image: none; margin: .5em 0 0 0; padding: .3em 1em .5em .4em; }
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { float: right; }
+.ui-dialog .ui-dialog-buttonpane button { margin: .5em .4em .5em 0; cursor: pointer; }
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+
+/*
+ * jQuery UI Progressbar 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Progressbar#theming
+ */
+.ui-progressbar { height:2em; text-align: left; }
+.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; }
+/*
+ * jQuery UI Resizable 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.ui-resizable { position: relative;}
+.ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block; }
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; left: 0; }
+.ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+.ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+/*
+ * jQuery UI Selectable 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Selectable#theming
+ */
+.ui-selectable-helper { position: absolute; z-index: 100; border:1px dotted black; }
+
+/*
+ * jQuery UI Slider 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Slider#theming
+ */
+.ui-slider { position: relative; text-align: left; }
+.ui-slider .ui-slider-handle { position: absolute; z-index: 2; width: 1.2em; height: 1.2em; cursor: default; }
+.ui-slider .ui-slider-range { position: absolute; z-index: 1; font-size: .7em; display: block; border: 0; background-position: 0 0; }
+
+.ui-slider-horizontal { height: .8em; }
+.ui-slider-horizontal .ui-slider-handle { top: -.3em; margin-left: -.6em; }
+.ui-slider-horizontal .ui-slider-range { top: 0; height: 100%; }
+.ui-slider-horizontal .ui-slider-range-min { left: 0; }
+.ui-slider-horizontal .ui-slider-range-max { right: 0; }
+
+.ui-slider-vertical { width: .8em; height: 100px; }
+.ui-slider-vertical .ui-slider-handle { left: -.3em; margin-left: 0; margin-bottom: -.6em; }
+.ui-slider-vertical .ui-slider-range { left: 0; width: 100%; }
+.ui-slider-vertical .ui-slider-range-min { bottom: 0; }
+.ui-slider-vertical .ui-slider-range-max { top: 0; }
+/*
+ * jQuery UI Tabs 1.8.16
+ *
+ * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Tabs#theming
+ */
+.ui-tabs { position: relative; padding: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+.ui-tabs .ui-tabs-nav { margin: 0; padding: .2em .2em 0; }
+.ui-tabs .ui-tabs-nav li { display: inline-block; list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }
+.ui-tabs .ui-tabs-nav li a { float: left; padding: .5em 1em; text-decoration: none; }
+/*.ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }*/
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+.ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 1.4em; background: none; }
+.ui-tabs .ui-tabs-hide { display: none !important; }
+
+/*
+ * jQuery UI Menu 1.9m7
+ *
+ * Copyright 2012, AUTHORS.txt (http://jqueryui.com/about)
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Menu#theming
+ */
+/*1、去掉.ui-menu-icons .ui-menu-item a中的 padding-left: 2em;*/
+.ui-menu { list-style:none; padding: 2px; margin: 0; display:block; outline: none; }
+.ui-menu .ui-menu { margin-top: -3px; position: absolute; }
+.ui-menu .ui-menu-item { margin: 0; padding: 0; zoom: 1; width: 100%; }
+.ui-menu .ui-menu-item a { text-decoration: none; display: block; padding: 2px .4em; line-height: 1.5; zoom: 1; font-weight: normal; }
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active { font-weight: normal; margin: -1px; }
+
+.ui-menu .ui-state-disabled { font-weight: normal; margin: .4em 0 .2em; line-height: 1.5; }
+.ui-menu .ui-state-disabled a { cursor: default; }
+
+/* icon support */
+.ui-menu-icons { position: relative; }
+.ui-menu-icons .ui-menu-item a { position: relative;
+    /*padding-left: 2em;*/
+}
+
+/* left-aligned */
+.ui-menu .ui-icon { position: absolute; top: .2em; left: .2em; }
+
+/* right-aligned */
+.ui-menu .ui-menu-icon { position: static; float: right; }
+
+/**
+*@name:日期控件
+*@description:
+*@require:JQueryUI日期控件CSS
+*@author:peng_zhou1
+*@version:WAF2
+*/
+.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 45%;}
+.ui-datepicker {padding: 0}
+.ui-datepicker td span, .ui-datepicker td a{text-align: center;font-weight: normal;}
+.ui-datepicker table .ui-state-default{border: 1px solid transparent}
+.ui-datepicker th, .ui-datepicker .ui-datepicker-title{font-weight: normal;}
+.ui-datepicker-frame {display: inline-block;}
+.ui-datepicker-frame .ui-datepicker-layout {display: table;white-space: nowrap;border-spacing: 0px;height: 100%;}
+.ui-datepicker-frame .ui-datepicker-layout div{display:table-cell;zoom:1;vertical-align: middle;}
+.ui-datepicker-frame .ui-datepicker-layout .ui-datepicker-inputframe{width: 100%;height: 100%;}
+.ui-datepicker-frame .ui-datepicker-layout input.hasDatepicker,
+.wform .ui-datepicker-frame .ui-datepicker-layout input.hasDatepicker {border: 0px;vertical-align: middle;outline: none;width: 100%;height: 100%;display: block;margin: 0px;padding: 0px;}
+.ui-datepicker-frame .ui-datepicker-layout .ui-datepicker-iconTrigger {cursor: pointer;padding: 0px 2px;vertical-align: middle;display: inline-block;width: 16px;height: 16px;}
+.ui-datepicker-frame.ui-state-disabled .ui-datepicker-layout .ui-datepicker-iconTrigger {cursor: default;}
+
+.ui-datepicker-multi-5 .ui-datepicker-group { width:20%; }
+.ui-datepicker-multi-6 .ui-datepicker-group { width:16.6%; }
+
+/**
+*@name:F7控件
+*@description:
+*@require:
+*@author:peng_zhou1
+*@version:WAF2
+*/
+.ui-f7-frame {display: inline-block;}
+.ui-f7-frame .ui-f7-layout {display: table;white-space: nowrap;border-spacing: 0px;height: 100%;}
+.ui-f7-frame .ui-f7-layout div{display:table-cell;zoom:1;vertical-align: middle;}
+.ui-f7-frame .ui-f7-layout .ui-f7-inputframe{width: 100%;height: 100%;}
+.ui-f7-frame .ui-f7-layout input.ui-f7 {border: 0px;vertical-align: middle;outline: none;width: 100%;height: 100%;display: block;margin: 0px;padding: 0px;}
+.ui-f7-frame .ui-f7-trigger {cursor: pointer;padding: 0px 2px;vertical-align: middle;display: inline-block;width: 16px;height: 16px;}
+.ui-f7-frame.ui-state-disabled .ui-f7-trigger {cursor: default;}
+
+
+
+.ui-f7grid-panel {
+	position: absolute;
+	font-size: 1em;
+	min-width: 350px;
+	overflow: hidden;
+}
+
+.ui-f7grid-panel table{
+    border-spacing: 0;
+}
+
+.ui-f7grid-panel table td{
+	border: 0;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.ui-f7grid-panel .ui-f7grid-searcher{
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.ui-f7grid-panel .ui-f7grid-searcher .ui-f7grid-searchColumn{
+	height: 21px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.ui-f7grid-panel .ui-f7grid-searcher .ui-f7grid-searchInput{
+	width: 35%;
+	height: 19px;
+	line-height: 19px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.ui-f7grid-panel .ui-f7grid-searcher .ui-f7grid-searchButton{
+	width: 60px;
+	height: 21px;
+	line-height: 19px;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid{
+	width: 100%;
+	overflow: auto;
+	font-size: 0;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-header {
+    border: 0;
+    height: 1.75em;
+	padding: 5px;
+	white-space: nowrap;
+	display: inline-block;
+	font-size: 12px;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-colHeader {
+	display: inline-block;
+	font-weight: bold;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-colHeader-label {
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-colHeader-label:hover {
+	text-decoration: underline;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-item {
+	height: auto;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	display: inline-block;
+	font-size: 12px
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-colItem {
+	overflow: visible;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: normal;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-item-even {
+	background-color: #edf6f8;
+}
+
+.ui-f7grid-panel .ui-f7grid-grid .ui-f7grid-rowItem {
+	padding: 5px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	display: block;
+}
+
+.ui-f7grid-panel .ui-f7grid-pager {
+	border-color: #BBB;
+	border-style: solid;
+	border-width: 1px 0;
+	height: 25px;
+	padding: 2px;
+	outline: 0 none;
+	vertical-align: baseline;
+}
+
+.ui-f7grid-panel .ui-f7grid-pager table{
+	height: 100%;
+}
+
+.ui-f7grid-panel .ui-f7grid-pager .ui-f7grid-navTable {
+	table-layout: auto;
+	width: 100%;
+	font-weight: normal;
+    font-size: 1em;
+}
+
+.ui-f7grid-panel .ui-f7grid-pager .ui-f7grid-navTable tr {
+	background: none;
+}
+
+.ui-f7grid-panel .ui-f7grid-pager .ui-f7grid-navTable tr td {
+	text-shadow: none;
+}
+
+.ui-f7grid-panel .ui-f7grid-pager .ui-f7grid-pg-button {
+	/*padding: 1px;*/
+	width: 18px;
+}
+
+.ui-f7grid-panel .ui-f7grid-pager .ui-f7grid-pg-button.ui-state-hover {
+	/*padding: 0px;*/
+}
+
+.ui-f7grid-panel .ui-f7grid-pager input.currentPage {
+	width: 20px;
+	height: 19px;
+}
+
+.ui-f7grid-panel div.ui-f7grid-checker {
+	display: inline-block;
+	width: 20px;
+	height: 17px;
+}
+
+.ui-f7grid-panel .ui-f7grid-checkbox {
+	vertical-align: middle;
+}
+
+.ui-f7grid-panel .ui-f7grid-buttonPanel{
+	text-align: center;
+	padding: 6px 0;
+	height: 26px;
+	background-color: #EDECEA;
+}
+
+.ui-f7grid-panel .ui-f7grid-buttonPanel .ui-f7grid-submit {
+	width: 70px;
+}
+
+.ui-f7grid-panel .ui-f7grid-buttonPanel .ui-f7grid-cancel {
+	width: 70px;
+	margin-left: 20px;
+}
+
+.ui-f7quick-panel {
+	position: absolute;
+	font-size: 1em;
+}
+
+.ui-f7quick-panel table{
+    border-spacing: 0;
+}
+
+.ui-f7quick-panel table td{
+	border: 0;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.ui-f7quick-panel .ui-f7quick-header {
+	padding: 5px;
+	vertical-align: middle;
+}
+
+.ui-f7quick-panel .ui-f7quick-header input{
+    width: 35%;
+    height: 19px;
+	line-height: 19px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.ui-f7quick-panel .ui-f7quick-header .ui-f7quick-search {
+	width: 60px;
+	height: 21px;
+	line-height: 19px;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.ui-f7quick-panel .ui-f7quick-content table {
+	table-layout: fixed;
+}
+
+.ui-f7quick-panel .ui-f7quick-content table td {
+	padding: 0.5em;
+}
+
+.ui-f7quick-panel .ui-f7quick-content .ui-f7quick-item {
+	text-decoration: none;
+	display: block;
+	padding: .2em .4em;
+	line-height: 1.5;
+	zoom: 1;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.ui-f7quick-panel .ui-f7quick-checkbox {
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.ui-f7quick-panel .ui-f7quick-pager {
+	border-color: #BBB;
+	border-style: solid;
+	border-width: 1px 0;
+	height: 25px;
+	padding: 2px;
+	outline: 0 none;
+	vertical-align: baseline;
+}
+
+.ui-f7quick-panel .ui-f7quick-pager table{
+	height: 100%;
+}
+
+.ui-f7quick-panel .ui-f7quick-pager .ui-f7quick-navTable {
+	table-layout: auto;
+	width: 100%;
+	font-weight: normal;
+    font-size: 1em;
+}
+
+.ui-f7quick-panel .ui-f7quick-pager .ui-f7quick-navTable tr {
+	background: none;	
+}
+
+.ui-f7quick-panel .ui-f7quick-pager .ui-f7quick-navTable tr td {
+	text-shadow: none;
+}
+
+.ui-f7quick-panel .ui-f7quick-pager .ui-f7quick-pg-button {
+	width: 18px;
+	/*padding: 1px;*/
+}
+
+.ui-f7quick-panel .ui-f7quick-pager .ui-f7quick-pg-button.ui-state-hover {
+	/*padding: 0px;*/
+}
+
+.ui-f7quick-panel .ui-f7quick-pager input.currentPage {
+	width: 20px;
+	height: 19px;
+}
+
+.ui-f7quick-panel .ui-f7quick-buttonPanel {
+	text-align: center;
+	padding: 6px 0;
+	height: 26px;
+	background-color: #EDECEA;
+}
+
+.ui-f7quick-panel .ui-f7quick-buttonPanel .ui-f7quick-submit {
+	width: 70px;
+}
+
+.ui-f7quick-panel .ui-f7quick-buttonPanel .ui-f7quick-cancel {
+	width: 70px;
+	margin-left: 20px;
+}
+
+.ui-f7iframe-panel{position: absolute;}
+.ui-f7iframe-panel .ui-f7iframe-iframe{width:100%; height:100%; border-width: 0px;}
+
+@charset "utf-8";
+/* powerFloat */
+.float_ajax_box {
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.float_loading {
+    width: 100px;
+    height: 100px;
+}
+
+.float_ajax_image {
+    padding: 5px;
+}
+
+.float_ajax_error {
+    width: 200px;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.float_list_ul {
+    margin: 0;
+    padding: 1px;
+    font-size: 12px;
+    list-style-type: none;
+}
+
+.float_list_ul li {
+    line-height: 20px;
+    text-indent: 5px;
+}
+
+.float_list_ul li:first-child {
+    border-top: 0;
+}
+
+.float_list_null {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.float_remind_box {
+    padding: 5px 10px;
+}
+
+.float_tip_box {
+    line-height: 18px;
+    padding: 0 3px;
+    position: absolute;
+}
+
+.float_doing_box {
+    padding: 5px 10px 5px 25px;
+    font-size: 12px;
+    position: absolute;
+}
+
+.float_corner {
+    font-size: 18px;
+    font-family: '宋体';
+    position: absolute;
+    left: -6000px;
+    overflow: hidden;
+}
+
+.float_corner .corner {
+    position: absolute;
+}
+
+.float_corner .corner_1 {
+    /*可去除*/
+    color: #ccc;
+}
+
+.float_corner .corner_2 {
+    /*可去除*/
+    color: #fff;
+}
+
+.float_corner_top, .float_corner_bottom {
+    width: 16px;
+    height: 8px;
+}
+
+.float_corner_top {
+    line-height: 14px;
+}
+
+.float_corner_bottom {
+    line-height: 17px;
+}
+
+.float_corner_left, .float_corner_right {
+    width: 8px;
+    height: 16px;
+}
+
+.float_corner_top .corner, .float_corner_bottom .corner {
+    left: 0;
+}
+
+.float_corner_right .corner, .float_corner_left .corner {
+    top: -2px;
+}
+
+.float_corner_bottom .corner_1 {
+}
+
+.float_corner_bottom .corner_2 {
+    top: 1px;
+}
+
+.float_corner_left .corner_1 {
+    right: 0;
+}
+
+.float_corner_left .corner_2 {
+    right: 1px;
+}
+
+.float_corner_top .corner_1 {
+    bottom: 0;
+}
+
+.float_corner_top .corner_2 {
+    bottom: 1px;
+}
+
+.float_corner_right .corner_2 {
+    left: 1px;
+}
+
+/*Grid*/
+.ui-jqgrid {position: relative; font-size:11px;}
+.ui-jqgrid .ui-jqgrid-view {position: relative;left:0px; top: 0px; padding: .0em;}
+/* caption*/
+.ui-jqgrid .ui-jqgrid-titlebar {padding: .3em .2em .2em .3em; position: relative; border-left: 0px none;border-right: 0px none; border-top: 0px none;}
+.ui-jqgrid .ui-jqgrid-title { float: left; margin: .1em 0 .2em; }
+.ui-jqgrid .ui-jqgrid-titlebar-close { position: absolute;top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height:18px;}.ui-jqgrid .ui-jqgrid-titlebar-close span { display: block; margin: 1px; }
+.ui-jqgrid .ui-jqgrid-titlebar-close:hover { padding: 0; }
+/* header*/
+.ui-jqgrid .ui-jqgrid-hdiv {position: relative; margin: 0em;padding: 0em; overflow-x: hidden; border-left: 0px none !important; border-top : 0px none !important; border-right : 0px none !important;}
+.ui-jqgrid .ui-jqgrid-hbox {float: left; padding-right: 20px;}
+.ui-jqgrid .ui-jqgrid-htable {table-layout:fixed;margin:0em;}
+.ui-jqgrid .ui-jqgrid-htable th {height:22px;padding: 0 2px 0 2px;}
+.ui-jqgrid .ui-jqgrid-htable th div {overflow: hidden; position:relative; height:17px;}
+.ui-th-column, .ui-jqgrid .ui-jqgrid-htable th.ui-th-column {overflow: hidden;white-space: nowrap;text-align:center;border-top : 0px none;border-bottom : 0px none;}
+.ui-th-ltr, .ui-jqgrid .ui-jqgrid-htable th.ui-th-ltr {border-left : 0px none;}
+.ui-th-rtl, .ui-jqgrid .ui-jqgrid-htable th.ui-th-rtl {border-right : 0px none;}
+.ui-first-th-ltr {border-right: 1px solid; }
+.ui-first-th-rtl {border-left: 1px solid; }
+.ui-jqgrid .ui-th-div-ie {white-space: nowrap; zoom :1; height:17px;}
+.ui-jqgrid .ui-jqgrid-resize {height:20px !important;position: relative; cursor :e-resize;display: inline;overflow: hidden;}
+.ui-jqgrid .ui-grid-ico-sort {overflow:hidden;position:absolute;display:inline; cursor: pointer !important;}
+.ui-jqgrid .ui-icon-asc {margin-top:-3px; height:12px;}
+.ui-jqgrid .ui-icon-desc {margin-top:3px;height:12px;}
+.ui-jqgrid .ui-i-asc {margin-top:0px;height:16px;}
+.ui-jqgrid .ui-i-desc {margin-top:0px;margin-left:13px;height:16px;}
+.ui-jqgrid .ui-jqgrid-sortable {cursor:pointer;}
+.ui-jqgrid tr.ui-search-toolbar th { border-top-width: 1px !important; border-top-color: inherit !important; border-top-style: ridge !important }
+tr.ui-search-toolbar input {margin: 1px 0px 0px 0px}
+tr.ui-search-toolbar select {margin: 1px 0px 0px 0px}
+/* body */ 
+.ui-jqgrid .ui-jqgrid-bdiv {position: relative; margin: 0em; padding:0; overflow: auto; text-align:left;}
+.ui-jqgrid .ui-jqgrid-btable {table-layout:fixed; margin:0em; outline-style: none; }
+.ui-jqgrid tr.jqgrow { outline-style: none; }
+.ui-jqgrid tr.jqgroup { outline-style: none; }
+.ui-jqgrid tr.jqgrow td {font-weight: normal; overflow: hidden; white-space: pre; height: 22px;padding: 0 2px 0 2px;border-bottom-width: 1px; border-bottom-color: inherit; border-bottom-style: solid;}
+.ui-jqgrid tr.jqgfirstrow td {padding: 0 2px 0 2px;border-right-width: 1px; border-right-style: solid;}
+.ui-jqgrid tr.jqgroup td {font-weight: normal; overflow: hidden; white-space: pre; height: 22px;padding: 0 2px 0 2px;border-bottom-width: 1px; border-bottom-color: inherit; border-bottom-style: solid;}
+.ui-jqgrid tr.jqfoot td {font-weight: bold; overflow: hidden; white-space: pre; height: 22px;padding: 0 2px 0 2px;border-bottom-width: 1px; border-bottom-color: inherit; border-bottom-style: solid;}
+.ui-jqgrid tr.ui-row-ltr td {text-align:left;border-right-width: 1px; border-right-color: inherit; border-right-style: solid;}
+.ui-jqgrid tr.ui-row-rtl td {text-align:right;border-left-width: 1px; border-left-color: inherit; border-left-style: solid;}
+.ui-jqgrid td.jqgrid-rownum { padding: 0 2px 0 2px; margin: 0px; border: 0px none;}
+.ui-jqgrid .ui-jqgrid-resize-mark { width:2px; left:0; background-color:#777; cursor: e-resize; cursor: col-resize; position:absolute; top:0; height:100px; overflow:hidden; display:none; border:0 none; z-index: 99999;}
+/* footer */
+.ui-jqgrid .ui-jqgrid-sdiv {position: relative; margin: 0em;padding: 0em; overflow: hidden; border-left: 0px none !important; border-top : 0px none !important; border-right : 0px none !important;}
+.ui-jqgrid .ui-jqgrid-ftable {table-layout:fixed; margin-bottom:0em;}
+.ui-jqgrid tr.footrow td {font-weight: bold; overflow: hidden; white-space:nowrap; height: 21px;padding: 0 2px 0 2px;border-top-width: 1px; border-top-color: inherit; border-top-style: solid;}
+.ui-jqgrid tr.footrow-ltr td {text-align:left;border-right-width: 1px; border-right-color: inherit; border-right-style: solid;}
+.ui-jqgrid tr.footrow-rtl td {text-align:right;border-left-width: 1px; border-left-color: inherit; border-left-style: solid;}
+/* Pager*/
+.ui-jqgrid .ui-jqgrid-pager { border-left: 0px none !important;border-right: 0px none !important; border-bottom: 0px none !important; margin: 0px !important; padding: 0px !important; position: relative; height: 25px;white-space: nowrap;overflow: hidden;}
+.ui-jqgrid .ui-pager-control {position: relative;}
+.ui-jqgrid .ui-pg-table {position: relative; padding-bottom:2px; width:auto; margin: 0em;}
+.ui-jqgrid .ui-pg-table td {font-weight:normal; vertical-align:middle; padding:1px;}
+.ui-jqgrid .ui-pg-button  { height:19px !important;}
+.ui-jqgrid .ui-pg-button span { display: block; margin: 1px; float:left;}
+.ui-jqgrid .ui-pg-button:hover { padding: 0px; }
+.ui-jqgrid .ui-state-disabled:hover {padding:1px;}
+.ui-jqgrid .ui-pg-input { height:13px;font-size:.8em; margin: 0em;}
+.ui-jqgrid .ui-pg-selbox {font-size:.8em; line-height:18px; display:block; height:18px; margin: 0em; }
+.ui-jqgrid .ui-separator {height: 18px; border-left: 1px solid #ccc ; border-right: 1px solid #ccc ; margin: 1px; float: right;}
+.ui-jqgrid .ui-paging-info {font-weight: normal;height:19px; margin-top:3px;margin-right:4px;}
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-div {padding:1px 0;float:left;position:relative;}
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-button { cursor:pointer; }
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-div  span.ui-icon {float:left;margin:0 2px;}
+.ui-jqgrid td input, .ui-jqgrid td select .ui-jqgrid td textarea { margin: 0em;}
+.ui-jqgrid td textarea {width:auto;height:auto;}
+.ui-jqgrid .ui-jqgrid-toppager {border-left: 0px none !important;border-right: 0px none !important; border-top: 0px none !important; margin: 0px !important; padding: 0px !important; position: relative; height: 25px !important;white-space: nowrap;overflow: hidden;}
+.ui-jqgrid .ui-jqgrid-toppager .ui-pg-div {padding:1px 0;float:left;position:relative;}
+.ui-jqgrid .ui-jqgrid-toppager .ui-pg-button { cursor:pointer; }
+.ui-jqgrid .ui-jqgrid-toppager .ui-pg-div  span.ui-icon {float:left;margin:0 2px;}
+/*subgrid*/
+.ui-jqgrid .ui-jqgrid-btable .ui-sgcollapsed span {display: block;}
+.ui-jqgrid .ui-subgrid {margin:0em;padding:0em; width:100%;}
+.ui-jqgrid .ui-subgrid table {table-layout: fixed;}
+.ui-jqgrid .ui-subgrid tr.ui-subtblcell td {height:18px;border-right-width: 1px; border-right-color: inherit; border-right-style: solid;border-bottom-width: 1px; border-bottom-color: inherit; border-bottom-style: solid;}
+.ui-jqgrid .ui-subgrid td.subgrid-data {border-top:  0px none !important;}
+.ui-jqgrid .ui-subgrid td.subgrid-cell {border-width: 0px 0px 1px 0px;}
+.ui-jqgrid .ui-th-subgrid {height:20px;}
+/* loading */
+.ui-jqgrid .loading {position: absolute; top: 45%;left: 45%;width: auto;z-index:101;padding: 6px; margin: 5px;text-align: center;font-weight: bold;display: none;border-width: 2px !important;}
+.ui-jqgrid .jqgrid-overlay {display:none;z-index:100;}
+* html .jqgrid-overlay {width: expression(this.parentNode.offsetWidth+'px');height: expression(this.parentNode.offsetHeight+'px');}
+* .jqgrid-overlay iframe {position:absolute;top:0;left:0;z-index:-1;width: expression(this.parentNode.offsetWidth+'px');height: expression(this.parentNode.offsetHeight+'px');}
+/* end loading div */
+/* toolbar */
+.ui-jqgrid .ui-userdata {border-left: 0px none;	border-right: 0px none;	height : 21px;overflow: hidden;	}
+/*Modal Window */
+.ui-jqdialog { display: none; width: 300px; position: absolute; padding: .2em; font-size:11px; overflow:visible;}
+.ui-jqdialog .ui-jqdialog-titlebar { padding: .3em .2em; position: relative;  }
+.ui-jqdialog .ui-jqdialog-title { margin: .1em 0 .2em; } 
+.ui-jqdialog .ui-jqdialog-titlebar-close { position: absolute;  top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+
+.ui-jqdialog .ui-jqdialog-titlebar-close span { display: block; margin: 1px; }
+.ui-jqdialog .ui-jqdialog-titlebar-close:hover, .ui-jqdialog .ui-jqdialog-titlebar-close:focus { padding: 0; }
+.ui-jqdialog-content, .ui-jqdialog .ui-jqdialog-content { border: 0; padding: .3em .2em; background: none; height:auto;}
+.ui-jqdialog .ui-jqconfirm {padding: .4em 1em; border-width:3px;position:absolute;bottom:10px;right:10px;overflow:visible;display:none;height:80px;width:220px;text-align:center;}
+/* end Modal window*/
+/* Form edit */
+.ui-jqdialog-content .FormGrid {margin: 0px;}
+.ui-jqdialog-content .EditTable { width: 100%; margin-bottom:0em;}
+.ui-jqdialog-content .DelTable { width: 100%; margin-bottom:0em;}
+.EditTable td input, .EditTable td select, .EditTable td textarea {margin: 0em;}
+.EditTable td textarea { width:auto; height:auto;}
+.ui-jqdialog-content td.EditButton {text-align: right;border-top: 0px none;border-left: 0px none;border-right: 0px none; padding-bottom:5px; padding-top:5px;}
+.ui-jqdialog-content td.navButton {text-align: center; border-left: 0px none;border-top: 0px none;border-right: 0px none; padding-bottom:5px; padding-top:5px;}
+.ui-jqdialog-content input.FormElement {padding:.3em}
+.ui-jqdialog-content .data-line {padding-top:.1em;border: 0px none;}
+
+.ui-jqdialog-content .CaptionTD {vertical-align: middle;border: 0px none; padding: 2px;white-space: nowrap;}
+.ui-jqdialog-content .DataTD {padding: 2px; border: 0px none; vertical-align: top;}
+.ui-jqdialog-content .form-view-data {white-space:pre}
+.fm-button { display: inline-block; margin:0 4px 0 0; padding: .4em .5em; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
+.fm-button-icon-left { padding-left: 1.9em; }
+.fm-button-icon-right { padding-right: 1.9em; }
+.fm-button-icon-left .ui-icon { right: auto; left: .2em; margin-left: 0; position: absolute; top: 50%; margin-top: -8px; }
+.fm-button-icon-right .ui-icon { left: auto; right: .2em; margin-left: 0; position: absolute; top: 50%; margin-top: -8px;}
+#nData, #pData { float: left; margin:3px;padding: 0; width: 15px; }
+/* End Eorm edit */
+/*.ui-jqgrid .edit-cell {}*/
+.ui-jqgrid .selected-row, div.ui-jqgrid .selected-row td {font-style : normal;border-left: 0px none;}
+/* inline edit actions button*/
+.ui-inline-del.ui-state-hover span, .ui-inline-edit.ui-state-hover span,
+.ui-inline-save.ui-state-hover span, .ui-inline-cancel.ui-state-hover span {
+    margin: -1px;
+}
+/* Tree Grid */
+.ui-jqgrid .tree-wrap {float: left; position: relative;height: 18px;white-space: nowrap;overflow: hidden;}
+.ui-jqgrid .tree-minus {position: absolute; height: 18px; width: 18px; overflow: hidden;}
+.ui-jqgrid .tree-plus {position: absolute;	height: 18px; width: 18px;	overflow: hidden;}
+.ui-jqgrid .tree-leaf {position: absolute;	height: 18px; width: 18px;overflow: hidden;}
+.ui-jqgrid .treeclick {cursor: pointer;}
+/* moda dialog */
+* iframe.jqm {position:absolute;top:0;left:0;z-index:-1;width: expression(this.parentNode.offsetWidth+'px');height: expression(this.parentNode.offsetHeight+'px');}
+.ui-jqgrid-dnd tr td {border-right-width: 1px; border-right-color: inherit; border-right-style: solid; height:20px}
+/* RTL Support */
+.ui-jqgrid .ui-jqgrid-title-rtl {float:right;margin: .1em 0 .2em; }
+.ui-jqgrid .ui-jqgrid-hbox-rtl {float: right; padding-left: 20px;}
+.ui-jqgrid .ui-jqgrid-resize-ltr {float: right;margin: -2px -2px -2px 0px;}
+.ui-jqgrid .ui-jqgrid-resize-rtl {float: left;margin: -2px 0px -1px -3px;}
+.ui-jqgrid .ui-sort-rtl {left:0px;}
+.ui-jqgrid .tree-wrap-ltr {float: left;}
+.ui-jqgrid .tree-wrap-rtl {float: right;}
+.ui-jqgrid .ui-ellipsis {text-overflow:ellipsis;}
+
+/**Caption**/
+
+.ui-jqgrid{}
+.ui-jqgrid .ui-jqgrid-titlebar-close {position: absolute;top: 0;width: 19px;margin: 0;padding: 1px;height: 18px;}
+.ui-jqgrid .ui-helper-clearfix::after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+.ui-jqgrid .ui-jqgrid-titlebar {height: 19px;}
+.ui-jqgrid tr.jqgrow td {white-space: normal;vertical-align:middle;text-align: left;font-weight: inherit;}
+.ui-jqgrid .ui-pg-selbox{display: inline-block;padding: 0}
+.ui-jqgrid .ui-jqgrid-htable th {height:25px;padding: 0 2px 0 2px;}
+.ui-jqgrid tr.jqgrow td.edit-cell input[type=text],.ui-jqgrid tr.jqgrow td.edit-cell select,.ui-jqgrid tr.jqgrow td.edit-cell textarea,.ui-jqgrid tr.jqgrow td.edit-cell div.ui-multiLangArea{padding:0;height:20px}
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-table input.ui-pg-input{width:28px;height: 18px;height: 18px\9;line-height: 18px\9}
+.ui-jqgrid .ui-jqgrid-pager .ui-pg-table select.ui-pg-selbox{padding:0;width:45px;height:20px;height:20px\9;line-height:20px\9}
+.ui-jqgrid tr.jqgrow.ui-priority-secondary{background: #EDF5FF}
+.ui-jqgrid .ui-jqgrid-htable .cbox{margin: 0;}
+.ui-jqgrid .s-ico .ui-grid-ico-sort.ui-state-disabled{background-color: transparent;}
+
+
+
+.ui-lablecontainer{
+    padding:5px 0;
+}
+
+.ui-lablecontainer .label{
+    display: inline-block;
+    vertical-align: middle;
+    /*margin-top: 4px;*/
+    width:100px;
+}
+
+.ui-lablecontainer .userinput{
+    vertical-align: middle;
+    display: inline-block;
+    /*margin-top: 4px;*/
+}
+
+.ui-lablecontainer .help{
+    /*margin-top:4px;*/
+    /*margin-left: 0;*/
+    display: inline-block;
+    width: 1.3em;
+    height: 1.3em;
+    vertical-align: top;
+}
+
+/*.ui-lablecontainer .ui-lablecontainer .label{*/
+    /*display:-moz-inline-box;  display:inline-block;  width:120px;*/
+    /*text-align:left;*/
+    /*display: block;*/
+/*}*/
+
+.ui-lablecontainer .requiredstar{
+	color:red;
+	font-weight:bold;
+	margin-right:3px;
+	display: inline-block;
+	vertical-align:middle;
+}
+
+.ui-lablecontainer .inner-label{
+	/*color:#0063ab;*/
+	display: inline-block;
+    word-break: break-all;
+}
+
+.ui-lablecontainer .valuelabel{
+    display: inline-block;
+	vertical-align: middle;
+	/*margin-top: 4px;*/
+}
+
+
+
+
+/*#67a40b; #FFD700*/
+.ui-msgarea {
+    margin: 5px auto;
+    min-height:20px;
+    position:relative;
+}
+
+.ui-msgarea .contentpanel,.ui-msgarea .buttonpanel{
+    display: inline-block;
+}
+
+.ui-msgarea .buttonpanel{
+    position: absolute;
+    right: 0;
+    z-index: 999999;
+}
+
+.ui-msgarea .contentpanel{
+    width: 100%;
+    padding-right: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ui-msgarea .buttonpanel .close-box{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+.ui-msgarea .buttonpanel .detail-box{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.waf-msg-content-detail {
+    font-size: 12px;
+    z-Index:99999;
+    width:100%;
+    display: block;
+    margin-left:20px;
+    overflow:auto;
+}
+
+.msg-info,.msg-warning,.msg-error{
+    padding-left: 20px;
+}
+
+
+
+
+
+.ui-msgbox  table {
+    width: 100%;
+}
+
+.ui-msgbox table td {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.ui-msgbox .ui-prompt table td {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.ui-msgbox table td div {
+    padding-left: 75px;
+    display: inline-block;
+    line-height: 186%
+}
+
+.ui-msgbox .ui-prompt table td div {
+    padding-left: 40px;
+    display: inline-block;
+    line-height: 186%;
+	margin-left:38px;
+}
+
+.ui-msgbox table td input {
+    margin-top: -20px;
+    margin-left: 80px;
+    display: inline-block;
+
+}
+
+.ui-msgbox input {
+    width:200px;
+    margin-top: -20px;
+    margin-left: 50px;
+    display: inline-block;
+
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    background-image: none;
+    border : none;
+    margin: 0.5em 0 0;
+    padding: 0.3em 0.1em 0.1em 0.4em;
+    text-align: left;
+}
+
+.ui-msg-button-text-only .ui-msg-button-text {
+    padding: .4em 0;
+    line-height: 1.5;
+}
+
+.ui-dialog .ui-dialog-buttonpane button,.ui-msg-button-text-only .ui-msg-button-text{
+    width: 5em;
+}
+
+.ui-msg-detail-content {
+    text-align: left;
+    border-top: 1px solid #aaaaaa /*{borderColorContent}*/;
+    background: #ffffff /*{bgColorContent}*/ url(images/ui-bg_flat_75_ffffff_40x100.png) /*{bgImgUrlContent}*/ 50% /*{bgContentXPos}*/ 50% /*{bgContentYPos}*/ repeat-x /*{bgContentRepeat}*/;
+    color: #222222 /*{fcContent}*/;
+    overflow: auto;
+}
+
+
+input.ui-numberfield {
+	ime-mode: disabled;
+	text-align: right;
+	padding-right: 2px;
+}
+.ui-panel{
+
+}
+
+
+.ui-section{
+   margin-top:10px;
+
+}
+.ui-section .sheader{
+    padding:5px 0px;
+    /*border-bottom:#cdcdcd 1px solid;*/
+}
+
+.ztree * {padding:0; margin:0; font-size:12px; font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif}
+.ztree {margin:0; padding:5px;}
+.ztree li{padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap}
+.ztree li ul{ margin:0; padding:0 0 0 18px}
+
+.ztree li a {padding:1px 3px 0 0; margin:0 10px 0 0; cursor:pointer; height:16px;
+	text-decoration:none; vertical-align:top; display: inline-block}
+.ztree li a:hover {text-decoration:underline}
+.ztree li a.curSelectedNode {padding-top:0px;}
+.ztree li a.curSelectedNode_Edit {padding-top:0px;}
+.ztree li a.tmpTargetNode {padding-top:0px;}
+.ztree li a input.rename {height:14px; width:80px; padding:0; margin:0;	font-size:12px;}
+.ztree li span {line-height:16px; margin-right: 2px}
+.ztree li button {width:16px; height:16px; vertical-align:middle; border:0 none; cursor: pointer;outline:none;}
+
+.ztree li button.chk {width:13px; height:13px; margin:0 3px 0 0; cursor: auto}
+.ztree li button.chk.checkbox_false_full {background-position:0 0}
+.ztree li button.chk.checkbox_false_full_focus {background-position:0 -14px}
+.ztree li button.chk.checkbox_false_part {background-position:0 -28px}
+.ztree li button.chk.checkbox_false_part_focus {background-position:0 -42px}
+.ztree li button.chk.checkbox_false_disable {background-position:0 -56px}
+.ztree li button.chk.checkbox_true_full {background-position:-14px 0}
+.ztree li button.chk.checkbox_true_full_focus {background-position:-14px -14px}
+.ztree li button.chk.checkbox_true_part {background-position:-14px -28px}
+.ztree li button.chk.checkbox_true_part_focus {background-position:-14px -42px}
+.ztree li button.chk.checkbox_true_disable {background-position:-14px -56px}
+.ztree li button.chk.radio_false_full {background-position:-28px 0}
+.ztree li button.chk.radio_false_full_focus {background-position:-28px -14px}
+.ztree li button.chk.radio_false_part {background-position:-28px -28px}
+.ztree li button.chk.radio_false_part_focus {background-position:-28px -42px}
+.ztree li button.chk.radio_false_disable {background-position:-28px -56px}
+.ztree li button.chk.radio_true_full {background-position:-42px 0}
+.ztree li button.chk.radio_true_full_focus {background-position:-42px -14px}
+.ztree li button.chk.radio_true_part {background-position:-42px -28px}
+.ztree li button.chk.radio_true_part_focus {background-position:-42px -42px}
+.ztree li button.chk.radio_true_disable {background-position:-42px -56px}
+
+.ztree li button.switch {width:18px; height:18px}
+.ztree li button.root_open{background-position:-92px -54px}
+.ztree li button.root_close{background-position:-74px -54px}
+.ztree li button.roots_open{background-position:-92px 0}
+.ztree li button.roots_close{background-position:-74px 0}
+.ztree li button.center_open{background-position:-92px -18px}
+.ztree li button.center_close{background-position:-74px -18px}
+.ztree li button.bottom_open{background-position:-92px -36px}
+.ztree li button.bottom_close{background-position:-74px -36px}
+.ztree li button.noline_open{background-position:-92px -72px}
+.ztree li button.noline_close{background-position:-74px -72px}
+.ztree li button.root_docu{ background:none;}
+.ztree li button.roots_docu{background-position:-56px 0}
+.ztree li button.center_docu{background-position:-56px -18px}
+.ztree li button.bottom_docu{background-position:-56px -36px}
+.ztree li button.noline_docu{ background:none;}
+
+.ztree li button.ico_open{margin-right:2px; background-position:-110px -16px; vertical-align:top; *vertical-align:middle}
+.ztree li button.ico_close{margin-right:2px; background-position:-110px 0; vertical-align:top; *vertical-align:middle}
+.ztree li button.ico_docu{margin-right:2px; background-position:-110px -32px; vertical-align:top; *vertical-align:middle}
+.ztree li button.edit {margin-right:2px; background-position:-110px -48px; vertical-align:top; *vertical-align:middle}
+.ztree li button.remove {margin-right:2px; background-position:-110px -64px; vertical-align:top; *vertical-align:middle}
+
+.ztree li button.ico_loading{margin-right:2px; vertical-align:top; *vertical-align:middle}
+
+button.tmpzTreeMove_arrow {width:16px; height:16px; padding:0; margin:2px 0 0 1px; border:0 none; position:absolute;}
+
+ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height:auto;overflow:hidden;}
+.zTreeMask {z-index:10000; position:absolute;}
+
+.ui-multiselect { padding:0; text-align:left;}
+.ui-multiselect span{vertical-align: middle;}
+.ui-multiselect span.ui-icon { float:right }
+.ui-multiselect-single .ui-multiselect-checkboxes input { position:absolute !important; top: auto !important; left:-9999px; }
+.ui-multiselect-single .ui-multiselect-checkboxes label { padding:5px !important;min-height: 1em; }
+
+.ui-multiselect-header { margin-bottom:3px; padding:3px 0 3px 4px }
+.ui-multiselect-header ul { font-size:0.9em }
+.ui-multiselect-header ul li { float:left; padding:0 10px 0 0 }
+.ui-multiselect-header a { text-decoration:none }
+.ui-multiselect-header a:hover { text-decoration:underline }
+.ui-multiselect-header span.ui-icon { float:left }
+.ui-multiselect-header li.ui-multiselect-close { float:right; text-align:right; padding-right:0 }
+
+.ui-multiselect-menu { display:none; padding:3px; position:absolute; z-index:10000 }
+.ui-multiselect-checkboxes { position:relative /* fixes bug in IE6/7 */; overflow-y:auto }
+.ui-multiselect-checkboxes label { cursor:default; display:block; border:1px solid transparent; padding:3px 1px }
+/*.ui-multiselect-checkboxes label input { position:relative; top:1px }*/
+.ui-multiselect-checkboxes label input { vertical-align:middle; }
+.ui-multiselect-checkboxes input { margin-right:5px;}
+.ui-multiselect-checkboxes li {
+    clear:both;
+    /*font-size:0.9em;*/
+    padding-right:3px
+}
+.ui-multiselect-checkboxes li.ui-multiselect-optgroup-label { text-align:center; font-weight:bold; border-bottom:1px solid }
+.ui-multiselect-checkboxes li.ui-multiselect-optgroup-label a { display:block; padding:3px; margin:1px 0; text-decoration:none }
+
+/* remove label borders in IE6 because IE6 does not support transparency */
+* html .ui-multiselect-checkboxes label { border:none }
+
+.ui-multiselect-hasfilter ul { position:relative; top:2px }
+.ui-multiselect-filter { float:left; margin-right:10px; font-size:11px }
+.ui-multiselect-filter input { width:70px; font-size:10px; margin-left:5px; height:15px; padding:2px; border:1px solid #292929; -webkit-appearance:textfield; -webkit-box-sizing:content-box; }
+/*增加IE下模仿placeholder的css*/
+.ui-multiselect-filter input.ui-filter-placeholder{
+    color: #a9a9a9;
+}
+
+.ui-multiselect { padding:0;display: inline-block;}
+.ui-multiselect.ui-state-hover,.ui-multiselect.ui-state-active,.ui-multiselect.ui-state-disabled{
+    background-image: none;
+}
+
+
+
+.ui-toolbar{
+    padding-left: 5px;
+    position: relative;
+}
+/*按钮区域*/
+.ui-toolbar .ui-toolbar-main {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding-right: 20px;
+}
+
+.ui-toolbar .ui-toolbar-ul{
+    font-size: 0;
+    overflow: hidden;
+    word-spacing: -6px;
+    letter-spacing: -6px;
+}
+.ui-toolbar .ui-toolbar-ul>li{
+    display: inline-block;
+    zoom: 1;
+    *display: inline; /* IE < 8: fake inline-block */
+    margin: 5px 0;
+    padding:0;
+    border: 0;
+    vertical-align: middle;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-size: 12.8px;
+}
+
+.ui-toolbar-more-ul>li{
+    zoom: 1;
+    *display: inline; /* IE < 8: fake inline-block */
+    margin: 5px 5px 5px 0px;
+    padding:0;
+    border: 0;
+    vertical-align: middle;
+    letter-spacing: 0;
+    word-spacing: 0;
+    font-size: 12.8px;
+}
+
+.ui-toolbar .ui-toolbar-more{
+    position: absolute;
+    top:0;
+    right: 2px;
+    box-sizing: border-box;
+    display: block;
+}
+.ui-toolbar .ui-toolbar-more .down{
+    display:block;
+    height: 16px;
+    width: 16px;
+}
+
+/*浮动的按钮*/
+.ui-toolbar-more-ul.ui-menu-ul{
+    z-index: 9999;
+}
+
+.ui-toolbar-more-ul li.ui-menu-item a.ui-toolbar-more-textindent{
+    text-indent: 8px;
+}
+/*vsplitbutton*/
+.ui-toolbar-main li.ui-vsplitbtn-li>span{
+    display:inline-block;
+    height: 20px;
+}
+.ui-validate-div {
+	padding-left: 18px;
+	margin-left:2px;
+	border:1px solid;
+	display:none;
+}
+
+label.error {
+	  padding-bottom: 1px;
+	  margin-top:4px;
+	  /*font-weight: bold;*/
+      padding-left: 15px;
+}
+
+
+
+.ui-dialog .waf-ui-dialog-titlebar-min{
+    height: 15px;
+    margin: -10px 5px ;
+    padding: 1px;
+    position:absolute;
+    right: 39px;
+    top: 50%;
+    width: 15px;
+}
+
+.ui-dialog .waf-ui-dialog-titlebar-max{
+    height: 15px;
+    margin: -10px 5px ;
+    padding: 1px;
+    position:absolute;
+    right: 22px;
+    top: 50%;
+    width: 15px;
+}
+
+
+
+
+.ui-dialog .waf-dialog-titlebar-close{
+    height: 15px;
+    width: 15px;
+    margin: -10px 5px;
+    padding: 1px;
+    position:absolute;
+    right: 5px;
+    top: 50%;
+    outline: none;
+}
+
+.ui-dialog .waf-ui-dialog-titlebar-help{
+    height: 15px;
+    margin: -10px 5px;
+    padding: 1px;
+    position:absolute;
+    right: 5px;
+    top: 50%;
+    width: 15px;
+}
+
+.ui-dialog .waf-ui-dialog-titlebar-min span, .ui-dialog .waf-ui-dialog-titlebar-max span,
+.ui-dialog .waf-ui-dialog-titlebar-help span, .ui-dialog .waf-dialog-titlebar-close span {
+    display: block;
+    margin: 1px;
+}
+
+/*dialog*/
+.ui-dialog .ui-dialog-titlebar.ui-widget-header {
+    height: 29px;
+    padding: 0 1em;;
+}
+
+.ui-dialog span.ui-dialog-title {
+    margin: 0.5em 16px 0.1em 0em;
+    /*margin: 0.5em 16px 0.1em 0.5em;*/
+}
+
+.ui-dialog .waf-ui-dialog-titlebar-min.ui-state-hover, .ui-dialog .waf-ui-dialog-titlebar-max.ui-state-hover,
+.ui-dialog .waf-ui-dialog-titlebar-help.ui-state-hover, .ui-dialog .waf-dialog-titlebar-close.ui-state-hover {
+    border: none;
+    background-image: none;
+    background-color: transparent;
+}
+
+
+
+.waf-ui-icon{
+	/*background: url(../../../../styles/images/viewsource.png) no-repeat left top;*/
+	margin-left:-10px;
+}
+.ui-tabs .ui-tabs-nav li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+
+.tabs-icon {
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: 10px;
+	top: 5px;
+}
+.tabs-closable {
+	padding-right: 8px;
+}
+
+div.ui-tabs,.ui-tabs ul.ui-tabs-nav{
+    padding: 0;
+}
+
+
+
+/**
+ * 定义所有的列布局
+ * @Version: WAF2
+ * @Author: JLG
+ * @Date: 2012-02-15
+ */
+.ui-columnLayout {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    zoom: 1;
+    letter-spacing: -0.31em; /**old:-0.5em**/
+    *letter-spacing: normal;
+    word-spacing: -0.43em;
+    position: relative;
+}
+
+.ui-column /**处理自定义的情况**/
+{
+    display: inline-block;
+    zoom: 1;
+    *display: inline; /* IE < 8: fake inline-block */
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    border-width:0\9; /**ie8下border-width默认为medium**/
+}
+
+
+.ui-columnLayout .col-splitPanel .shrink{
+    width: 5px;
+    height:36px;
+    position: absolute;
+    top:45%;
+}
+
+.ui-columnLayout .col-splitPanel .shrink:hover{
+    cursor: pointer;
+}
+
+.col-splitPanel {
+    width: 5px;
+    height: 100%;
+}
+
+.border-sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.ui-floatbar {
+	padding: 3px;
+}
+.ui-floatbar.ui-floatbar-fixed{
+	position: fixed;
+}
+.ui-floatbar.ui-floatbar-absolute{
+	position: absolute;
+}
+
+.ui-floatbar-button {
+	background-color: white;
+	display: inline-block;
+}
+.ui-floatbar-button.ui-floatbar-fixed{
+	position: fixed;
+}
+.ui-floatbar-button.ui-floatbar-absolute{
+	position: absolute;
+}
+
+.ui-floatbar-button span{
+	display: inline-block;
+}
+.ui-floatbar-toolbar {
+	padding: 3px 0;
+	height: 16px;
+	margin-bottom: 3px;
+}
+.ui-floatbar-closeBtn {
+	float: right;
+	padding-right: 10px;
+}
+.ui-floatbar-list {
+	list-style: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ui-floatbar-list > li{
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: gray;
+}
+.ui-outline {
+	display: block;
+	padding: 3px;
+}
+
+.ui-outline li ul {
+	padding: 0 0 0 18px;
+}
+
+.ui-outline ul {
+	list-style: none;
+}
+
+.ui-outline .ui-outline-item a {
+	text-decoration: none;
+	display: block;
+	padding: 2px;
+}
+
+.ui-outline .ui-outline-item a.ui-state-hover {
+	margin: -1px;
+}
+
+.ui-outline-highlight {
+	border: 1px solid red;
+}
+
+.ui-outline .ui-outline-top {
+	height: 16px;
+}
+.ui-outline .ui-outline-titleicon {
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*linkbutton*/
+.ui-linkbutton{
+    display: inline-block;    
+}
+.ui-linkbutton .ui-lb-icon,.ui-linkbutton .ui-menubtn-right {
+    display: inline-block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+.ui-linkbutton .ui-lb-text {
+    display: inline-block;
+    padding: 0em .4em;
+    /*vertical-align: middle;*/
+}
+.ui-lb-disabled {
+    color: #C6C6C6 !important;
+    cursor: default;
+}
+/*hsplitbutton*/
+.ui-menu li.ui-hsplitbtn-li{
+    display: block;
+}
+.ui-menu li.ui-hsplitbtn-li>span{
+    display:block;
+    padding:0;
+}
+.ui-menu-item a.ui-menuitem-indent{
+    text-indent: 8px;
+}
+.ui-menu-ul .ui-li-menuitem,.ui-menu-ul .ui-li-menuitem .ui-linkbutton{
+    border-width:0px
+}
+
+.ui-menu-ul-root li{
+    zoom: 1;
+    *display: inline; /* IE < 8: fake inline-block */
+    margin: 2px 5px 5px 0px;
+    padding:0;
+    border: 0;
+    vertical-align: middle;
+    letter-spacing: 0;
+    word-spacing: 0;
+    font-size: 12.8px;
+}
+
+
+.ui-multiLangBox{
+	height: 24px;
+	width: 150px;
+	display: inline-block;
+	position: relative;
+}
+.ui-multiLangBox input.ui-multiLangBox-input{
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.ui-multiLangBox.supportMultiLang input.ui-multiLangBox-input{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding-right: 22px;
+}
+.ui-multiLangBox.supportMultiLang .ui-multiLangBox-trigger{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 23px;
+	height: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+.ui-multiLangBox-langSelect{
+	position: absolute;
+}
+.ui-multiLangBox-langSelect ul{
+	list-style-type: none;
+}
+.ui-multiLangBox-langSelect .ui-multiLangBox-langItem{
+	cursor: pointer;
+}
+.ui-multiLangBox-langSelect .ui-multiLangBox-langItem a{
+	text-align: left;
+	text-decoration: none;
+	display: block;
+	padding: .2em .4em;
+	line-height: 1.5;
+	zoom: 1;
+}
+.ui-multiLangBox-langSelect .ui-multiLangBox-langItem em{
+	width: 20px;
+	padding: 2px 1px;
+	text-align: center;
+	margin-right: 5px;
+	display: inline-block;
+}
+
+.ui-multiLangArea{
+	height: 32px;
+	width: 150px;
+	display: inline-block;
+	position: relative;
+}
+.ui-multiLangArea textarea.ui-multiLangArea-input{
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+.ui-multiLangArea.supportMultiLang textarea.ui-multiLangArea-input{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding-right: 22px;
+}
+.ui-multiLangArea.supportMultiLang .ui-multiLangArea-trigger{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 23px;
+	height: 100%;
+	text-align: center;
+	cursor: pointer;	
+}
+.ui-multiLangArea-langSelect{
+	position: absolute;
+}
+.ui-multiLangArea-langSelect ul{
+	list-style-type: none;
+}
+.ui-multiLangArea-langSelect .ui-multiLangArea-langItem{
+	cursor: pointer;
+}
+.ui-multiLangArea-langSelect .ui-multiLangArea-langItem a{
+	text-align: left;
+	text-decoration: none;
+	display: block;
+	padding: .2em .4em;
+	line-height: 1.5;
+	zoom: 1;
+}
+.ui-multiLangArea-langSelect .ui-multiLangArea-langItem em{
+	width: 20px;
+	padding: 2px 1px;
+	text-align: center;
+	margin-right: 5px;
+	display: inline-block;
+}
+
+

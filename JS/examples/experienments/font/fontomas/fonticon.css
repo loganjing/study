@@ -1,0 +1,46 @@
+﻿/*Entypo font*/
+
+@font-face {
+    font-family: 'FontomasEmtypo';
+    src: url('entypo/fontomas-webfont.eot');
+    src: url('entypo/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+         url('entypo/fontomas-webfont.woff') format('woff'),
+         url('entypo/fontomas-webfont.ttf') format('truetype'),
+         url('entypo/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*IconicFill font*/
+@font-face {
+    font-family: 'FontomasIconicFill';
+    src: url('iconicfill/fontomas-webfont.eot');
+    src: url('iconicfill/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+         url('iconicfill/fontomas-webfont.woff') format('woff'),
+         url('iconicfill/fontomas-webfont.ttf') format('truetype'),
+         url('iconicfill/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*IconicStroke Font*/
+@font-face {
+    font-family: 'FontomasIconicStroke';
+    src: url('iconicstroke/fontomas-webfont.eot');
+    src: url('iconicstroke/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+         url('iconicstroke/fontomas-webfont.woff') format('woff'),
+         url('iconicstroke/fontomas-webfont.ttf') format('truetype'),
+         url('iconicstroke/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/*WebSymbolsRegular Font*/
+@font-face {
+    font-family: 'FontomasWebSymbolsRegular';
+    src: url('websymbolsregular/fontomas-webfont.eot');
+    src: url('websymbolsregular/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+         url('websymbolsregular/fontomas-webfont.woff') format('woff'),
+         url('websymbolsregular/fontomas-webfont.ttf') format('truetype'),
+         url('websymbolsregular/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

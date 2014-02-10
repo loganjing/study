@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .vertical {
+            height: 100px;
+            line-height: 100px;/*值等于元素高度的值*/
+            border: 1px solid;
+        }
+        #wrap {
+            width: 200px;/*元素的宽度*/
+            height:200px;/*元素的高度*/
+            position: absolute;
+            left: 50%;/*配合margin-left的负值实现水平居中*/
+            margin-left: -100px;/*值的大小等于元素宽度的一半*/
+            top:50%;/*配合margin-top的负值实现垂直居中*/
+            margin-top: -100px;/*值的大小等于元素高度的一半*/
+        }
+    </style>
+</head>
+<body>
+<h1>lineheight=height</h1>
+<p>这种方法用来实现单行垂直居中是相当的简单的，你只要保证元素内容是单行，并且其高度是固定不变的，你只要将其“line-height”设置成和“height”值一样就Ok了。</p>
+
+<div class="vertical">content</div>
+
+<div id="wrap">test</div>
+
+</body>
+</html>

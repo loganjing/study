@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .table {
+            height: 300px;/*高度值不能少*/
+            width: 300px;/*宽度值不能少*/
+            display: table;
+            position: relative;
+            float:left;
+            border: 1px solid;
+        }
+
+        .tableCell {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px;
+            *position: absolute;
+            *top: 50%;
+            *left: 50%;
+        }
+        .content {
+            *position:relative;
+            *top: -50%;
+            *left: -50%;
+        }
+    </style>
+</head>
+<body>
+<h1>table-cell & absolute</h1>
+
+<div class="table">
+    <div class="tableCell">
+        <div class="content">content</div>
+    </div>
+</div>
+
+</body>
+</html>

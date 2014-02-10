@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .commontable {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+            border-top: 2px #888 solid;
+            border-bottom: 2px #888 solid;
+        }
+
+        .commontable th, td {
+            padding: 0.5em;
+        }
+
+        .commontable thead th {
+            color: #000;
+            border: 1px solid #E6E6E6;
+            background: #FFFFFF;
+        }
+
+        .commontable tbody td {
+            vertical-align: top;
+            border: 1px solid #E6E6E6;
+        }
+
+        .foldtable{
+            border-top: 2px #888 solid;
+            border-bottom: 2px #888 solid;
+        }
+
+        .foldtable .row{
+            margin: 0.8em 0;
+            padding: 0.5em;
+            border-bottom: 1px dashed #ccc;
+        }
+        .foldtable .row .column{
+            display: inline-block;
+            margin: 0 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>基本形式</h1>
+<table id="table1" class="commontable">
+    <thead>
+       <th>编码</th>
+       <th>名称</th>
+       <th>简称</th>
+       <th>描述</th>
+    </thead>
+    <tbody>
+       <tr>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+       </tr>
+       <tr>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+       </tr>
+       <tr>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+           <td><input type="text"/></td>
+       </tr>
+    </tbody>
+</table>
+
+<h2>折叠形式</h2>
+<div class="foldtable">
+    <div class="row">
+        <div class="column"><label>编码:</label><input type="text"/></div>
+        <div class="column"><label>名称:</label><input type="text"/></div>
+        <div class="column"><label>简称:</label><input type="text"/></div>
+        <div class="column"><label>描述:</label><input type="text"/></div>
+        <div class="column"><a href="#">Add</a>&nbsp;&nbsp;<a href="#">Del</a></div>
+    </div>
+
+    <div class="row">
+        <div class="column"><label>编码:</label><input type="text"/></div>
+        <div class="column"><label>名称:</label><input type="text"/></div>
+        <div class="column"><label>简称:</label><input type="text"/></div>
+        <div class="column"><label>描述:</label><input type="text"/></div>
+        <div class="column"><a href="#">Add</a>&nbsp;&nbsp;<a href="#">Del</a></div>
+    </div>
+
+    <div class="row">
+        <div class="column"><label>编码:</label><input type="text"/></div>
+        <div class="column"><label>名称:</label><input type="text"/></div>
+        <div class="column"><label>简称:</label><input type="text"/></div>
+        <div class="column"><label>描述:</label><input type="text"/></div>
+        <div class="column"><a href="#">Add</a>&nbsp;&nbsp;<a href="#">Del</a></div>
+    </div>
+
+    <div class="row">
+        <div class="column"><label>编码:</label><input type="text"/></div>
+        <div class="column"><label>名称:</label><input type="text"/></div>
+        <div class="column"><label>简称:</label><input type="text"/></div>
+        <div class="column"><label>描述:</label><input type="text"/></div>
+        <div class="column"><a href="#">Add</a>&nbsp;&nbsp;<a href="#">Del</a></div>
+    </div>
+
+    <div class="row">
+        <div class="column"><label>编码:</label><input type="text"/></div>
+        <div class="column"><label>名称:</label><input type="text"/></div>
+        <div class="column"><label>简称:</label><input type="text"/></div>
+        <div class="column"><label>描述:</label><input type="text"/></div>
+        <div class="column"><a href="#">Add</a>&nbsp;&nbsp;<a href="#">Del</a></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    alert(table1.rows.length);
+</script>
+
+</body>
+</html>

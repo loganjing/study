@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="../css/standard_all.css" />
+    <link type="text/css" rel="stylesheet" href="../css/eas_all.css" />
+    <link type="text/css" rel="stylesheet" href="../css/ui.jqgrid.css" />
+    <link type="text/css" rel="stylesheet" href="../css/grid.css" />
+    <script type="text/javascript" src="../../js/jquery-1.6.4.js"></script>
+    <script type="text/javascript" src="../js/waf.js"></script>
+    <script type="text/javascript" src="../js/waf.util.js"></script>
+    <script type="text/javascript" src="../js/grid.locale-zh-CN.js"></script>
+    <script type="text/javascript" src="../js/grid.waf.locale-zh-CN.js"></script>
+    <script type="text/javascript" src="../js/grid.wafbase.js"></script>
+    <script type="text/javascript" src="../js/grid.wafformatter.js"></script>
+    <script type="text/javascript" src="../js/grid.wafcustom.js"></script>
+    <script type="text/javascript" src="../js/grid.wafgrouping.js"></script>
+    <script type="text/javascript" src="../js/grid.waf.js"></script>
+    <script type="text/javascript" src="../js/grid.wafcelledit.js"></script>
+
+
+
+    <script type="text/javascript">
+        function test2(){
+            alert(1123456);
+        }
+
+        $(document).ready(function() {
+            var lastsel;
+            jQuery("#list4").jqGrid({
+                datatype:"local",
+                height:250,
+                colNames:['Inv No', 'Date', 'Client', 'Amount', 'Tax', 'Total', 'Notes'],
+                colModel:[
+                    {name:'id', index:'id', width:60, sorttype:"int",formatter:"showlink",formatoptions:{onclick:'test2',addParam:'&action=edit'}},
+                    {name:'invdate', index:'invdate', width:90, sorttype:"date"},
+                    {name:'name', index:'name', width:300},
+                    {name:'amount', index:'amount', width:80, align:"right", sorttype:"float"},
+                    {name:'tax', index:'tax', width:80, align:"right", sorttype:"float"},
+                    {name:'total', index:'total', width:80, align:"right", sorttype:"float"},
+                    {name:'note', index:'note', width:150, sortable:false}
+                ],
+                multiselect:true,
+                pager:'#pager2',
+                caption:"Manipulating Array Data"
+            });
+            var mydata = [
+                {id:"1", invdate:"2007-10-01", name:"test", note:"note", amount:"200.00", tax:"10.00", total:"210.00"},
+                {id:"2", invdate:"2007-10-02", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"3", invdate:"2007-09-01", name:"test3", note:"note3", amount:"400.00", tax:"30.00", total:"430.00"},
+                {id:"4", invdate:"2007-10-04", name:"test", note:"note", amount:"200.00", tax:"10.00", total:"210.00"},
+                {id:"5", invdate:"2007-10-05", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"6", invdate:"2007-09-06", name:"test3", note:"note3", amount:"400.00", tax:"30.00", total:"430.00"},
+                {id:"7", invdate:"2007-10-04", name:"test", note:"note", amount:"200.00", tax:"10.00", total:"210.00"},
+                {id:"5", invdate:"2007-10-05", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"6", invdate:"2007-09-06", name:"test3", note:"note3", amount:"400.00", tax:"30.00", total:"430.00"},
+                {id:"7", invdate:"2007-10-04", name:"test", note:"note", amount:"200.00", tax:"10.00", total:"210.00"},
+                {id:"8", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"9", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"10", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"11", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"12", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"13", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"14", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"15", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"16", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"17", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"18", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"19", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"},
+                {id:"20", invdate:"2007-10-03", name:"test2", note:"note2", amount:"300.00", tax:"20.00", total:"320.00"}
+
+            ];
+            for (var i = 0; i <= mydata.length; i++)
+                jQuery("#list4").jqGrid('addRowData', i + 1, mydata[i]);
+        });
+    </script>
+</head>
+<body>
+
+<table id="list4"></table>
+<div id="pager2"></div>
+
+</body>
+</html>

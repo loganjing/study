@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="column.css" />
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+    <script type="text/javascript" src="wafColumn.js"></script>
+    <style type="text/css">
+        .coral {
+            background: #D2E9FF;
+            height: 100px;
+        }
+
+        .green {
+            background: #f1f1f1;
+            height: 100px;
+        }
+
+        .red {
+            background: #CCCCCC;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="columnLayout" class="ui-panel ui-columnLayout border-sizing" style="border:1px solid #ddd;height:100px">
+    <div id="col1" class="ui-column border-sizing coral" style="width: 33.33333%; ">
+        Coral Column
+    </div>
+    <div id="col2" class="ui-column border-sizing green" style="width: 33.33333%; ">
+        Green Column
+    </div>
+    <div id="col3" class="ui-column border-sizing red" style="width: 33.33333%; ">
+        Red Column
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $("#col1").wafColumn({id:"col1", tagClass:"coral", colWidth:"33.33333%"});
+        $("#col2").wafColumn({id:"col2", tagClass:"green", colWidth:"33.33333%"});
+        $("#col3").wafColumn({id:"col3", tagClass:"red", colWidth:"33.33333%"});
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+</head>
+<body>
+<h1>计算各种高度</h1>
+
+
+
+<br/>
+
+<div style="width: 150px;height:40px;border: 2px solid red;margin: 10px;padding: 10px;overflow: auto" id="test">
+    jjjjj<br/>
+    jjjjj<br/>
+    jjjjj<br/>
+    jjjjj<br/>
+    jjjjj<br/>
+    jjjjj<br/>
+    jjjjj<br/>
+    jjjjj<br/>
+    jjjjj<br/>
+</div>
+
+<div id="info"></div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#info").html($("#info").html()+"test.height:"+$("#test").height()+"<BR>");
+        $("#info").html($("#info").html()+"test.innerHeight:"+$("#test").innerHeight()+"<BR>");
+        $("#info").html($("#info").html()+"test.outerHeight:"+$("#test").outerHeight()+"<BR>");
+        $("#info").html($("#info").html()+"test.outerHeight(true):"+$("#test").outerHeight(true)+"<BR>");
+        $("#info").html($("#info").html()+"<BR>");
+        $("#info").html($("#info").html()+"test.clientHeight:"+document.getElementById("test").clientHeight+"<BR>");
+        $("#info").html($("#info").html()+"test.offsettHeight:"+document.getElementById("test").offsetHeight+"<BR>");
+        $("#info").html($("#info").html()+"test.scrollHeight:"+document.getElementById("test").scrollHeight+"<BR>");
+        $("#info").html($("#info").html()+"test.scrollTop:"+document.getElementById("test").scrollTop+"<BR>");
+
+        $("#info").html($("#info").html()+"<BR>");
+
+        $("#info").html($("#info").html()+"当前屏幕高度(空白空间)availHeight:"+window.screen.availHeight+"<BR>");
+        $("#info").html($("#info").html()+"当前屏幕高度(分辨率值)screenHeight:"+window.screen.height+"<BR>");
+        $("#info").html($("#info").html()+"当前网页高度body.offsetHeight:"+window.document.body.offsetHeight+"<BR>");
+        $("#info").html($("#info").html()+"当前可视区域高度body.clientHeight:"+window.document.body.clientHeight+"<BR>");
+        $("#info").html($("#info").html()+"当前可视区域高度body.scrollHeight:"+window.document.body.scrollHeight+"<BR>");
+
+        $("#info").html($("#info").html()+"<BR>");
+        $("#info").html($("#info").html()+"width:"+$("#test").width()+"<BR>");
+        $("#info").html($("#info").html()+"innerWidth:"+$("#test").innerWidth()+"<BR>");
+        $("#info").html($("#info").html()+"outerWidth:"+$("#test").outerWidth()+"<BR>");
+        $("#info").html($("#info").html()+"outerWidth(true):"+$("#test").outerWidth(true)+"<BR>");
+        $("#info").html($("#info").html()+"BOXModel:"+jQuery.support.boxModel );
+
+    });
+</script>
+
+</body>
+</html>

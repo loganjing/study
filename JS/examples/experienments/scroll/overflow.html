@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>    
+	<style>
+	   div.ocean{
+    position:relative;
+    background-color:blue;
+    width:120px;
+    height:120px;
+    }
+div.land{
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color:red;
+    overflow:hidden;
+    }
+p.joke{
+    position:absolute;
+    width:150px;
+    height:110px;
+    top:30px;
+    left:30px;
+    background-color:yellow;
+    }
+	</style>
+</head>
+<body>
+
+<div class="ocean">
+    <div class="land">
+        <p class="joke">
+                Mrs. Smith couldn’t get her husband to exercise. 
+                She asked Mrs. Jones what she should do. Jones replied, 
+                ”Tape the remote control between his toes.”
+        </p>
+    </div>
+</div>
+
+<p>
+我们知道，overflow属性值有这几种：
+visible：声明内容不会被剪裁。比如内容可能被渲染到容器外面。
+hidden：声明内容将被剪裁，并且也甭想使用滚动条来查看剪裁掉的内容。
+scroll：声明内容将被剪裁，但有可能出现滚动条来查看被剪裁掉的内容。滚动条出现的位置在inner border adge和outer padding adge之间。
+auto：声明决策将依赖于客户端，优先使用scroll。
+</p>
+
+<p>
+W3C标准中指明：
+通常一个盒子的内容是被限制在盒子边界之内的。但有时也会产生溢出，即部分或全部内容跑到盒子边界之外。溢出将在满足下列条件之一时出现：
+1. 一个不换行的行元素宽度超出了容器盒子宽度。
+2. 一个宽度固定的块元素放在了比它窄的容器盒子内。
+3. 一个元素的高度超出了容器盒子的高度。
+4. 一个子孙元素，由负边距值引起的部分内容在盒子外部。
+5. text-indent属性引起的行内元素在盒子的左右边界外。
+6. 一个绝对定位的子孙元素，部分内容在盒子外。但超出的部分不是总会被剪裁。子孙元素的内容就不会被子孙元素和其包含块之间的祖先元素的overflow的设置所剪裁。
+</p>
+
+<p>
+当溢出发生时，overflow属性约定了容器盒子是否剪裁掉超出其内边界的部分，并且决定是否出现滚动条来访问被剪裁掉的内容。它会影响到元素所有内容的剪裁，但有个例外情况，即上面第6条所提到的：元素的子孙元素的包含块（Containing blocks）是整个视窗（viewport）或是该元素的祖先元素，内容将不会被剪裁。包含块是什么呢？简单的说，就是可以决定一个元素位置和大小的块。通常一个元素的包含块由离它最近的块级祖先元素的内容边界决定。但当元素被设置成绝对定位时，包含块由最近的position不是static的祖先元素决定。
+</p>
+
+<p>
+hidden并没有失效，而是有可能我们遇到的情况恰好满足了第6个条件，使得元素的包含块发生了变化。上面的故事中，也提到了在遇到‘hidden’失效的情况时，可以根据需要来改变元素的包含块来达到正义的目的。
+</p>
+
+</body>
+</html>

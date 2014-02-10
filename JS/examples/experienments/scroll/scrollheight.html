@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="text/javascript">
+        function scrollHeight1(){
+            alert("page scrollHeight:"+document.getElementById("page").scrollHeight);
+            alert("body scrollHeight:"+document.body.scrollHeight);
+            alert("html scrollHeight:"+document.documentElement.scrollHeight);
+
+            //alert("body tagName:"+document.body.tagName);//return BODY
+            //alert("documentElement tagName:"+document.documentElement.tagName); //return HTML
+        }
+    </script>
+</head>
+<body>
+
+<div id="page">
+    <div style="height:10px;background: blue">
+        <div style="height:450px;background: green">
+            <div style="height: 800px;background: #ddd">
+                dddd
+            </div>
+        </div>
+    </div>
+</div>
+
+<br/>
+<input type="button" onclick="scrollHeight1()" value="获取PAGE的高度"/>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+
+<div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_list2" dir="ltr" style="width: 943px; ">
+    <div class="ui-widget-overlay jqgrid-overlay" id="lui_list2"></div>
+    <div class="loading ui-state-default ui-state-active" id="load_list2" style="display: none; ">读取中...</div>
+    <div class="ui-jqgrid-view" id="gview_list2" style="width: 943px; ">
+        <div class="ui-jqgrid-titlebar ui-widget-header ui-corner-top ui-helper-clearfix" style="display: none; "><a
+                role="link" href="javascript:void(0)" class="ui-jqgrid-titlebar-close HeaderButton"
+                style="right: 0px; "><span class="ui-icon ui-icon-circle-triangle-n"></span></a><span
+                class="ui-jqgrid-title"></span></div>
+        <div style="width: 943px; " class="ui-state-default ui-jqgrid-hdiv">
+            <div class="ui-jqgrid-hbox">
+                <table class="ui-jqgrid-htable" style="width: 943px; " role="grid" aria-labelledby="gbox_list2"
+                       cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                    <tr class="ui-jqgrid-labels" role="rowheader">
+                        <th id="list2_invid" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
+                            style="width: 51px; "><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                        style="cursor: col-resize; ">&nbsp;</span>
+
+                            <div id="jqgh_list2_invid" class="ui-jqgrid-sortable">编号<span class="s-ico"
+                                                                                          style="display:none"><span
+                                    sort="asc"
+                                    class="ui-grid-ico-sort ui-icon-asc ui-i-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                    sort="desc"
+                                    class="ui-grid-ico-sort ui-icon-desc ui-i-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
+                            </div>
+                        </th>
+                        <th id="list2_client_id" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
+                            style="width: 102px; "><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                         style="cursor: col-resize; ">&nbsp;</span>
+
+                            <div id="jqgh_list2_client_id" class="ui-jqgrid-sortable">客户<span class="s-ico"
+                                                                                              style=""><span sort="asc"
+                                                                                                             class="ui-grid-ico-sort ui-icon-asc ui-i-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                    sort="desc"
+                                    class="ui-grid-ico-sort ui-icon-desc ui-i-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"
+                                    style="display: none; margin-left: 0px; "></span></span></div>
+                        </th>
+                        <th id="list2_invdate" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
+                            style="width: 102px; "><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                         style="cursor: col-resize; ">&nbsp;</span>
+
+                            <div id="jqgh_list2_invdate" class="ui-jqgrid-sortable">日期<span class="s-ico"
+                                                                                            style="display:none"><span
+                                    sort="asc"
+                                    class="ui-grid-ico-sort ui-icon-asc ui-i-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                    sort="desc"
+                                    class="ui-grid-ico-sort ui-icon-desc ui-i-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
+                            </div>
+                        </th>
+                        <th id="list2_amount" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
+                            style="width: 184px; "><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                         style="cursor: col-resize; ">&nbsp;</span>
+
+                            <div id="jqgh_list2_amount" class="ui-jqgrid-sortable">数量<span class="s-ico"
+                                                                                           style="display:none"><span
+                                    sort="asc"
+                                    class="ui-grid-ico-sort ui-icon-asc ui-i-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                    sort="desc"
+                                    class="ui-grid-ico-sort ui-icon-desc ui-i-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
+                            </div>
+                        </th>
+                        <th id="list2_tax" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
+                            style="width: 184px; "><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                         style="cursor: col-resize; ">&nbsp;</span>
+
+                            <div id="jqgh_list2_tax" class="ui-jqgrid-sortable">计税<span class="s-ico"
+                                                                                        style="display:none"><span
+                                    sort="asc"
+                                    class="ui-grid-ico-sort ui-icon-asc ui-i-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                    sort="desc"
+                                    class="ui-grid-ico-sort ui-icon-desc ui-i-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
+                            </div>
+                        </th>
+                        <th id="list2_total" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
+                            style="width: 184px; "><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr"
+                                                         style="cursor: col-resize; ">&nbsp;</span>
+
+                            <div id="jqgh_list2_total" class="ui-jqgrid-sortable">总数<span class="s-ico"
+                                                                                          style="display:none"><span
+                                    sort="asc"
+                                    class="ui-grid-ico-sort ui-icon-asc ui-i-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                    sort="desc"
+                                    class="ui-grid-ico-sort ui-icon-desc ui-i-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
+                            </div>
+                        </th>
+                        <th id="list2_note" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr"
+                            style="width: 101px; ">
+                            <div id="jqgh_list2_note" class="ui-jqgrid-sortable">备注<span class="s-ico"
+                                                                                         style="display:none"><span
+                                    sort="asc"
+                                    class="ui-grid-ico-sort ui-icon-asc ui-i-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span
+                                    sort="desc"
+                                    class="ui-grid-ico-sort ui-icon-desc ui-i-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span>
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="ui-jqgrid-bdiv" style="height: auto; width: 943px; ">
+            <div style="position:relative;">
+                <div></div>
+                <table id="list2" tabindex="0" cellspacing="0" cellpadding="0" border="0" role="grid"
+                       aria-multiselectable="false" aria-labelledby="gbox_list2" class="ui-jqgrid-btable"
+                       style="width: 943px; ">
+                    <tbody>
+                    <tr class="jqgfirstrow" role="row" style="height:auto">
+                        <td role="gridcell" style="height: 0px; width: 51px; " class=""></td>
+                        <td role="gridcell" style="height: 0px; width: 102px; " class=""></td>
+                        <td role="gridcell" style="height: 0px; width: 102px; " class=""></td>
+                        <td role="gridcell" style="height: 0px; width: 184px; " class=""></td>
+                        <td role="gridcell" style="height: 0px; width: 184px; " class=""></td>
+                        <td role="gridcell" style="height: 0px; width: 184px; " class=""></td>
+                        <td role="gridcell" style="height: 0px; width: 101px; " class=""></td>
+                    </tr>
+                    <tr id="list2ghead_0_0" role="row" class="ui-widget-content jqgroup ui-row-ltr list2ghead_0">
+                        <td style="padding-left:0px;" colspan="7"><span style="cursor:pointer;"
+                                                                        class="ui-icon ui-icon-circlesmall-plus tree-wrap-ltr"
+                                                                        onclick="jQuery('#list2').jqGrid('groupingToggle','list2ghead_0_0');return false;"></span><a
+                                href="#">客户2045,共5个</a></td>
+                    </tr>
+                    <tr role="row" id="1" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"
+                        style="display:none;">
+                        <td role="gridcell" style="text-align:center;" title="1175" aria-describedby="list2_invid">1175
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2045" aria-describedby="list2_client_id">
+                            2045
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2012-03-29"
+                            aria-describedby="list2_invdate">2012-03-29
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="123.00" aria-describedby="list2_amount">
+                            123.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="456.00" aria-describedby="list2_tax">456.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="789.00" aria-describedby="list2_total">
+                            789.00
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="123456789" aria-describedby="list2_note">
+                            123456789
+                        </td>
+                    </tr>
+                    <tr role="row" id="2" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"
+                        style="display:none;">
+                        <td role="gridcell" style="text-align:center;" title="1198" aria-describedby="list2_invid">1198
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2045" aria-describedby="list2_client_id">
+                            2045
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2010-01-19"
+                            aria-describedby="list2_invdate">2010-01-19
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="12,155.00" aria-describedby="list2_amount">
+                            12,155.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="63.00" aria-describedby="list2_tax">63.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="185.00" aria-describedby="list2_total">
+                            185.00
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="This is record 19"
+                            aria-describedby="list2_note">This is record 19
+                        </td>
+                    </tr>
+                    <tr role="row" id="3" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"
+                        style="display:none;">
+                        <td role="gridcell" style="text-align:center;" title="1195" aria-describedby="list2_invid">1195
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2045" aria-describedby="list2_client_id">
+                            2045
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2010-01-16"
+                            aria-describedby="list2_invdate">2010-01-16
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="33.00" aria-describedby="list2_amount">
+                            33.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="33.00" aria-describedby="list2_tax">33.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="179.00" aria-describedby="list2_total">
+                            179.00
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="This is record 16EE"
+                            aria-describedby="list2_note">This is record 16EE
+                        </td>
+                    </tr>
+                    <tr role="row" id="4" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"
+                        style="display:none;">
+                        <td role="gridcell" style="text-align:center;" title="1193" aria-describedby="list2_invid">1193
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2045" aria-describedby="list2_client_id">
+                            2045
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2012-03-29"
+                            aria-describedby="list2_invdate">2012-03-29
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="117.00" aria-describedby="list2_amount">
+                            117.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="76.00" aria-describedby="list2_tax">76.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="176.00" aria-describedby="list2_total">
+                            176.00
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="This is record 14"
+                            aria-describedby="list2_note">This is record 14
+                        </td>
+                    </tr>
+                    <tr role="row" id="5" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"
+                        style="display:none;">
+                        <td role="gridcell" style="text-align:center;" title="11801" aria-describedby="list2_invid">
+                            11801
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2045" aria-describedby="list2_client_id">
+                            2045
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="2010-01-01"
+                            aria-describedby="list2_invdate">2010-01-01
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="104.00" aria-describedby="list2_amount">
+                            104.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="45.00" aria-describedby="list2_tax">45.00
+                        </td>
+                        <td role="gridcell" style="text-align:right;" title="149.00" aria-describedby="list2_total">
+                            149.00
+                        </td>
+                        <td role="gridcell" style="text-align:center;" title="This is record 1"
+                            aria-describedby="list2_note">This is record 1
+                        </td>
+                    </tr>
+                    <tr role="row" class="ui-widget-content jqfoot ui-row-ltr">
+                        <td style="text-align:center;" aria-describedby="list2_invid">&nbsp;</td>
+                        <td style="text-align:center;" aria-describedby="list2_client_id">共5个</td>
+                        <td style="text-align:center;" aria-describedby="list2_invdate">&nbsp;</td>
+                        <td style="text-align:right;" aria-describedby="list2_amount">小计12,532.00</td>
+                        <td style="text-align:right;" aria-describedby="list2_tax">小计673.00</td>
+                        <td style="text-align:right;" aria-describedby="list2_total">小计1,478.00</td>
+                        <td style="text-align:center;" aria-describedby="list2_note">&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ui-jqgrid-sdiv" style="width: 943px; ">
+            <div class="ui-jqgrid-hbox">
+                <table role="grid" style="width: 943px; " class="ui-jqgrid-ftable" cellspacing="0" cellpadding="0"
+                       border="0">
+                    <tbody>
+                    <tr role="row" class="ui-widget-content footrow footrow-ltr">
+                        <td role="gridcell" style="text-align: center; width: 51px; " aria-describedby="list2_invid"
+                            title="Total:" class="">Total:
+                        </td>
+                        <td role="gridcell" style="text-align: center; width: 102px; "
+                            aria-describedby="list2_client_id" title="5" class="">5
+                        </td>
+                        <td role="gridcell" style="text-align: center; width: 102px; " aria-describedby="list2_invdate"
+                            class="">&nbsp;</td>
+                        <td role="gridcell" style="text-align: right; width: 184px; " aria-describedby="list2_amount"
+                            title="12,532.00" class="">12,532.00
+                        </td>
+                        <td role="gridcell" style="text-align: right; width: 184px; " aria-describedby="list2_tax"
+                            title="673.00" class="">673.00
+                        </td>
+                        <td role="gridcell" style="text-align: right; width: 184px; " aria-describedby="list2_total"
+                            title="1,478.00" class="">1,478.00
+                        </td>
+                        <td role="gridcell" style="text-align: center; width: 101px; " aria-describedby="list2_note"
+                            class="">&nbsp;</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="ui-jqgrid-resize-mark" id="rs_mlist2">&nbsp;</div>
+    <div id="pagerlist2" style="width: 943px; " class="ui-state-default ui-jqgrid-pager ui-corner-bottom" dir="ltr">
+        <div id="pg_pagerlist2" class="ui-pager-control" role="group">
+            <table cellspacing="0" cellpadding="0" border="0" class="ui-pg-table"
+                   style="width:100%;table-layout:fixed;height:100%;" role="row">
+                <tbody>
+                <tr>
+                    <td id="pagerlist2_left" align="left" class=""></td>
+                    <td id="pagerlist2_center" align="center" style="white-space:pre;" class=""></td>
+                    <td id="pagerlist2_right" align="right" style="width: 408px; " class="">
+                        <table cellspacing="0" cellpadding="0" border="0" style="table-layout:auto;"
+                               class="ui-pg-table">
+                            <tbody>
+                            <tr>
+                                <td dir="ltr" class=""><input class="ui-pg-input" type="text" size="2" maxlength="7"
+                                                              value="0" role="textbox"> 共 <span
+                                        id="sp_1_pagerlist2">129</span> 页
+                                </td>
+                                <td id="first_pagerlist2" class="ui-pg-button ui-corner-all ui-state-disabled"
+                                    title="第一页"><span class="ui-icon ui-icon-seek-first"></span></td>
+                                <td id="prev_pagerlist2" class="ui-pg-button ui-corner-all ui-state-disabled"
+                                    title="上一页"><span class="ui-icon ui-icon-seek-prev"></span></td>
+                                <td id="next_pagerlist2" class="ui-pg-button ui-corner-all" title="下一页"><span
+                                        class="ui-icon ui-icon-seek-next"></span></td>
+                                <td id="last_pagerlist2" class="ui-pg-button ui-corner-all" title="最后一页"><span
+                                        class="ui-icon ui-icon-seek-end"></span></td>
+                                <td dir="ltr" class="">每页显示<select class="ui-pg-selbox" role="listbox">
+                                    <option role="option" value="5">5</option>
+                                    <option role="option" value="10">10</option>
+                                    <option role="option" value="20">20</option>
+                                    <option role="option" value="40">40</option>
+                                    <option role="option" value="50" selected="selected">50</option>
+                                </select></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

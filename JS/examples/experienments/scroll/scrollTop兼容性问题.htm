@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>浏览器 窗口 scrollTop 的兼容性问题 | 刘大宝——qiongbupa</title>
+<link rel="stylesheet" href="http://www.qiongbupa.com/wp-content/themes/big-city/style.css" type="text/css" media="screen" />
+<link rel="pingback" href="http://www.qiongbupa.com/xmlrpc.php" />
+	<link rel='archives' title='April 2012' href='http://www.qiongbupa.com/archives/date/2012/04' />
+	<link rel='archives' title='February 2012' href='http://www.qiongbupa.com/archives/date/2012/02' />
+	<link rel='archives' title='January 2012' href='http://www.qiongbupa.com/archives/date/2012/01' />
+	<link rel='archives' title='December 2011' href='http://www.qiongbupa.com/archives/date/2011/12' />
+	<link rel='archives' title='November 2011' href='http://www.qiongbupa.com/archives/date/2011/11' />
+	<link rel='archives' title='October 2011' href='http://www.qiongbupa.com/archives/date/2011/10' />
+	<link rel='archives' title='September 2011' href='http://www.qiongbupa.com/archives/date/2011/09' />
+	<link rel='archives' title='August 2011' href='http://www.qiongbupa.com/archives/date/2011/08' />
+	<link rel='archives' title='June 2011' href='http://www.qiongbupa.com/archives/date/2011/06' />
+	<link rel='archives' title='May 2011' href='http://www.qiongbupa.com/archives/date/2011/05' />
+	<link rel='archives' title='March 2011' href='http://www.qiongbupa.com/archives/date/2011/03' />
+	<link rel='archives' title='February 2011' href='http://www.qiongbupa.com/archives/date/2011/02' />
+	<link rel='archives' title='January 2011' href='http://www.qiongbupa.com/archives/date/2011/01' />
+	<link rel='archives' title='December 2010' href='http://www.qiongbupa.com/archives/date/2010/12' />
+	<link rel='archives' title='November 2010' href='http://www.qiongbupa.com/archives/date/2010/11' />
+	<link rel='archives' title='October 2010' href='http://www.qiongbupa.com/archives/date/2010/10' />
+	<link rel='archives' title='September 2010' href='http://www.qiongbupa.com/archives/date/2010/09' />
+	<link rel='archives' title='August 2010' href='http://www.qiongbupa.com/archives/date/2010/08' />
+	<link rel='archives' title='June 2010' href='http://www.qiongbupa.com/archives/date/2010/06' />
+	<link rel='archives' title='April 2010' href='http://www.qiongbupa.com/archives/date/2010/04' />
+	<link rel='archives' title='March 2010' href='http://www.qiongbupa.com/archives/date/2010/03' />
+	<link rel='archives' title='January 2010' href='http://www.qiongbupa.com/archives/date/2010/01' />
+	<link rel='archives' title='December 2009' href='http://www.qiongbupa.com/archives/date/2009/12' />
+	<link rel='archives' title='November 2009' href='http://www.qiongbupa.com/archives/date/2009/11' />
+	<link rel='archives' title='October 2009' href='http://www.qiongbupa.com/archives/date/2009/10' />
+	<link rel='archives' title='September 2009' href='http://www.qiongbupa.com/archives/date/2009/09' />
+	<link rel='archives' title='August 2009' href='http://www.qiongbupa.com/archives/date/2009/08' />
+	<link rel='archives' title='July 2009' href='http://www.qiongbupa.com/archives/date/2009/07' />
+	<link rel='archives' title='June 2009' href='http://www.qiongbupa.com/archives/date/2009/06' />
+<link rel="alternate" type="application/rss+xml" title="刘大宝——qiongbupa &raquo; Feed" href="http://www.qiongbupa.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="刘大宝——qiongbupa &raquo; Comments Feed" href="http://www.qiongbupa.com/comments/feed" />
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.06 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-4451761-2']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	// End of Google Analytics for WordPress by Yoast v4.0
+	//]]></script>
+<link rel="alternate" type="application/rss+xml" title="刘大宝——qiongbupa &raquo; 浏览器 窗口 scrollTop 的兼容性问题 Comments Feed" href="http://www.qiongbupa.com/archives/887/feed" />
+<link rel='stylesheet' id='anyShare-css'  href='http://www.qiongbupa.com/wp-content/plugins/anyshare//anyShare.css?ver=3.3.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/prototype.js?ver=1.6.1'></script>
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/scriptaculous/wp-scriptaculous.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/scriptaculous/builder.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/scriptaculous/effects.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/scriptaculous/dragdrop.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/scriptaculous/slider.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/scriptaculous/controls.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://www.qiongbupa.com/wp-includes/js/jquery/jquery.js?ver=1.7.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.qiongbupa.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.qiongbupa.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='&lt;img display:none 图片隐藏 浏览器仍然加载' href='http://www.qiongbupa.com/archives/884' />
+<link rel='next' title='寿星万年历 元旦不显示  bug修改' href='http://www.qiongbupa.com/archives/897' />
+<meta name="generator" content="WordPress 3.3.1" />
+<link rel='shortlink' href='http://www.qiongbupa.com/?p=887' />
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[127,236] -->
+<meta name="description" content="今天做图片lazy load 需要得到页面的scrolltop值 当然如果有jquery 那么就直接 $(ele).scrollTop(); 好了，" />
+<meta name="keywords" content="冷" />
+<link rel="canonical" href="http://www.qiongbupa.com/archives/887" />
+<!-- /all in one seo pack -->
+<script type="text/javascript" src="http://www.qiongbupa.com/wp-content/plugins/audio-player/assets/audio-player.js?ver=2.0.4.1"></script>
+<script type="text/javascript">AudioPlayer.setup("http://www.qiongbupa.com/wp-content/plugins/audio-player/assets/player.swf?ver=2.0.4.1", {width:"290",animation:"yes",encode:"yes",initialvolume:"60",remaining:"no",noinfo:"no",buffer:"5",checkpolicy:"no",rtl:"no",bg:"6a60f0",text:"333333",leftbg:"CCCCCC",lefticon:"333333",volslider:"666666",voltrack:"FFFFFF",rightbg:"B4B4B4",rightbghover:"999999",righticon:"333333",righticonhover:"FFFFFF",track:"FFFFFF",loader:"009900",border:"CCCCCC",tracker:"DDDDDD",skip:"666666",pagebg:"FFFFFF",transparentpagebg:"yes"});</script>
+<script src='http://www.qiongbupa.com/wp-content/plugins/twitter-friends/ajax.js'></script>
+<script>
+function cancel_post()
+{
+ document.getElementById('post_form').innerHTML = "<a href='javascript:;' onClick='post_to_twitter_form()'>Post to Twitter</a>";
+}
+
+function cancel_reply(id)
+{
+ document.getElementById('reply_div_post_'+id).innerHTML = "";
+}
+
+function post_to_twitter_form()
+{
+ document.getElementById('post_form').innerHTML = "<form>Post (140 chars or less):<br> <textarea name='post_text' id='post_text' onKeyDown='CountLeft(this.form.post_text,this.form.left,140);' onKeyUp='CountLeft(this.form.post_text,this.form.left,140);' style='width:98%' rows='5'></textarea><br>Remaining: <input readonly type='text' name='left' size=3 maxlength=3 value='140'>  <input onClick='submit_post(\"http://www.qiongbupa.com/wp-content/plugins/twitter-friends/ajax.php\")' type='button' id='post_button' value='Post' /><input type='button' onClick='cancel_post();' value='cancel' /></form>";
+}
+
+function reply_form(username,id)
+{
+document.getElementById('reply_div_post_'+id).innerHTML = "<form>Post (140 chars or less):<br> <textarea name='reply_text' id='reply_text' onKeyDown='CountLeft(this.form.reply_text,this.form.reply_left,140);' onKeyUp='CountLeft(this.form.reply_text,this.form.reply_left,140);' style='width:98%' rows='5'>@"+username+"</textarea><br>Remaining: <input readonly type='text' name='reply_left' size=3 maxlength=3 value=''>  <input onClick='reply_post(\"http://www.qiongbupa.com/wp-content/plugins/twitter-friends/ajax.php\",\""+username+"\", \""+id+"\")' type='button' id='post_button' value='Reply' /><input type='button' onClick='cancel_reply("+id+");' value='cancel' /></form>";
+CountLeft(this.form.reply_text,this.form.reply_left,140);
+}
+
+function CountLeft(field, count, max) {
+ // if the length of the string in the input field is greater than the max value, trim it 
+ if (field.value.length > max)
+ field.value = field.value.substring(0, max);
+ else
+ // calculate the remaining characters  
+ count.value = max - field.value.length;
+ }
+</script>
+		<link rel="stylesheet" href="http://www.qiongbupa.com/wp-content/plugins/nktagcloud/css/page.css?v=0.9.0" type="text/css" media="all" /> </head>
+<body class="single single-post postid-887 single-format-standard">
+    <div id="header-wrapper">
+        <div id="header">
+            <h1><a href="http://www.qiongbupa.com">刘大宝——qiongbupa</a></h1>
+            <h2>我们虽然穷，但是不打架，不骂人，不吹牛，我们有骨气，别人就会尊敬我们</h2>
+        </div>
+    </div>
+    <div id="access-wrapper">
+        <div id="access" role="navigation">
+            <div class="menu"><ul><li class="page_item page-item-2"><a href="http://www.qiongbupa.com/about">About</a></li><li class="page_item page-item-142"><a href="http://www.qiongbupa.com/javascript-ninja">javascript Ninja</a></li><li class="page_item page-item-707"><a href="http://www.qiongbupa.com/%e5%a4%a9%e4%bd%bf%e5%a6%88%e5%a6%88%e5%bf%97%e6%84%bf%e8%80%85%e7%bf%bb%e8%af%91%e9%a1%b9%e7%9b%ae">天使妈妈志愿者翻译项目</a></li></ul></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div id="root">
+        <div id="main">    <div id="content">
+                	        		<div class="post-887 post type-post status-publish format-standard hentry category-1" id="post-887">
+        		    <div class="entry-title">
+                    <h2><a href="http://www.qiongbupa.com/archives/887" rel="bookmark" title="Permalink to: 浏览器 窗口 scrollTop 的兼容性问题">浏览器 窗口 scrollTop 的兼容性问题</a></h2>
+                    </div>
+                    <div class="postdata">
+                        <span class="vcard">Posted by <span class="fn">bower</span></span>
+                        <span class="published posted_date" title="2011-12-15 18:31:27+00:00">on December 15, 2011</span>
+                        <br/>
+                        <a href="http://www.qiongbupa.com/archives/category/whatever/%e5%86%b7" title="View all posts in 冷" rel="category tag">冷</a>                    </div>
+                    <div class="entry-content"><p class="bookmark-me">分享给你的朋友-><a title="technorati.com" href="http://www.technorati.com/faves?add=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.technorati.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/technorati.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="del.icio.us" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','del.icio.us']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/delicious.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="digg.com" href="http://digg.com/submit?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','digg.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/digg.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="www.facebook.com" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;t=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.facebook.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/facebook.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="bookmarks.yahoo.com" href="http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','bookmarks.yahoo.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/yahoo.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="www.google.com" href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.google.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/google.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="twitthis.com" href="http://twitthis.com/twit?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','twitthis.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/twitter.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="myspace.com" href="http://www.myspace.com/Modules/PostTo/Pages/?u=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.myspace.com']);"%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/myspace.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="haohaoreport.com" href="http://www.haohaoreport.com/submit.php?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.haohaoreport.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/haohao.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> </p><p>今天做图片lazy load 需要得到页面的scrolltop值</p>
+<p>当然如果有jquery 那么就直接<br />
+$(ele).scrollTop();</p>
+<p><span id="more-887"></span></p>
+<p>好了， 本文结束。。</p>
+<p>不过 事实是没有这么舒服， 没有jquery..</p>
+<p>好吧， 你不要告诉我去官网下一个。。</p>
+<p>故事一般都是曲折的， 所以jquery 是不能 也不会有的。。</p>
+<p>言归正传 这个值大家觉得烦 是因为有很多类似的</p>
+<p>window.pageYOffset 被所有浏览器支持除了 IE 6, IE 7, IE 8, 不关doctype的事， 注IE9 开始支持此属性。</p>
+<p>window.scrollY 被Firefox, Google Chrome , Safari支持 不关doctype的事, 注IE9 不支持此属性</p>
+<p>在（quirk 模式）的时候 document.body.scrollTop 在 Internet Explorer, Firefox, Opera, Google Chrome Safari 返回正确的值。<br />
+在（quirk 模式）的时候 document.documentElement.scrollTop 永远是零</p>
+<p>非quirk模式的时候 document.documentElement.scrollTop Internet Explorer, Firefox and Opera 返回正确的值 但是在 Google Chrome ，Safari 中永远是零</p>
+<p>特整理一个表格如下</p>
+<table width="713" border="0" cellspacing="0" cellpadding="0">
+<colgroup>
+<col width="217" />
+<col width="106" />
+<col width="102" />
+<col span="4" width="72" /> </colgroup>
+<tbody>
+<tr>
+<td width="217" height="18">非quirk模式</td>
+<td width="106">IE6 7 8</td>
+<td width="102">IE9</td>
+<td width="72">firefox</td>
+<td width="72">opera</td>
+<td width="72">chrome</td>
+<td width="72">safari</td>
+</tr>
+<tr>
+<td height="18">scrollY</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+</tr>
+<tr>
+<td height="18">pageYOffset</td>
+<td>undefined</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+</tr>
+<tr>
+<td height="18">body.scrollTop</td>
+<td style="text-align: left;" align="right">0</td>
+<td style="text-align: left;" align="right">0</td>
+<td style="text-align: left;" align="right">0</td>
+<td align="right">0</td>
+<td>正确</td>
+<td>正确</td>
+</tr>
+<tr>
+<td height="19">documentElement.scrollTop</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td style="text-align: left;" align="right">0</td>
+<td style="text-align: left;" align="right">0</td>
+</tr>
+<tr>
+<td height="19"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td height="18">quirk 模式</td>
+<td>IE6 7 8</td>
+<td>IE9</td>
+<td>firefox</td>
+<td>opera</td>
+<td>chrome</td>
+<td>safari</td>
+</tr>
+<tr>
+<td height="18">scrollY</td>
+<td>undefined</td>
+<td>undefined</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+</tr>
+<tr>
+<td height="18">pageYOffset</td>
+<td>undefined</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+</tr>
+<tr>
+<td height="18">body.scrollTop</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+<td>正确</td>
+</tr>
+<tr>
+<td height="19">documentElement.scrollTop</td>
+<td style="text-align: left;" align="right">0</td>
+<td>正确</td>
+<td style="text-align: left;" align="right">0</td>
+<td style="text-align: left;" align="right">0</td>
+<td style="text-align: left;" align="right">0</td>
+<td style="text-align: left;" align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p>以上在win7环境下测试</p>
+<p>可以看出是非常凌乱的</p>
+<p>只在quirk模式下， body.scrollTop是被所有都支持的</p>
+<p>所以这个表大家也不用 也没有必要去记， 只要记住一条</p>
+<p>if(window.pageYOffset){//这一条滤去了大部分， 只留了IE678</p>
+<p>}else if(document.documentElement.scrollTop ){//IE678 的非quirk模式</p>
+<p>}else if(document.body.scrolltop){//IE678 的quirk模式</p>
+<p>}</p>
+<p>原则是看pageYOffset 然后看documentElement.scrollTop, 最后是document.body.scrollTop</p>
+<p>当然 也可以直接scrollTop 而不使用pageYOffset</p>
+<p>以下是MDN 提供的兼容性代码</p>
+<p>scrolltop = (((t = document.documentElement) || (t = document.body.parentNode)) &amp;&amp; typeof t.scrollTop == &#8216;number&#8217; ? t : document.body).scrollTop</p>
+<p>遇到这样一个棘手的问题：document.body.scrollTop的值始终为0，于是到处找相关解决办法。原来是DTD的问题,要是页面直接用开头的话就没有问题了。但是要符合web标准,DTD当 然是不能少的。使用DTD时用document.documentElement.scrollTop代替 document.body.scrollTop就可以了。 但是有个浏览器兼容的问题，document.documentElement.scrollTop在IE中有效，但是在Firefox下是无效的。 总结： 去掉DTD后，在IE、Firefox下document.body.scrollTop值正常。 加上DTD，将document.documentElement.scrollTop代替document.body.scrollTop 后，IE中显示正常，在Firefox下document.documentElement.scrollTop（即 document.body.scrollTop）的值仍然是始终为0。</p>
+<p>&nbsp;</p>
+<p id="anyShare"><b>分享到：</b><a id="renren" href="http://share.renren.com/share/buttonshare.do?link=http://www.qiongbupa.com/archives/887&title=浏览器 窗口 scrollTop 的兼容性问题" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','share.renren.com']);" target="_blank">人人网</a><a id="kaixin" href="http://www.kaixin001.com/repaste/share.php?rurl=http://www.qiongbupa.com/archives/887&rtitle=浏览器 窗口 scrollTop 的兼容性问题" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.kaixin001.com']);" target="_blank">开心网</a><a id="qqtwet" href="http://v.t.qq.com/share/share.php?url=http://www.qiongbupa.com/archives/887&title=浏览器 窗口 scrollTop 的兼容性问题" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','v.t.qq.com']);" target="_blank">腾讯微博</a><a id="sntwet" href="http://v.t.sina.com.cn/share/share.php?url=http://www.qiongbupa.com/archives/887&title=浏览器 窗口 scrollTop 的兼容性问题" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','v.t.sina.com.cn']);" target="_blank">新浪微博</a><a id="douban" href="http://www.douban.com/recommend/?url=http://www.qiongbupa.com/archives/887&title=浏览器 窗口 scrollTop 的兼容性问题" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.douban.com']);" target="_blank">豆瓣分享</a><a id="qqzone" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.qiongbupa.com/archives/887" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','sns.qzone.qq.com']);" target="_blank">腾讯空间</a><a id="bdcang" href="http://cang.baidu.com/do/add?iu=http://www.qiongbupa.com/archives/887&it=浏览器 窗口 scrollTop 的兼容性问题" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','cang.baidu.com']);" target="_blank">百度搜藏</a><a id="qqfavs" href="http://shuqian.qq.com/post?uri=http://www.qiongbupa.com/archives/887&title=浏览器 窗口 scrollTop 的兼容性问题" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','shuqian.qq.com']);" target="_blank">腾讯书签</a><br clear="all" /></p><p class="bookmark-me">分享给你的朋友-><a title="technorati.com" href="http://www.technorati.com/faves?add=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.technorati.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/technorati.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="del.icio.us" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','del.icio.us']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/delicious.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="digg.com" href="http://digg.com/submit?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','digg.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/digg.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="www.facebook.com" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;t=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.facebook.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/facebook.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="bookmarks.yahoo.com" href="http://bookmarks.yahoo.com/toolbar/savebm?opener=tb&amp;u=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','bookmarks.yahoo.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/yahoo.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="www.google.com" href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.google.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/google.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="twitthis.com" href="http://twitthis.com/twit?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','twitthis.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/twitter.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="myspace.com" href="http://www.myspace.com/Modules/PostTo/Pages/?u=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.myspace.com']);"%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/myspace.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> <a title="haohaoreport.com" href="http://www.haohaoreport.com/submit.php?url=http%3A%2F%2Fwww.qiongbupa.com%2Farchives%2F887&amp;title=%E6%B5%8F%E8%A7%88%E5%99%A8+%E7%AA%97%E5%8F%A3+scrollTop+%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','www.haohaoreport.com']);" target="_blank" rel="nofollow"><img src="http://www.qiongbupa.com/wp-content/plugins/bookmark-me/images/haohao.png" style="margin:0;border:0;padding:0" alt="bookmark"/></a> </p></div>
+                            		</div>
+                
+
+
+<!-- You can start editing here. -->
+
+
+            <!-- If comments are open, but there are no comments. -->
+    
+
+
+
+
+
+
+    								<div id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/archives/887#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://www.qiongbupa.com/wp-comments-post.php" method="post" id="commentform">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">Email</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">Website</label><input id="url" name="url" type="text" value="" size="30" /></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment" />
+							<input type='hidden' name='comment_post_ID' value='887' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</p>
+									<div style="display:block;" id="secureimgdiv">
+				<p><label for="securitycode">Anti-spam word: (Required)</label><span style="color:#FF0000;">*</span><br />
+				<small>To prove you're a person (not a spam script), type the security word shown in the picture. Click on the picture to hear an audio file of the word.</small><br />
+				<input type="text" name="securitycode" id="securitycode" size="30" tabindex="4" />
+				<input id="cas_match" type="hidden" name="matchthis" value="254208" />
+				<a id="cas_link" href="http://www.qiongbupa.com/wp-content/plugins/custom-anti-spam/custom_anti_spam.php?audioselect=254208" rel="nofollow" title="Click to hear an audio file of the anti-spam word">
+				<img id="cas_image" src="http://www.qiongbupa.com/wp-content/plugins/custom-anti-spam/custom_anti_spam.php?antiselect=254208" alt="Click to hear an audio file of the anti-spam word" style="border:1px solid black;vertical-align:top;height:50px;width:160px;" /></a></p>
+			</div>
+			<script language='JavaScript' type='text/javascript'>
+            <!--
+                var commentinput = document.getElementById("comment").parentNode;
+                var submitp = commentinput.parentNode;
+                var substitution2 = document.getElementById("secureimgdiv");
+                submitp.insertBefore(substitution2, commentinput);
+            // -->
+            </script>
+					</form>
+							</div><!-- #respond -->
+			<script type="text/javascript" charset="utf-8">
+    jQuery(document).ready(function() {
+        jQuery('#commentform').submit(function() {
+            _gaq.push(
+                ['_setAccount','UA-4451761-2'],
+                ['_trackEvent','comment']
+            );
+        });
+    });    
+</script>
+			        	    	    </div>
+		<div id="sidebar">
+    <div class="box">			<div class="textwidget"><form action="http://www.google.com/cse" id="cse-search-box" target="_blank">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-7151536628824273:dhum9f8g58d" />
+    <input type="hidden" name="ie" value="GB2312" />
+    <input type="text" name="q" size="39" />
+    <input type="submit" name="sa" value="&#x641c;&#x7d22;" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=zh-Hans"></script>
+</div>
+		</div><div class="box">			<div class="textwidget"><script type="text/javascript"><!--
+google_ad_client = "pub-7151536628824273";
+/* 300x250, 创建于 10-11-11 */
+google_ad_slot = "4113808915";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+		</div><div class="box"><h3>Tags</h3><a href='http://www.qiongbupa.com/archives/tag/0day-%e6%bc%8f%e6%b4%9e'  class='tag-link-24 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>0day 漏洞</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/amazon'  class='tag-link-71 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>amazon</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/apple'  class='tag-link-50 nktagcloud-14' title='11 topics' rel="tag" style='font-size: 14.99pt;'>apple/Mac</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/asus'  class='tag-link-35 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>asus</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/bug'  class='tag-link-90 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>bug</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/centos'  class='tag-link-17 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>centos</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/chrome'  class='tag-link-53 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>chrome</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/cn%e5%9f%9f%e5%90%8d'  class='tag-link-64 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>cn域名</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/cocoa'  class='tag-link-60 nktagcloud-12' title='3 topics' rel="tag" style='font-size: 12.6pt;'>cocoa</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/coldfusion'  class='tag-link-7 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>coldfusion</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/cross-browser'  class='tag-link-14 nktagcloud-18' title='22 topics' rel="tag" style='font-size: 18.27pt;'>cross browser</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/cross-browser'  class='tag-link-14 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>cross browser</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/css'  class='tag-link-81 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>css</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/design'  class='tag-link-51 nktagcloud-12' title='3 topics' rel="tag" style='font-size: 12.6pt;'>Design</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ec2'  class='tag-link-72 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>ec2</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/fanfou'  class='tag-link-22 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>fanfou</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/filezilla'  class='tag-link-73 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>filezilla</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/firebug'  class='tag-link-56 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>firebug</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/firefox4'  class='tag-link-54 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>firefox4</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/freebsd'  class='tag-link-61 nktagcloud-13' title='7 topics' rel="tag" style='font-size: 13.79pt;'>FreeBSD</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ftp'  class='tag-link-74 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>ftp</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/gcc'  class='tag-link-59 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>gcc</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/gnome'  class='tag-link-18 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>gnome</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/google'  class='tag-link-48 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>Google</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/gvim'  class='tag-link-75 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>gvim</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/html-standard'  class='tag-link-78 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>html standard</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/html-tab'  class='tag-link-20 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>html tab</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ie'  class='tag-link-44 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>IE</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/iphone'  class='tag-link-58 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>iphone</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ipod-touch'  class='tag-link-65 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>ipod touch</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/javascript'  class='tag-link-4 nktagcloud-21' title='33 topics' rel="tag" style='font-size: 21.55pt;'>javascript</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/javascript'  class='tag-link-4 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>javascript</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/javascript-debug'  class='tag-link-19 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>javascript debug</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/jquery'  class='tag-link-40 nktagcloud-12' title='4 topics' rel="tag" style='font-size: 12.9pt;'>jQuery</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/karmic'  class='tag-link-33 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>karmic</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/kernel'  class='tag-link-32 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>kernel</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/linux'  class='tag-link-39 nktagcloud-13' title='5 topics' rel="tag" style='font-size: 13.19pt;'>linux</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/all-about-linux'  class='tag-link-5 nktagcloud-32' title='68 topics' rel="tag" style='font-size: 32pt;'>linux/ubuntu</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/livingonearth'  class='tag-link-3 nktagcloud-29' title='61 topics' rel="tag" style='font-size: 29.91pt;'>living on earth</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/lumia-800'  class='tag-link-84 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>lumia 800</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/mac'  class='tag-link-8 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>mac</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/mysql'  class='tag-link-9 nktagcloud-14' title='8 topics' rel="tag" style='font-size: 14.09pt;'>mysql</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/mysql'  class='tag-link-9 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>mysql</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/mysql-delete'  class='tag-link-23 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>MYSQL DELETE</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/nginx'  class='tag-link-69 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>nginx</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/notepad'  class='tag-link-41 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>notepad++</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/nslookup'  class='tag-link-62 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>nslookup</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/nxdomain'  class='tag-link-63 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>NXDOMAIN</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/objective-c'  class='tag-link-57 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>objective c</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/opensuse'  class='tag-link-25 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>opensuse</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/opera'  class='tag-link-26 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>opera</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/pptpd'  class='tag-link-80 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>pptpd</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/procfs'  class='tag-link-66 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>procfs</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/projectcenter'  class='tag-link-67 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>projectcenter</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/proxy'  class='tag-link-70 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>proxy</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/python'  class='tag-link-13 nktagcloud-14' title='11 topics' rel="tag" style='font-size: 14.99pt;'>python</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/qq'  class='tag-link-43 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>QQ</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/qq2009'  class='tag-link-55 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>qq2009</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/qwrap'  class='tag-link-86 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>qwrap</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/realtime'  class='tag-link-47 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>realtime</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/all-about-linux/rhel'  class='tag-link-76 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>rhel</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/rhel'  class='tag-link-76 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>rhel</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/samba'  class='tag-link-6 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>samba</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/seo'  class='tag-link-21 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>seo</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/server'  class='tag-link-45 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>server</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/share-to'  class='tag-link-89 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>share to</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/sina'  class='tag-link-88 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>sina</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ssh'  class='tag-link-37 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>ssh</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ssh-tunel'  class='tag-link-38 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>ssh tunel</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/subversion'  class='tag-link-29 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>subversion</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/svn'  class='tag-link-30 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>svn</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/tornado'  class='tag-link-46 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>tornado</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/trac'  class='tag-link-36 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>trac</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/twitter'  class='tag-link-11 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>twitter</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ubuntu'  class='tag-link-31 nktagcloud-13' title='6 topics' rel="tag" style='font-size: 13.49pt;'>ubuntu</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ubuntu-dns'  class='tag-link-15 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>ubuntu dns</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/all-about-linux/ubuntu-server'  class='tag-link-16 nktagcloud-16' title='17 topics' rel="tag" style='font-size: 16.78pt;'>ubuntu server</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/ucenter'  class='tag-link-10 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>ucenter</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/all-about-linux/vim'  class='tag-link-27 nktagcloud-13' title='5 topics' rel="tag" style='font-size: 13.19pt;'>VIM</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/vim'  class='tag-link-27 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>VIM</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/vpn'  class='tag-link-79 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>vpn</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/w3c'  class='tag-link-82 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>w3c</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/weibo'  class='tag-link-87 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>weibo</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/whatever'  class='tag-link-12 nktagcloud-15' title='12 topics' rel="tag" style='font-size: 15.28pt;'>whatEver</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/win7'  class='tag-link-34 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>win7</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/windows'  class='tag-link-28 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>windows</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/windows-phone'  class='tag-link-83 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>windows phone</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/windows-phone'  class='tag-link-83 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>windows phone</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/wine'  class='tag-link-42 nktagcloud-12' title='2 topics' rel="tag" style='font-size: 12.3pt;'>wine</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/%e4%ba%91%e4%b8%bb%e6%9c%ba%ef%bc%8c%e4%b8%87%e7%bd%91'  class='tag-link-77 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>云主机，万网</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/%e4%ba%ba%e8%84%b8%e8%af%86%e5%88%ab'  class='tag-link-49 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>人脸识别</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/whatever/%e5%86%b7'  class='tag-link-1 nktagcloud-14' title='10 topics' rel="tag" style='font-size: 14.69pt;'>冷</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/%e5%b8%82%e5%9c%ba%e5%a4%a7%e5%a7%a8%e5%a6%88'  class='tag-link-85 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>市场大姨妈</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/category/%e6%98%9f%e5%ba%a7'  class='tag-link-68 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>星座</a><span class="nktagcloud-separator">|</span>
+<a href='http://www.qiongbupa.com/archives/tag/%e6%b9%bf%e7%83%ad%e4%bd%93%e8%b4%a8'  class='tag-link-52 nktagcloud-12' title='1 topic' rel="tag" style='font-size: 12pt;'>湿热体质</a><span class="nktagcloud-separator">|</span></div><div class="box">			<div class="textwidget"><script type="text/javascript"><!--
+google_ad_client = "pub-7151536628824273";
+/* 160x600, created 11/3/10 */
+google_ad_slot = "9912716909";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+		</div><div class="box"><h3>&nbsp;</h3><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>January 2013</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://www.qiongbupa.com/archives/date/2012/04" title="View posts for April 2012">&laquo; Apr</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr>
+		<td colspan="1" class="pad"></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+	</tr>
+	<tr>
+		<td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+	</tr>
+	<tr>
+		<td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+	</tr>
+	<tr>
+		<td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+	</tr>
+	<tr>
+		<td>28</td><td>29</td><td>30</td><td id="today">31</td>
+		<td class="pad" colspan="3">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></div><div class="box"><h3> </h3><form role="search" method="get" id="searchform" action="http://www.qiongbupa.com/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form></div></div>	</div><!--#main-->
+</div>
+<div id="footer">
+	<p class="copyright"><a href="http://wordpress.searchperience.com" class="powered"><img src="http://www.qiongbupa.com/wp-content/themes/big-city/images/cubes.gif" alt="Commerce Search" /></a>&copy; 2013 刘大宝——qiongbupa All Rights Reserved.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .imgWrap li {
+            float: left;
+            border: solid 1px #666;
+            margin: 10px 10px 0 0;
+            list-style: none;
+            background: #ffa;
+        }
+        .imgWrap a {
+            width: 319px;
+            height: 319px;
+            display: block;
+        }
+
+    </style>
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+
+    <script type="text/javascript">
+        $.fn.imgVAlign=function(){
+            return $(this).each(function(i){
+                //获取图片的src值，并定义给变量bg
+                var bg = $(this).attr("src");
+                //给图片的父元素定义背景图片的样式，并且背景图片
+                $(this).parent().css({"background": "url("+ bg +") no-repeat center center"
+                });
+                //将图片隐藏
+                $(this).css("opacity","0");
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>JQuery背景图片实现.</h1>
+
+<p>这个方法很简单，就是得用jQuery方法，将图片转换为其父元素的背景图片，并且在其父元素中居中显示背景图片，然后在将其自身的透明度设置为“0”， 这样也能达到图片居中的效果</p>
+
+<ul class="imgWrap clearfix">
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img1.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img2.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img3.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img4.jpg" alt="" /></a></li>
+</ul>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".imgBox img").imgVAlign();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .imgWrap li{
+            width: 319px;
+            height: 319px;
+            float: left;
+            border: solid 1px #666;
+            margin: 10px 10px 0 0;
+            list-style: none;
+            text-align: center;
+            font-size: 0;
+        }
+
+        .imgWrap a {
+            display: block;
+            height: 100%;
+            background: #ffa ;
+        }
+        .imgWrap a:hover {
+            background-color: green;
+        }
+        .imgWrap span {
+            display: inline-block;/*将行内元素改变为行内块元素显示*/
+            width: 1px;/*实现ＩＥ下可读效果*/
+            height: 100%;/*使用元素高度和图片容器高度一样*/
+            vertical-align: middle;/*垂直对齐*/
+        }
+
+        .imgWrap img {
+            vertical-align: middle;
+        }
+    </style>
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+
+</head>
+<body>
+<h1>Pic Center Support All Explore.</h1>
+<p>我将span行内元素设置为行内块元素，也就是将其display设置为“inline-block”，将其宽度定位1px，height为容器的100%，这样高度可以和容器的高度达到一样，然后通过“vertical-align:middle”设置垂直对齐，从而实现所需要的效果。</p>
+
+<ul class="imgWrap clearfix">
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img1.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img2.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img3.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img4.jpg" alt="" /></a></li>
+</ul>
+
+
+
+
+</body>
+</html>

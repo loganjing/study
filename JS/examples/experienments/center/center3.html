@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .imgWrap li {
+            float: left;
+            border: solid 1px #666;
+            margin: 10px 10px 0 0;
+            list-style: none;
+            border-collapse: collapse;
+        }
+        .imgWrap a {
+            background: #ffa;
+            width: 319px;
+            height: 319px;
+            display: table-cell;/*图片容器以表格的单元格形式显示*/
+            text-align: center; /* 实现水平居中 */
+            vertical-align: middle; /*实现垂直居中*/
+        }
+        .imgWrap a:hover {
+            background-color: #dfd;
+        }
+        .imgWrap img {
+            border: solid 1px #66f;
+            vertical-align: middle; /*图片垂直居中*/
+        }
+    </style>
+    <!--[if lt IE 8]>
+    <style type="text/css">
+        .imgWrap a {
+            display: block;
+        }
+        .imgWrap span {
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        .imgWrap {
+            _height: 0;
+            zoom: 1;
+        }
+    </style>
+    <![endif]-->
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+
+</head>
+<body>
+<h1>Pic Center Support All Explore. IE6-7线盒span</h1>
+<p>首先在图片的容器元素中设置“display:table-cell;vertical-align:middle;”实现现浏览器的垂直居中；
+    IE6-7有一个好的办法，就是创建一个线盒，此线盒的高度和图片容器的高度一样，并且给这个线盒也设置“vertical-align:middle”。</p>
+<P>线盒-此处最好使用行内标签，千万不要使用块标签，因为使用块标签会没有效果</P>
+
+<ul class="imgWrap clearfix">
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img1.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img2.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img3.jpg" alt="" /></a></li>
+    <li><a href="#" class="imgBox"><span></span><img src="../images/img4.jpg" alt="" /></a></li>
+</ul>
+
+
+
+
+</body>
+</html>

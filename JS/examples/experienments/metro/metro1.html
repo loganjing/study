@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Index2</title>
+<style type="text/css">
+.clearfix:after {
+ content: ".";
+ display: block;
+ height: 0;
+ clear: both;
+ visibility: hidden;
+}
+html{
+ font-family:Verdana, Geneva, sans-serif;
+ font-size:14px;
+}
+div.tiles{
+ background-color:black;
+ padding:50px;
+}
+div.tiles > div{
+ border-radius:2px;
+ padding:10px;
+ margin:5px;
+ color:white;
+ background-color:#666;
+ display:marker;
+ cursor:pointer;
+ position:relative;
+ float:left;
+ width:25px;
+ height:25px;
+}
+div.tiles div:hover{
+ transition:background-color 1s;
+ -moz-transition:background-color 1s;
+ -webkit-transition:background-color 1s;
+ background-color:#060;
+ -moz-transform:rotate(6deg);
+}
+div.tiles div.icon{
+ position:absolute;
+ width:30px;
+ height:30px;
+ bottom:0px;
+ left:0px;
+ z-index:10;
+ background-color:red;
+}
+<!--These classes define how wide a tile should be-->
+div.tiles div.w1{width:25px;}
+div.tiles div.w2{width:80px;}
+div.tiles div.w3{width:160px;}
+div.tiles div.w4{width:190px;}
+<!--These classes define how tall a tile should be-->
+div.tiles div.h1{height:25px;}
+div.tiles div.h2{height:80px;}
+div.tiles div.h3{height:160px;}
+div.tiles div.h4{height:190px;}
+</style>
+</style>
+</head>
+<body>
+<div class="tiles clearfix">
+ <div class="w4 h2">mattberg@live.com <div class="icon">icon</div></div>
+ <div class="w4 h2">RSS</div>
+ <div class="w4 h2">13</div>
+ <div class="w2 h2">IE</div>
+ <div class="w2 h2">Photo</div>
+ <div class="w4 h2">Now Playing</div>
+ <div class="w4 h2">Photo <div class="icon">icon</div></div>
+ <div class="w2 h2">Shop</div>
+ <div class="w2 h2">SMS</div>
+ <div class="w4 h2">Weather <div class="icon">icon</div></div>
+ <div class="w4 h2">Investment</div>
+ <div class="w1 h1">Lilly</div>
+ <div class="w1 h1">Lilly</div>
+ <div class="w1 h1">Lilly</div>
+ <div class="w1 h1">Lilly</div>
+ <div class="w1 h1">Lilly</div>
+ <div class="w1 h1">Lilly</div>
+<div class="w1 h1">Lilly</div>
+</div>
+</body>
+</html>

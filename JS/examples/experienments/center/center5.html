@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style type="text/css">
+        .imgWrap li {
+            background: #ffa url(images/gridBg.gif) repeat center;
+            width: 319px;
+            height: 319px;
+            float: left;
+            border: solid 1px #666;
+            margin: 10px 10px 0 0;
+            list-style: none;
+            text-align: center;
+        }
+        .table {
+            width: 100%;
+            height: 100%;
+            display: table;
+            position: relative;
+        }
+
+        .tableCell {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            padding: 10px;
+            *position: absolute;
+            *top: 50%;
+            *left: 50%;
+        }
+        .imgWrap a {
+            display: block;
+            *position:relative;
+            *top: -50%;
+            *left: -50%;
+        }
+    </style>
+    <script type="text/javascript" src="../../jquery/lib/jquery-1.6.4.js"></script>
+
+</head>
+<body>
+<h1>模拟表格居中.</h1>
+
+<ul class="imgWrap clearfix">
+    <li>
+        <div class="table">
+            <div class="tableCell">
+                <a href="#" class="imgBox"><img src="../images/img1.jpg" alt=""/></a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="table">
+            <div class="tableCell">
+                <a href="#" class="imgBox"><img src="../images/img2.jpg" alt=""/></a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="table">
+            <div class="tableCell">
+                <a href="#" class="imgBox"><img src="../images/img3.jpg" alt=""/></a>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div class="table">
+            <div class="tableCell">
+                <a href="#" class="imgBox"><img src="../images/img4.jpg" alt=""/></a>
+            </div>
+        </div>
+    </li>
+</ul>
+
+
+</body>
+</html>
