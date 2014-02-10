@@ -1,0 +1,50 @@
+.buttonArea .ui-lb-icon {	
+	border-style:none;  
+	width:48px;
+	height:48px; 
+}
+.buttonArea .addOtherReqButton {
+	// background:url(../image/btn_bizAccount_add.png); 
+	background:url(../image/btn_all.png);
+	background-position: -53px -53px;
+}
+.buttonArea .addLoanButton {
+	background:url(../image/btn_all.png); 
+	background-position: -159px 0px;
+}
+.buttonArea .addBizButton {
+	background:url(../image/btn_all.png);
+	background-position: -53px -53px;	
+}
+.buttonArea .addEvecReqButton {
+	background:url(../image/btn_all.png); 
+	background-position: -212px -0px;
+}
+.buttonArea .addEvecLoanButton {
+	background:url(../image/btn_all.png); 
+	background-position: -0px -53px;
+}
+.buttonArea .addTraButton {
+	background:url(../image/btn_all.png); 
+	background-position: -159px -53px;
+}
+.buttonArea .loanListButton {
+	background:url(../image/btn_all.png); 
+	background-position: 0px 0px;
+}
+.buttonArea .personBankButton {
+	background:url(../image/btn_all.png); 
+	background-position: -53px 0px;
+}
+.buttonArea .imageScanButton {
+	background:url(../image/btn_all.png); 
+	background-position: -106px -53px;
+}
+.buttonArea .ui-lb-text {
+	display: block;
+	text-align: center;
+	margin-top:10px;
+}
+.ui-jqgrid .ui-jqgrid-btable .jqgrow td {
+   height: 32px;
+}

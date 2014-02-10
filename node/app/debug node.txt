@@ -1,0 +1,6 @@
+node-inspector &
+node --debug-brk your/short/node/script.js mainPage_meta.json SNUM99393
+
+http://127.0.0.1:8080/debug?port=5858
+
+node --debug-brk app/main.js app/loan.json loan D:\node\app

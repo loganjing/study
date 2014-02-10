@@ -1,0 +1,51 @@
+.wform .colspan .userinput {
+  width: 100%;
+  padding-left: 76px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wform .three .colspan .userinput {
+  padding-left: 76px;
+}
+
+.ui-section .content{
+   padding-left:20px;
+}
+
+.ui-fileupload {
+padding: 5px 5px 5px 0px;
+}
+
+.choosePayBtn {
+	position: absolute;
+	z-Index: 8;
+	right: 0px;
+	display: inline-block;
+  	height: 24px;
+	width: 20px;
+}
+
+/** 去除分组标题的收起样式 **/
+.ui-section .ui-section-minus:before {
+	content: none ! important;
+}
+.ui-section .ui-section-plus:before {
+	content: none ! important;
+}
+.ui-section .sheader .title {
+    cursor: default ! important;
+}
+.ui-section .sheader {
+	border-bottom: none ! important;
+}
+/** 分组标题跟内容间距6px **/
+.ui-section .sheader {
+	margin-bottom: 1px;
+}
+.ui-section {
+	margin-top: 15px;
+}

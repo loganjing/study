@@ -1,0 +1,5 @@
+node-inspector &
+node --debug-brk your/short/node/script.js mainPage_meta.json SNUM99393
+
+node my/main.js my/addNew_meta.json dynamicEditPage
+node my/main.js my/mainPage_meta.json dynamicListPage

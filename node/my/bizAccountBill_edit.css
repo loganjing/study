@@ -1,0 +1,54 @@
+#columnLayout_baseInfo, #columnLayout_payerInfo {
+	display:none;
+	background-color:#F5F4F4;
+	padding:10px;
+}
+
+#columnLayout_payerInfo .colspan .userinput {
+	padding-left: 106px;
+}
+
+.wform .three .colspan .userinput {
+  padding-left: 96px;
+}
+
+#btnSelectPayer .ui-lb-text {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.amountContainer .inner-label {
+	font-weight: bold;
+	color: #ff9600;
+}
+
+/** 分组块缩进样式调整 **/
+#webAttachment_content, #section_baseInfo_content, #section_payerInfo_content, #columnLayout4 {
+	background: #F5F4F4;
+}
+#columnLayout4 {
+	padding-left: 15px;
+	height: 30px;
+	margin: 0px auto;
+	padding-top: 5px;
+}
+.ui-section .content {
+	padding-left: 15px ! important;
+}
+#section_cause_content, #section_entries_content,#section_loan_content, #section_req_content {
+	padding-left: 0px ! important;
+}
+.ui-infoBlock .rows {
+	padding-right: 0px;
+}
+
+.ui-infoBlock .rows .row .rowButtonPanel, .ui-dataView .rows .row .rowButtonPanel {
+position: absolute;
+top: -7px;
+right: 0px;
+z-index: 110;
+}
+
+#section2_cause {
+	padding-left: 15px;
+}
