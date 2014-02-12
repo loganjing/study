@@ -2,19 +2,27 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="style/style.css" media="screen" rel="stylesheet" type="text/css" />
     <title></title>
 </head>
 <body>
+
+<p class="rd">元素为绝对定位时，包含块由他最近的positon不为static的祖先元素创建。</p>
+<p class="rd">1.如果祖先元素为行内元素，则包含块取决于其祖先元素的direction属性。下面两个例子演示的就是这个例子.</p>
+<p class="rd">a.direction="ltr"时，包含块的顶左是祖先元素生成的第一个框的顶左内边界，右、下边是祖先元素生成的最后一个框的右、下内边距边界</p>
+
 <p style="border:1px solid red; width:200px; padding:20px;">
     T
     <span style="background-color:#C0C0C0; position:relative;">
       这段文字从左向右排列，红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。
       可以通过它们绝对定位的位置来判断它们包含块的边缘。
-    <em style="position:absolute; font-weight:bold;color:red; top:0; left:0;">XX</em>
-    <em style="position:absolute; font-weight:bold;color:yellow; top:20px; left:0;">XX</em>
-    <em style="position:absolute; font-weight:bold;color:blue; bottom:0; right:0;">XX</em>
+    <em style="position:absolute; color:red; top:0; left:0;">XX</em>
+    <em style="position:absolute; color:yellow; top:20px; left:0;">XX</em>
+    <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
     </span>
 </p>
+<p class="rd">文字采取默认从左到右的方式排列。红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。按照标准来说，它们包含块的左顶边是 SPAN形成的第一个框（即第一行的灰色部分）的顶、左内边距边，包含块的右、下边是SPAN 生成的最后一个框（最后一行灰色的部分）的右、下内边距边界</p>
+<p class="rd">行内元素内形成的包含块，在各浏览器中各不相同，存在兼容性问题。可以通过上面的例子可以证明这一点。蓝色的 “XX”的位置在各浏览器中都不一样。你可以打开浏览器试一下</p>
 
 
 <p style="border:1px solid red; width:200px; padding:20px;">
@@ -27,11 +35,57 @@
     <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
     </span>
 </p>
+<p class="rd">当行框是这样的时候，比较纠结,这时，会造成包含块的宽度为负。这时，绝对定位元素定位起来，肯定也很纠结。</p>
 
+
+<p style="border:1px solid red; width:200px; padding:20px;" class="ib">
+    TEXT TEXT TEXT
+    <span style="background-color:#C0C0C0; position:relative;" class="ib">
+      这段文字从左向右排列，红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。
+      可以通过它们绝对定位的位置来判断它们包含块的边缘。
+    <em style="position:absolute; color:red; top:0; left:0;">XX</em>
+    <em style="position:absolute; color:yellow; top:20px; left:0;">XX</em>
+    <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
+    </span>
+</p>
+
+<p style="border:1px solid red; width:200px; padding:20px;" class="ib">
+    TEXT
+    <span style="background-color:#C0C0C0; position:relative;width: 130px" class="ib">
+      这段文字从左向右排列，红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。
+      可以通过它们绝对定位的位置来判断它们包含块的边缘。
+    <em style="position:absolute; color:red; top:0; left:0;">XX</em>
+    <em style="position:absolute; color:yellow; top:20px; left:0;">XX</em>
+    <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
+    </span>
+</p>
+<p class="rd">当SPAN的display设置为inline-block时的情况。</p>
+
+<br>
+<br>
+<br>
+
+<p class="rd">b.如果 'direction'  是 'rtl'，包含块的顶、右边是祖先元素生成的第一个框的顶、右内边距边界(padding edges) ，左、下边是祖先元素生成的最后一个框的左、下内边距边界,如下：</p>
+<p style="border:1px solid red; width:200px; padding:20px; direction:rtl;">
+    T
+    <span style="background-color:#C0C0C0; position:relative;">
+     这段文字从右向左排列，红 XX 和 蓝 XX 和黄 XX 都是绝对定位元素，它的包含块是相对定位的SPAN。
+     可以通过它们绝对定位的位置来判断它们……
+    <em style="position:absolute; color:red; top:0; left:0;">XX</em>
+    <em style="position:absolute; color:yellow; top:20px; left:0;">XX</em>
+    <em style="position:absolute; color:blue; bottom:0; right:0;">XX</em>
+    </span>
+</p>
+
+
+
+<p class="rd">2.如果祖先元素不是行内元素，则包含块的区域应该是祖先元素的内边距，如下：</p>
 <div id="container" style="padding:50px; background-color:#c0c0c0; position:relative; width:200px; height:200px;">
     <div id="div1" style="width:100%;height:100%;border:2px solid blue;">
         <div id="content" style="border:1px solid red; position:absolute; left:0; top:0;">absolute element</div>
     </div>
 </div>
+
+
 </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HEAD>
+    <TITLE>Anonymous text interrupted by a block</TITLE>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="style/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+        div {
+            width: 200px;
+            border: 1px solid gold;
+        }
+
+        span {
+            border: 1px solid red;
+        }
+
+        p {
+            width: 100px;
+            border: 1px solid green;
+        }
+    </style>
+</HEAD>
+<BODY>
+<div>
+       <span>This is anonymous text before the P.
+           <P>This is the content of P.</P>
+             This is anonymous text after the P.
+       </span>
+</div>
+
+<p class="rd" style="width: 100%;border:none">案例说明：当一个行内框包含一个块框(block box)时，这个行内框 (inline box)（和与它处于同一行框内的祖先行内框）会围绕着块框被截断。
+             断点之前和之后的行框(line boxes)会被封闭到匿名的框里，并且，这个块框会成为这些匿名框的兄弟框。当这样的行内框受到相对定位的影响时，相对定位也会影响块框。
+</p>
+</BODY>
