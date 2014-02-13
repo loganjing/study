@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="style/style.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<p class="rd">如果B的定位时relative，后续框的定位计算并不考虑B的偏移，仍然会认为B在那个地方,如下图：</p>
+<div style="position:static; width:100px;">
+    <div id="A" style="background-color:green;">A</div>
+    <div id="B" style="position:relative;top:70px; left:50px;background-color:red;">B</div>
+    <div id="C" style="background-color:blue;">C</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<p class="rd">下图是绝对定位的例子，A和C的长度都是300，为什么B的长度变得那么小呢，答案：绝对定位之后，BOX的宽度不受其父容器的限制，也不受其包含块的限制，所以他的宽度由自身的内容决定，这就是绝对定位的包裹性。：</p>
+<div style="position:absolute; width:300px; border:2px solid yellow;">
+    <div id="A" style="background-color:green;height:50px;">A</div>
+    <div id="B" style="position:absolute;top:70px; left:50px; height:50px; background-color:red;">B</div>
+    <div id="C" style="background-color:blue;height:50px;">C</div>
+</div>
+</body>
+</html>
