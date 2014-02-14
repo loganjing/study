@@ -56,12 +56,21 @@
             alert(pattern1.lastIndex);
         }
 
+        //test方法
+        function regTest(){
+            var pattern = /\d{3}-\d{3}-\d{3}/;
+            var text = "000-999-666";
+            if(pattern.test(text)){
+                alert("text matched!");
+            }
+        }
+
     </script>
 </head>
 <body>
 
 </body>
 <script type="text/javascript">
-    regExec();
+    regTest();
 </script>
 </html>
