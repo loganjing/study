@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        function dateExm(){
+            //Date的parse返回毫秒数
+            var date = Date.parse("2012-02-02");
+            date = new Date(date);
+            alert(date.toLocaleString());
+
+            date = Date.now();
+            alert(new Date(date).toString());
+            alert(new Date(date).toDateString());
+            alert(new Date(date).toTimeString());
+            alert(new Date(date).toUTCString());
+
+            date = Date.parse("2012-02-02 14:23:12");
+            date = new Date(date);
+            alert("time:"+date.getTime());
+            alert("full-year:"+date.getFullYear());
+            alert("year:"+date.getYear());
+            alert("month:"+date.getMonth());
+            alert("date:"+date.getDate());
+            alert("hour:"+date.getHours());
+            alert("Minutes:"+date.getMinutes());
+            alert("seconds:"+date.getSeconds());
+        }
+    </script>
+</head>
+<body>
+<p>例子中演示了Date的各种用法，不要删除，查看源码中的Javascript代码。</p>
+</body>
+<script>
+    dateExm();
+</script>
+</html>

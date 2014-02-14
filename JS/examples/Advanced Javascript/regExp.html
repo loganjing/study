@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        function log(msg){
+            console && console.info(msg);
+        }
+        //基本的匹配
+        function regExm1(){
+            //匹配字符串中所有的at实例
+            var pattern = /at/g;
+            log(pattern.exec("this is in china, at home!"));
+            //匹配bat或者cat，不区分大小写
+            pattern = /[bc]at/i;
+            log(pattern.exec("dog and cat,op and bat!"));
+            //匹配所有以at结尾的三个字符，不区分大小写. .号表示结尾
+            pattern = /.at/i;
+            log(pattern.exec("app.atiks"));
+        }
+
+        //元字符匹配必须使用转义符号
+        //元字符包括 ( [ { ] ^ % | ) ? * + . ] }
+        function regExm2(){
+            //匹配第一个[ba]t
+            var pattern = /\[bc\]at/i;
+            //匹配所有.at,不区分大小写
+            pattern = /\.at/i;
+            log(pattern.source);
+            log(pattern.global);
+            log(pattern.ignoreCase);
+            log(pattern.multiline);
+            log(pattern.lastIndex);
+        }
+
+        //exec的用法
+        function regExec(){
+            var text = "cat,bat,sat,fat";
+            var pattern1 = /.at/;
+            var matches = pattern1.exec(text);
+            //alert(matches.index);
+            //alert(matches[0]);
+            //alert(pattern1.lastIndex);
+
+            //加上g标签后，多次调用会每次往后查找。
+            var pattern2 = /.at/g;
+            matches = pattern2.exec(text);
+            alert(matches.index);
+            alert(matches[0]);
+            alert(pattern1.lastIndex);
+
+            matches = pattern2.exec(text);
+            alert(matches.index);
+            alert(matches[0]);
+            alert(pattern1.lastIndex);
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    regExec();
+</script>
+</html>

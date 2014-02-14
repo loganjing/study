@@ -113,8 +113,57 @@
             alert("删除的项目:" + removed);
         }
 
-        function arr7() {
+        //处理迭代方法,every:数组中的每一项都符合条件，返回true，否则返回false.
+        function arrEvery() {
+            var number = [1,2,3,4,5,4,3,2,1];
+            var ret = number.every(function(item,index,array){
+                return item>2;
+            });
+            alert("数组的每一项是否都大于2："+ret);
+        }
 
+        function arrFilter(){
+            var number = [1,2,3,4,5,4,3,2,1];
+            var ret = number.filter(function(item,index,array){
+                return item>2;
+            });
+            alert("数组大于2的项目包括："+ret);
+        }
+
+        function arrSome(){
+            var number = [1,2,3,4,5,4,3,2,1];
+            var ret = number.some(function(item,index,array){
+                return item>2;
+            });
+            alert("数组是否包含大于2的项目："+ret);
+        }
+
+        function arrMap(){
+            var number = [1,2,3,4,5,4,3,2,1];
+            var ret = number.map(function(item,index,array){
+                return item*2;
+            });
+            alert("数组中的每一项乘以2以后："+ret);
+        }
+
+        function arrForEach(){
+            var number = [1,2,3,4,5,4,3,2,1];
+            number.forEach(function(item,index,array){
+                console.info(item);
+            });
+        }
+
+        function arrReduce(){
+            var number = [1,2,3,4,5];
+            var sum = number.reduce(function(prev,cur,index,array){
+                return prev + cur;
+            });
+            alert(sum);
+
+            sum = number.reduceRight(function(prev,cur,index,arr){
+                return prev * cur;
+            })
+            alert(sum);
         }
 
     </script>
@@ -124,7 +173,7 @@
 <p>例子中演示了Array的各种用法，不要删除，查看源码中的Javascript代码。</p>
 
 <script>
-    arr6();
+    arrReduce();
 </script>
 </body>
 </html>
