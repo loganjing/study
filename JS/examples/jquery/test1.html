@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <script type="text/javascript" src="../../lib/jquery-1.6.3.js"></script>
+    <title></title>
+</head>
+<body>
+
+
+<form id="form1" runat="server">
+    <p>one</p>
+
+    <div><p style="display:none">two</p></div>
+    <p>three</p>
+    <br/>
+
+    <div>
+        <input type="text"/>&nbsp;&nbsp;<input id="chkTest" type="checkbox" checked="checked"/>&nbsp;&nbsp;<input
+            id="btnTest" type="button" value="button"/></div>
+</form>
+
+
+<script type="text/javascript">
+    $(function () {
+//        $("div>p").css("display", "block"); //显示
+//        $("div>p").css("color", "blue"); //颜色为绿色
+//
+//        alert($("div>p").html()); //找到所有div元素的子元素p,并显示p元素的innerHTML
+//
+//        var chks = $("input:checkbox", document.forms[0]); //在文档的第一个表单中，查找所有的多选按钮(即:type为checkbox的input元素)
+//        alert(chks.length);
+//        for (var i = 0; i < chks.length; i++) {
+//            alert(chks[i].checked);
+//        }
+
+//        $("<div><p>This is a jQuery test.</p></div>").appendTo("body");
+//
+//        //创建一个input元素
+//        if (!$.browser.msie) {
+//            $("<input>").attr("type", "checkbox").appendTo("body"); // 在 IE 中无效:
+//        }
+//        else {
+//            // 所有浏览器中有效
+//            $("<input type='checkbox'>").appendTo("body");
+//        }
+
+//        $("#form1").html();
+
+        $(document.body).css("background", "cef"); //设置页面背景色
+            $(document.forms[0].elements).hide(); //隐藏一个表单中的所有元素
+    });
+</script>
+
+</body>
+</html>
