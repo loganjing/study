@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+
+        //通过使用defineProperty修改writable属性来控制属性是否可以操作。
+        function dataProp(){
+            var person = {};
+            Object.defineProperty(person,"name",{
+                writable:false,
+                value:"Nicholos"
+            })
+            alert(person.name);
+            person.name = "Gergo";
+            alert(person.name);
+
+            Object.defineProperty(person,"name1",{
+                configurable:false,
+                value:"Nicholos1"
+            })
+            delete person.name1;
+            alert(person.name);
+            alert(person.name1);
+        }
+
+        function property(){
+            var book = {
+                _year:2004,
+                edition:1
+            }
+            Object.defineProperty(book,"year",{
+                get:function(){
+                    return this._year;
+                },
+                set:function(newYear){
+                    if(newYear>2004){
+                        this._year = newYear;
+                        this.edition += newYear - 2004;
+                    }
+                }
+            });
+            Object.defineProperty(book,"sum",{
+                get:function(){
+                    return this.sum;
+                },
+                set:function(newYear){
+                    this.sum = newYear + this._year;
+                }
+            });
+
+            book.year = 2005;
+            alert(book.edition);
+            book.sum = 1000;
+            alert(book.sum);
+        }
+
+        //ie9才支持getOwnPropertyDescriptor方法，ie8支持的不好。
+        function testGetProperties(){
+            var book = {};
+            Object.defineProperties(book,{
+                _year:{
+                    value:2004
+                },
+                edition:{
+                    value:1
+                },
+                year:{
+                    get:function(){
+                        return this._year;
+                    },
+                    set:function(newYear){
+                        if(newYear>2004){
+                            this._year = newYear;
+                            this.edition += newYear - 2004;
+                        }
+                    }
+                }
+            })
+            var dest = Object.getOwnPropertyDescriptor(book,"_year");
+            alert("_year's value:"+dest.value);
+            alert("_year's configurable:"+dest.configurable);
+            alert("_year's get:"+typeof dest.get);
+            alert("_year's set:"+typeof dest.set);
+
+
+            dest = Object.getOwnPropertyDescriptor(book,"year");
+            alert("year's value:"+dest.value);
+            alert("year's configurable:"+dest.configurable);
+            alert("year's get:"+typeof dest.get);
+            alert("year's set:"+typeof dest.set);
+        }
+    </script>
+</head>
+<body>
+
+<script type="text/javascript">
+    testGetProperties();
+</script>
+</body>
+</html>
