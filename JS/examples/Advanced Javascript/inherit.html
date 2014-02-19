@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        function Animal(name,weight){
+            this.weight = weight;
+            this.name = name;
+        }
+
+        function Dog(name,weight,type){
+            Animal.call(this,name,weight);
+            this.type = type;
+        }
+
+        function object(o){
+            var f = new Function();
+            f.prototype = o;
+            return new f();
+        }
+
+        function inherit(superType,subType){
+            var f = new Function();
+            f.prototype = superType.prototype;
+            subType.prototype = new f();
+            subType.constructor = subType;
+
+            var prototype = object(superType.prototype);
+            prototype.constructor = subType;
+            subType.prototype = prototype;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
