@@ -62,9 +62,9 @@
         for (var i = 0; i < 10; i++) {
             funs[i] = function (num) {
                 //这里插入的参数num就是自执行的i，要想将i保存下来，就必须将i保存到子函数的作用域链中，那么就必须能引用到父函数的变量。
-               return function(){
-                   console.info(num);
-               }
+                return function () {
+                    //console&&console.info(num);
+                }
             }(i);
         }
         return funs;
@@ -79,16 +79,74 @@
     //this变量
     var name = "The global name!";
     var obj = {
-        name : "object's name",
-        getName:function(){
+        name: "object's name",
+        getName: function () {
             var that = this;
-            return function(){
+            return function () {
                 return that.name;
             }
         }
     }
 
-    alert(obj.getName()());
+    //alert(obj.getName()());
+
+    //在构造函数中定义特权方法和私有变量
+    function myObject() {
+        var privateVar = 10;
+
+        function privateFunction() {
+            return false;
+        }
+
+        this.publicMethod = function () {
+            privateVar++;
+            return privateVar;
+        }
+    }
+
+    var obj1 = new myObject();
+    //    alert(obj1.publicMethod());
+    //    alert(obj1.publicMethod());
+    //    alert(obj1.publicMethod());
+
+
+    //静态私有变量
+    (function () {
+        var name;
+        Person = function (tmp) {
+            name = tmp;
+        }
+        Person.prototype.getName = function () {
+            return name;
+        }
+        Person.prototype.setName = function (tmp) {
+            name = tmp;
+        }
+    })();
+
+    var p1 = new Person("BOB");
+    //alert(p1.getName());
+    p1.setName("Nicolar");
+    //alert(p1.getName());
+
+
+    //模块模式
+    var application = function () {
+        var components = [];
+        components.push({name: "sys"});
+        return {
+            getComponents: function () {
+                return components;
+            },
+            registerComponent: function (component) {
+                components.push(component);
+            }
+        }
+    }();
+
+    alert(application.getComponents().toString());
+    application.registerComponent({name:"fi"});
+    alert(application.getComponents().toString());
 
 
 </script>
