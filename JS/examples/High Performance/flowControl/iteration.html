@@ -87,7 +87,7 @@ function rand(number) {
 </script>
 
 <script type="text/javascript">
-    function test(n,loop) {
+    function test(n, loop) {
         var arr = [], str = "", tmp;
         for (var i = 0; i < n; i++) {
             tmp = rand(n);
@@ -96,7 +96,7 @@ function rand(number) {
         }
         document.getElementById("srcArr" + n).innerHTML = "[" + str + "]";
 
-        arr = loop?mergeSortIterator(arr):mergeSort(arr);
+        arr = loop ? mergeSortIterator(arr) : mergeSort(arr);
         str = "";
         for (var i = 0; i < n; i++) {
             tmp = arr[i];
@@ -105,7 +105,7 @@ function rand(number) {
         document.getElementById("destArr" + n).innerHTML = "[" + str + "]";
     }
 
-    test(10,true);
+    test(10, true);
     //test(100,true);
 
     //test(10,false);
