@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+    <script type="text/javascript" src="../../lib/jquery-1.6.3.js"></script>
+    <title></title>
+    <style>
+        li{
+            width: 100px;
+            border:1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <ul class="parent">
+        <li class="first">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+
+    function bind(name){
+        var first = document.querySelectorAll(name)[0];
+        if(first.addEventListener){
+            first.addEventListener("click",function(e){
+                  alert("I am in "+name);
+                  stopBubble(e);
+            })
+        }else{
+            first.attachEvent("onclick",function(e){
+                alert("I am in "+name);
+                stopBubble(e);
+            })
+        }
+    }
+
+    function stopBubble(e){
+        //ie的e的情况
+        e = e || window.e;
+        e.stopPropagation? e.stopPropagation(): e.cancelBubble = true;
+    }
+
+
+
+    bind(".first");
+    bind(".parent");
+
+
+    function log(value) {
+            console && console.info(value);
+        }
+
+
+    function Bar(){
+        return 2;
+    }
+    var bar = new Bar();
+    log(bar);
+    log(bar.constructor == Bar);
+
+    function foo(a,b,c){
+        arguments[0] = 2;
+        log(a);
+
+        b=4;
+        log(arguments[1]);
+
+        var d=c;
+        d=9;
+        log(c);
+
+        var p = Array.prototype.slice.call(arguments);
+        log(p);
+    }
+    foo(1,2,3);
+
+    var arr = ["22","ad","s2","ks","ad"];
+    //push方法追加到数组末尾，并返回数组的新长度
+//    log(arr.push("add"));
+//    log(arr);
+//    //移除数组中的最后一个元素，并返回
+//    log(arr.pop());
+//    log(arr);
+//
+//    log(arr.shift());
+//    log(arr);
+
+//    var o = arr.unshift("11","22","33");
+//    log(o);
+//    log(arr);
+
+//    arr.splice(2,2,"cc","dd","ee");
+//    log(arr);
+
+    var first = $(".first");
+    log(first.siblings());
+</script>
+
+</body>
+</html>

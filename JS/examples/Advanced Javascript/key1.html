@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<script type="text/javascript">
+    function log(value) {
+        console && console.info(value);
+    }
+    var arr = new Array(3);
+    log(arr[1]);
+    log(1 in arr);
+    arr[1] = undefined;
+    log(1 in arr);
+
+    arr = ["a", "b", "c"];
+    for (var p in arr) {
+        log(p + "--->" + arr[p]);
+    }
+
+    arr = new Array(3);
+    log(arr[2]);
+
+    arr = new Array("3");
+    log(arr);
+
+    var myVar = "my value";
+    (function () {
+        log(this.myVar);
+        log(myVar);    //why this is undefined
+        var myVar = "local value";
+        log(myVar);
+    })();
+
+    //调用时的实际上是window.aa()
+    function aa() {
+        log(myVar);
+    }
+    aa();
+
+    function aa() {
+        log("aa");
+    }
+    aa();
+
+    function () {
+        log("test!!!!");
+    }
+
+
+
+    var fn = function () {
+        log(this === window)
+    };
+    fn();
+</script>
+
+<script>
+    function foo() {
+        foo.abc = function () {
+            alert('def')
+        }
+        this.abc = function () {
+            alert('xyz')
+        }
+        abc = function () {
+            alert('@@@@@')
+        };
+        // var abc = function(){alert('$$$$$$')}
+    }
+    foo.prototype.abc = function () {
+        alert('456');
+    }
+    foo.abc = function () {
+        alert('123');
+    }
+    // var f = new foo();
+    // f.abc();
+    foo.abc(); //123
+    abc(); //报错Uncaught ReferenceError: abc is not defined
+</script>
+
+</body>
+</html>
