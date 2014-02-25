@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<div id="parent">
+    <div id="child1"></div>
+    <div id="child2"></div>
+    <div id="child3"></div>
+    <div id="child4"></div>
+    <div id="child5"></div>
+</div>
+
+<span   id="outer"><span   id="inner">text</span></span>
+
+<script type="text/javascript">
+    var parent = document.getElementById("parent");
+    var arr = Array.prototype.slice.call(parent.childNodes,0);
+
+    var child = document.getElementById("parent");
+
+</script>
+
+</body>
+</html>
