@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<script type="text/javascript">
+    function getBytesLen(str){
+        var len = str.length;
+        var bytes = len;
+        for(var i=0;i<len;i++){
+            if(str.charCodeAt(i)>255){
+                bytes++;
+            }
+        }
+        return bytes;
+    }
+
+    function getMaxNum(str){
+        var o = {},max= 0, maxNum;
+        for(var i= 0,len=str.length;i<len;i++){
+            if(!o[str[i]]){
+                o[str[i]] = 1;
+            }else{
+                o[str[i]] = o[str[i]] + 1;
+            }
+            if(max==0 || max<o[str[i]]){
+                max = o[str[i]];
+                maxNum = str[i];
+            }
+        }
+        o = null;
+        return {data:maxNum,max:max};
+    }
+
+    var str="aadddsddeeeeaaadaaa";
+    console.info(getMaxNum(str));
+//    console.info(getBytesLen("221思考iiw"));
+</script>
+
+</body>
+</html>

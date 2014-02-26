@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<p>
+    二分法检索（binary search）又称折半检索，二分法检索的基本思想是设字典中的元素从小到大有序地存放在数组（array）中，
+    首先将给定值key与字典中间位置上元素的关键码(key)比较，如果相等，则检索成功；
+    否则，若key小，则在字典前半部分中继续进行二分法检索;
+    若key大，则在字典后半部分中继续进行二分法检索。
+    这样，经过一次比较就缩小一半的检索区间，如此进行下去，直到检索成功或检索失败。
+    二分法检索是一种效率较高的检索方法，要求字典在顺序表中按关键码排序。
+</p>
+<script type="text/javascript">
+    //Math.floor:向下取整,Math.ceil向下取整
+    //无论数组是奇数还是偶数，在找不到的情况下，startIndex,endIndex肯定会趋向于相等，这样middle，startIndex，endIndex都是相等的情况下，还是没有找到，那就不存在了。
+    function binarySearch(items, value) {
+        var startIndex = 0,
+                endIndex = items.length - 1,
+                middle = Math.floor((startIndex + endIndex) / 2);
+        while(items[middle]!=value && startIndex<endIndex){
+            if(items[middle]>value){
+                endIndex = middle - 1;
+            }else{
+                startIndex = middle + 1;
+            }
+            middle = Math.floor((startIndex + endIndex) / 2);
+        }
+        return items[middle]!=value?-1:middle;
+    }
+
+    //Test
+    var oddArr = [3,4,6,8,66,78,333,987,1000];
+    //console.info(binarySearch(oddArr,1000));
+    oddArr = [3,4,6,8,66,78,333,987];
+    console.info(binarySearch(oddArr,1));
+</script>
+
+</body>
+</html>

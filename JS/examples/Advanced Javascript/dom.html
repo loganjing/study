@@ -3,11 +3,12 @@
 <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../../lib/jquery-1.6.3.js"></script>
 </head>
 <body>
 
 <div id="parent">
-    <div id="child1"></div>
+    <div id="child1" ctrlrole="text"></div>
     <div id="child2"></div>
     <div id="child3"></div>
     <div id="child4"></div>
@@ -22,6 +23,17 @@
 
     var child = document.getElementById("parent");
 
+    //ie8(包括)以下支持elem.aaa的方式来访问，ie8以上的就支持getAttribute了
+    function getAttribute(id,prop){
+        if($.browser.ie){
+            var elem = document.getElementById(id);
+            return elem[prop]||elem.getAttribute(prop);
+        }else{
+            return document.getElementById(id).getAttribute(prop);
+        }
+    }
+
+    alert(getAttribute("child1","ctrlrole"));
 </script>
 
 </body>

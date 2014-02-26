@@ -166,6 +166,35 @@
             alert(sum);
         }
 
+        function unique(items){
+            var len = items.length,o={},ret=[];
+            for(var i=len;i>=0;i--){
+                if(!o[items[i]]){
+                    o[items[i]] = 1;
+                    ret.push(items[i]);
+                }
+            }
+            return ret;
+        }
+
+        function unique2(items){
+            var len = items.length,o={},i= 0,tmp;
+            while(i<len){
+                if(!o[items[i]]){
+                    o[items[i]] = true;
+                }else{
+                    //不用再申请一个新的数组来处理，重复之后，回退一个进行处理。
+                    items.splice(i,1);
+                    i--;
+                    len = items.length;
+                }
+                i++;
+            }
+            return items;
+        }
+
+        console.info(unique2([3,2,5,3,2,5,8]).join(","));
+
     </script>
 </head>
 <body>
@@ -173,7 +202,7 @@
 <p>例子中演示了Array的各种用法，不要删除，查看源码中的Javascript代码。</p>
 
 <script>
-    arrReduce();
+    //arrReduce();
 </script>
 </body>
 </html>

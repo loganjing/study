@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+
+<p>
+    设要排序的数组是A[0]……A[N-1]，首先任意选取一个数据（通常选用数组的第一个数）作为关键数据，然后将所有比它小的数都放到它前面，所有比它大的数都放到它后面，这个过程称为一趟快速排序。值得注意的是，快速排序不是一种稳定的排序算法，也就是说，多个相同的值的相对位置也许会在算法结束时产生变动。
+    一趟快速排序的算法是：
+    1）设置两个变量i、j，排序开始的时候：i=0，j=N-1；
+    2）以第一个数组元素作为关键数据，赋值给key，即key=A[0]；
+    3）从j开始向前搜索，即由后开始向前搜索(j--)，找到第一个小于key的值A[j]，将A[j]赋给A[i]；
+    4）从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]赋给A[j]；
+    5）重复第3、4步，直到i=j； (3,4步中，没找到符合条件的值，即3中A[j]不小于key,4中A[j]不大于key的时候改变j、i的值，使得j=j-1，i=i+1，直至找到为止。找到符合条件的值，进行交换的时候i，
+    j指针位置不变。另外，i==j这一过程一定正好是i+或j-完成的时候，此时令循环结束）。
+</p>
+
+<script type="text/javascript">
+    function swap(items, firstIndex, secondIndex){
+        var temp = items[firstIndex];
+        items[firstIndex] = items[secondIndex];
+        items[secondIndex] = temp;
+    }
+
+    function quickSort_old(items){
+        if(items.length <=1 ) return items;
+        var pivot = items[Math.floor((0 + items.length - 1) / 2)];
+        var left = [],right = [];
+
+        for(var i= 0, len = items.length; i<len;i++){
+            if(items[i]<pivot){
+                left.push(items[i]);
+            }else if(items[i]>pivot){
+                right.push(items[i]);
+            }
+        }
+        return quickSort(left).concat([pivot]).concat(quickSort(right));
+    }
+
+    function partition(items,left,right){
+        var pivot = items[Math.floor((left+right)/2)];
+        var i=left, j=right;
+        while(i<=j){
+            while(items[i] < pivot){
+                i++;
+            }
+            while(items[j]>pivot){
+                j--;
+            }
+            if(i<=j){
+                swap(items,i,j);
+                i++;
+                j--;
+            }
+        }
+        return i;
+    }
+
+    function quickSort(items,left,right){
+        if(items.length>1){
+            left = typeof left !="number"?0:left;
+            right = typeof right !="number"?items.length-1:right;
+
+            var index = partition(items,left,right);
+
+            if(left < index -1){
+                quickSort(items,left,index-1);
+            }
+
+            if(index<right){
+                quickSort(items,index,right);
+            }
+        }
+        return items;
+    }
+
+
+    var oddArr = [77,44,32,1,65,8,221,453,21,21];
+    oddArr = quickSort(oddArr);
+    console.info(oddArr.join(","));
+</script>
+</body>
+</html>
