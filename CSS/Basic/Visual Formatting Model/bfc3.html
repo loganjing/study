@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>无标题文档</title>
+    <style>
+        html,body {height:100%; }
+        * { padding:10px; margin:0; color:#000; text-decoration:none; list-style:none; font-family:"微软雅黑" }
+        .outer{width:300px;border:1px solid #666;padding:10px;overflow: hidden;zoom:1}
+        .innerLeft{height:100px;width:100px;float:left;background:#f00;}
+        .innerRight{height:100px;width:100px;float:right;background:#090;}
+    </style>
+</head>
+
+<body>
+<div class="outer">
+    <div class="innerLeft"></div>
+    <div class="innerRight"></div>
+</div>
+<p>
+    根据 CSS2.1 规范第 10.6.3 部分的高度计算规则，在进行普通流中的块级非替换元素的高度计算时，浮动子元素不参与计算。
+
+    同时 CSS2.1 规范第10.6.7部分的高度计算规则，在计算生成了 block formatting context 的元素的高度时，其浮动子元素应该参与计算。
+
+    所以，触发外部容器BFC，高度将重新计算。比如给outer加上属性overflow:hidden触发其BFC。
+</p>
+</body>
+</html>

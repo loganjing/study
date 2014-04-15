@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>无标题文档</title>
+    <style>
+        * { padding:0; margin:0; }
+        #red, #yellow, #orange, #green { width:100px; height:100px; float:left; }
+        #red { background-color:red; }
+        #yellow { background-color:yellow; }
+        #orange { background-color:orange; }
+        #green { background-color:green; }
+
+        #c1{overflow:hidden;}
+        #c2{overflow:hidden;}
+    </style>
+</head>
+
+<body>
+<div id="c1">
+    <div id="red">
+    </div>
+    <div id="yellow">
+    </div>
+</div>
+<div id="c2">
+    <div id="orange">
+    </div>
+    <div id="green">
+    </div>
+</div>
+<p>Here is the text!</p>
+<br>
+<div>
+    <p>
+        该段代码本意要形成两行两列的布局，但是由于#red，#yellow，#orange，#green四个div在同一个布局环境BFC中，因此虽然它们位于两个不同的div（#c1和#c2）中，但仍然不会换行，而是一行四列的排列。
+        上面的例子，我再加两行代码，创建两个BFC, #c1{overflow:hidden;}#c2{overflow:hidden;}
+    </p>
+</div>
+</body>
+</html>
