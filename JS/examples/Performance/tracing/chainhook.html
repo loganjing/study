@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        var obj = function(element) {
+            this.element = element;
+            this.fn0 = function(arg) {
+                console.log(arg, element);
+                return this;
+            }
+            this.fn1 = function(arg) {
+                console.log(arg, arg, element);
+                return this;
+            }
+            if(this instanceof obj) {
+                return this.obj;
+            }else {
+                return new obj(element);
+            }
+        };
+
+        var objInst = obj("monkeys");
+
+        var ref0 = objInst.fn0;
+        objInst.fn0 = function(arg) {
+            console.log("calling f0");
+            return ref0.apply(this, [arg]);
+        };
+
+        var ref1 = objInst.fn1;
+        objInst.fn1 = function(arg) {
+            console.log("calling f1");
+            return ref1.apply(this, [arg]);
+        };
+
+        objInst.fn0("hello").fn1("bye");
+    </script>
+</head>
+<body>
+
+</body>
+</html>
