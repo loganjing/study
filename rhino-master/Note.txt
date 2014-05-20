@@ -1,1 +1,2 @@
 http://www.envjs.com/doc/guides
+http://geek.michaelgrace.org/2011/09/rhino-and-envjs/
