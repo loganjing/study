@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        var worker = new Worker("./worker.js");
+        worker.onmessage = function(event){
+            document.write(event.data);
+        }
+        worker.onerror = function(event){
+            alert(event.message);
+        }
+        worker.postMessage(1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

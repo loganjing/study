@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>无标题文档</title>
+    <style>
+        html,body {height:100%; }
+        * { padding:0; margin:0;  text-decoration:none; list-style:none; font-family:"微软雅黑" }
+        .rowone{background:#f00;height:100px;margin-bottom:20px;overflow:hidden;}
+        .rowtow{background:#090;height:100px;margin-top:20px;position:relative;overflow: hidden}
+
+        .mg {overflow:hidden; }
+
+    </style>
+</head>
+
+<body>
+<div class="rowone">
+</div>
+<div class="rowtow">
+</div>
+
+
+<div class="mg">
+    <div class="rowone">
+    </div>
+</div>
+<div class="mg">
+    <div class="rowtow">
+    </div>
+</div>
+
+<p>
+    根据 CSS 2.1 8.3.1 Collapsing margins 第一条，两个相邻的普通流中的块框在垂直位置的空白边会发生折叠现象。也就是处于同一个BFC中的两个垂直窗口的margin会重叠。
+
+    根据 CSS 2.1 8.3.1 Collapsing margins 第三条，生成 block formatting context 的元素不会和在流中的子元素发生空白边折叠。所以解决这种问题的办法是要为两个容器添加具有BFC的包裹容器。
+
+    所以解这个问题的办法就是,把两个容器分别放在两个据有BFC的包裹容器中，IE里就是触发layout的两个包裹容器中！
+</p>
+
+</body>
+</html>

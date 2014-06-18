@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+        var obj = {
+            fn:function(){
+                //注意：这里this为对象，并不是字符串，如果使用this==="monkeys",返回值是false，如果是==,则是相等的.
+                if(this == "monkeys"){
+                    console.info("Monkeys is fun!")
+                }else{
+                    console.info("There is no monkeys!")
+                }
+            }
+        }
+
+        obj.fn.apply("monkeys");
+
+        var ref = obj.fn;
+        obj.fn = function(){
+            console.info("hook into js.fn");
+            //注意调用apply时传递的参数.
+//            ref.apply(obj);
+            ref.apply(this);
+        }
+
+        obj.fn.apply("monkeys");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>无标题文档</title>
+    <style>
+        html,body {height:100%; }
+        * { padding:0; margin:0; color:#fff; text-decoration:none; list-style:none; font-family:"微软雅黑" }
+        /*float:left产生BFP*/
+        .aside{background:#f00;width:170px;float:left;height:300px;}
+        .main{background:#090;height:500px;overflow: hidden}
+    </style>
+</head>
+
+<body>
+<div class="aside">
+</div>
+<div class="main">
+</div>
+
+<br>
+<p style="color: red">
+    很明显，.aside和.mian重叠了。试分析一下，由于两个box都处在同一个BFC中，都是以BFC边界为起点，
+    如果两个box本身都具备BFC的话，会按顺序一个一个排列布局，现在.main并不具备BFC，
+    按照规则2，内部元素左外边与包含块的左边相接触， 即使存在浮动也是如此，除非这个元素也创建了一个新的 Block Formatting Context 。如果一个元素也创建了一个BFC，则不会重叠。
+    按上面规则4拥有BFC的元素是不可以跟浮动元素重叠的，所以只要为.mian再创建一个BFC,就可以解决这个重叠的问题。
+    上面已经说过创建BFC的方法，可以根据具体情况选用不同的方法，这里我选用的是加overflow:hidden。
+</p>
+</body>
+</html>
