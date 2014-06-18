@@ -10,36 +10,30 @@
 <input type="text" id="txt">
 
 <p>操作说明：在文本框中输入内容，然后鼠标点击文本框之外，观察事件的触发顺序.</p>
-<p>在Chrome,IE10,IE9,IE8,IE7,firefox下，事件的执行顺序都是：mousedown-->blur(text)-->mouseup-->click, 比如：
+    <p>在Chrome,IE10,IE9,IE8,IE7,firefox下，事件的执行顺序都是：mousedown-->blur(text)-->mouseup-->click, 比如：
     <img src="aa.png">
 </p>
 
 <script>
-    var index = 0;
+    var index = 0, txt = $("#txt");
     $(function(){
-      $("#txt").click(function(){
-//          console.info("txt Click event "+(index++));
-      }).blur(function(){
+      txt.blur(function(){
          console.info("txt blur event " +(index++));
       });
 
-      var txt = $("#txt");
-     $(document).click(function(e){
+      $(document).click(function(e){
          if(txt.val().length>0){
              console.info("document click event "+(index++));
          }
-
      }).mousedown(function(){
-                 if(txt.val().length>0){
-                     console.info("document mouse down event "+(index++));
-                 }
-
-             }).mouseup(function(){
-                 if(txt.val().length>0){
-                     console.info("document mouse up event "+(index++));
-                 }
-
-             });
+         if(txt.val().length>0){
+             console.info("document mouse down event "+(index++));
+         }
+     }).mouseup(function(){
+         if(txt.val().length>0){
+             console.info("document mouse up event "+(index++));
+         }
+     });
     });
 </script>
 
