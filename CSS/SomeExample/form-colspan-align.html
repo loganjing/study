@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <link href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://v3.bootcss.com/assets/css/docs.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">  
+  
+  <style>
+    
+    body{
+      padding:50px;
+      min-width:900px;
+    }
+    
+    
+    
+    .row{
+      margin-bottom:10px;
+    }
+    
+    .ui-labelContainer span{
+      display:inline-block;
+      width:45px;
+    }
+    
+    
+    
+    .offset{
+      padding-right:5%;
+      text-align:right;
+    }
+    
+    .colspan .ui-labelContainer{
+      text-align:left;
+    }
+    
+    .colspan .ui-labelContainer .lb{
+      position:absolute;
+    }
+    
+    .colspan .ui-labelContainer .input{
+      width:100%;
+      padding-left:49px
+    }
+    
+    .colspan .ui-labelContainer .content{
+      width:100%;
+    }
+    
+  </style>
+  
+  
+  <title>JS Bin</title>
+</head>
+<body >
+  
+  <div class="row">
+    <div class="col-xs-4 col-sm-4">
+      <div class="ui-labelContainer ">
+        <span>Label1</span>
+        <input type="text">
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 offset">
+      <div class="ui-labelContainer">
+        <span>Label2</span>
+        <input type="text">
+      </div>
+    </div>
+      
+    <div class="col-xs-4 col-sm-4 offset">
+      <div class="ui-labelContainer ">
+        <span>Label3</span>
+        <input type="text">
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-8 col-sm-8 offset colspan">
+      <div class="ui-labelContainer">
+        <span  class="lb">Label4</span>
+        <div class="input">
+           <input class="content" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 offset">
+      <div class="ui-labelContainer ">
+        <span>Label5</span>
+        <input type="text">
+      </div>
+    </div>
+      
+    
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 offset colspan">
+      <div class="ui-labelContainer">
+        <span class="lb">Label7</span>
+        <div class="input">
+           <input class="content" type="text">
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+</html>
